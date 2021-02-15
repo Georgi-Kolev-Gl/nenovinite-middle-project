@@ -37,7 +37,6 @@ class siteManger {
             this.allNews.push(obj);
         }
     }
-
 }
 let manager = new siteManger;
 const news = [
@@ -2086,15 +2085,14 @@ const news = [
 function addId(arr) {
     let result = []
     for(let i = 0; i < arr.length; i++){
-        arr[i].id = i + 1;
-        result.push[arr[i]]
-    }
-    return result;
+        arr[i].id = i + 1;        
+    }    
 }
-let newsWithId = addId(news);
+addId(news);
 
-newsWithId.forEach(function (el) {
-    let newNews = new News(el.title, el.image, el.text, el.data, el.user, el.counter, el.type, id)
+news.forEach(function (el) {
+    let newNews = new News(el.title, el.image, el.text, el.data, el.user, el.counter, el.type, el.id)
     manager.addNewsToAllNews(newNews)
 })
+
 console.log(manager.allNews);
