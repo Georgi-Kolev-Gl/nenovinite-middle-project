@@ -38,6 +38,7 @@ class siteManger {
         }
     }
 }
+
 let manager = new siteManger;
 const news = [
     {
@@ -2082,6 +2083,7 @@ const news = [
         type: "rubric",
     },
 ];
+
 function addId(arr) {
     let result = []
     for(let i = 0; i < arr.length; i++){
