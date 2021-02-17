@@ -10,7 +10,6 @@ const AddNewsPage = document.getElementById("addNews");
 
 function hashChnage() {
   let currentPage = window.location.hash.slice(1);
-  console.log(currentPage);
   switch (currentPage) {
     case "homeContainer":
       HomePage.style.display = "block";
@@ -153,14 +152,13 @@ news.forEach(function (el) {
   manager.addNewsToAllNews(newNews);
 });
 
-
 //add id to news
 function addId(arr) {
-    for (let i = 0; i < arr.length; i++) {
-      arr[i].id = i + 1;
-    }
+  for (let i = 0; i < arr.length; i++) {
+    arr[i].id = i + 1;
   }
-  addId(news);
+}
+addId(news);
 
 //convert data from news
 function convertDate(str) {
@@ -193,7 +191,6 @@ function convertDate(str) {
   return day + "." + numberOfMOnth + "." + year;
 }
 
-
 function printSmallCardNews(arr, containerToprint) {
   containerToprint.innerHTML = "";
   let counter = 9;
@@ -221,7 +218,6 @@ function printSmallCardNews(arr, containerToprint) {
   });
 }
 
-
 function prinprintNewsToCarousel(arr, containerToprint) {
   containerToprint.innerHTML = "";
   for (let i = 0; i < arr.length; i++) {
@@ -233,13 +229,12 @@ function prinprintNewsToCarousel(arr, containerToprint) {
     link.href = "#currentNews";
     let divContainer = creatElement("div", "", "newsCard");
     let img = creatElement("img");
-    console.log(element);
     img.src = element.img;
     img.alt = element.title;
     let divContainerTitle = creatElement("div", "", "newsCardTitle");
     let title = creatElement("h3", element.title);
     let currentDate = convertDate(element.date);
-    
+
     let date = creatElement("p", currentDate, "date");
     let text = creatElement("p", "Прочети новина", "readNews");
     divContainerTitle.append(title, date, text);
@@ -256,15 +251,149 @@ let cultureCarouselNews = getById("containerHomePageCultureNews");
 let OffsideNews = getById("containerHomePageOffsideNews");
 let horoscopeCarouselNews = getById("containerHomePageHoroscopeNews");
 let rubricCarouselNews = getById("containerHomePageRubricNews");
+let leftArrowPolitics = getById("leftArowPolitics");
+let rightArrowPolitics = getById("rightArowPolitics");
+let leftArrowWorld = getById("leftArowWorld");
+let rightArrowWorld = getById("rightArowWorld");
+let leftArrowCulture = getById("leftArowCulture");
+let rightArrowCulture = getById("rightArowCulture");
+let leftArrowSport = getById("leftArowOffside");
+let rightArrowSport = getById("rightArowOffside");
+let leftArrowHoroscope = getById("leftArowHoroscope");
+let rightArrowHoroscope = getById("rightArowHoroscope");
+let leftArrowRubric = getById("leftArowRubric");
+let rightArrowRubric = getById("rightArowRubric");
+
 let arr1 = manager.filterNewsByType("politics");
 let arr2 = manager.filterNewsByType("world");
 let arr3 = manager.filterNewsByType("culture");
 let arr4 = manager.filterNewsByType("sport");
 let arr5 = manager.filterNewsByType("horoscope");
 let arr6 = manager.filterNewsByType("rubric");
-prinprintNewsToCarousel(arr1, politicsCarouselNews)
-prinprintNewsToCarousel(arr2, worldCarouselNews)
-prinprintNewsToCarousel(arr3, cultureCarouselNews)
-prinprintNewsToCarousel(arr4, OffsideNews)
-prinprintNewsToCarousel(arr5, horoscopeCarouselNews)
+prinprintNewsToCarousel(arr1, politicsCarouselNews);
+prinprintNewsToCarousel(arr2, worldCarouselNews);
+prinprintNewsToCarousel(arr3, cultureCarouselNews);
+prinprintNewsToCarousel(arr4, OffsideNews);
+prinprintNewsToCarousel(arr5, horoscopeCarouselNews);
 prinprintNewsToCarousel(arr6, rubricCarouselNews);
+
+politicsCarouselNews.style.left = "0%";
+worldCarouselNews.style.left = "0%";
+cultureCarouselNews.style.left = "0%";
+OffsideNews.style.left = "0%";
+horoscopeCarouselNews.style.left = "0%";
+rubricCarouselNews.style.left = "0%";
+
+leftArrowPolitics.addEventListener("click", function (event) {
+  event.preventDefault();
+  let current = politicsCarouselNews.style.left;
+  if (current == "-198%") {
+    politicsCarouselNews.style.left = 0;
+  } else {
+    politicsCarouselNews.style.left = parseInt(current) - 99 + "%";
+  }
+});
+rightArrowPolitics.addEventListener("click", function (event) {
+  event.preventDefault();
+  let current = politicsCarouselNews.style.left;
+  if (current == "0px" || current == "0%") {
+    politicsCarouselNews.style.left = "-198%";
+  } else {
+    politicsCarouselNews.style.left = parseInt(current) + 99 + "%";
+  }
+});
+
+leftArrowWorld.addEventListener("click", function (event) {
+  event.preventDefault();
+  let current = worldCarouselNews.style.left;
+  if (current == "-198%") {
+    worldCarouselNews.style.left = 0;
+  } else {
+    worldCarouselNews.style.left = parseInt(current) - 99 + "%";
+  }
+});
+rightArrowWorld.addEventListener("click", function (event) {
+  event.preventDefault();
+  let current = worldCarouselNews.style.left;
+  if (current == "0px" || current == "0%") {
+    worldCarouselNews.style.left = "-198%";
+  } else {
+    worldCarouselNews.style.left = parseInt(current) + 99 + "%";
+  }
+});
+
+leftArrowCulture.addEventListener("click", function (event) {
+  event.preventDefault();
+  let current = cultureCarouselNews.style.left;
+  if (current == "-198%") {
+    cultureCarouselNews.style.left = 0;
+  } else {
+    cultureCarouselNews.style.left = parseInt(current) - 99 + "%";
+  }
+});
+rightArrowCulture.addEventListener("click", function (event) {
+  event.preventDefault();
+  let current = cultureCarouselNews.style.left;
+  if (current == "0px" || current == "0%") {
+    cultureCarouselNews.style.left = "-198%";
+  } else {
+    cultureCarouselNews.style.left = parseInt(current) + 99 + "%";
+  }
+});
+
+leftArrowSport.addEventListener("click", function (event) {
+  event.preventDefault();
+  let current = OffsideNews.style.left;
+  if (current == "-198%") {
+    OffsideNews.style.left = 0;
+  } else {
+    OffsideNews.style.left = parseInt(current) - 99 + "%";
+  }
+});
+rightArrowSport.addEventListener("click", function (event) {
+  event.preventDefault();
+  let current = OffsideNews.style.left;
+  if (current == "0px" || current == "0%") {
+    OffsideNews.style.left = "-198%";
+  } else {
+    OffsideNews.style.left = parseInt(current) + 99 + "%";
+  }
+});
+
+leftArrowHoroscope.addEventListener("click", function (event) {
+  event.preventDefault();
+  let current = horoscopeCarouselNews.style.left;
+  if (current == "-198%") {
+    horoscopeCarouselNews.style.left = 0;
+  } else {
+    horoscopeCarouselNews.style.left = parseInt(current) - 99 + "%";
+  }
+});
+rightArrowHoroscope.addEventListener("click", function (event) {
+  event.preventDefault();
+  let current = horoscopeCarouselNews.style.left;
+  if (current == "0px" || current == "0%") {
+    horoscopeCarouselNews.style.left = "-198%";
+  } else {
+    horoscopeCarouselNews.style.left = parseInt(current) + 99 + "%";
+  }
+});
+
+leftArrowRubric.addEventListener("click", function (event) {
+  event.preventDefault();
+  let current = rubricCarouselNews.style.left;
+  if (current == "-198%") {
+    rubricCarouselNews.style.left = 0;
+  } else {
+    rubricCarouselNews.style.left = parseInt(current) - 99 + "%";
+  }
+});
+rightArrowRubric.addEventListener("click", function (event) {
+  event.preventDefault();
+  let current = rubricCarouselNews.style.left;
+  if (current == "0px" || current == "0%") {
+    rubricCarouselNews.style.left = "-198%";
+  } else {
+    rubricCarouselNews.style.left = parseInt(current) + 99 + "%";
+  }
+});
