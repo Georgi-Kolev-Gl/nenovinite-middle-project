@@ -143,7 +143,7 @@ window.addEventListener("hashchange", hashChnage);
       element.image = "./assets/images/" + element.image;
     });
   })();
-  
+
 //convert data from news
 function convertDate(str) {
   let months = [
@@ -226,3 +226,4 @@ function prinprintNewsToCarousel(arr, containerToprint) {
     containerToprint.append(link);
   }
 }
+
