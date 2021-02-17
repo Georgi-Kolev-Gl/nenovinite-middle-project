@@ -137,12 +137,30 @@ function hashChnage() {
 window.addEventListener("DOMContentLoaded", hashChnage);
 window.addEventListener("hashchange", hashChnage);
 
-//add image url to news
-(function () {
-    news.forEach((element) => {
-      element.image = "./assets/images/" + element.image;
-    });
-  })();
+//create site manager and add news to manager
+let manager = new siteManger();
+news.forEach(function (el) {
+  let newNews = new News(
+    el.title,
+    el.image,
+    el.text,
+    el.data,
+    el.user,
+    el.counter,
+    el.type,
+    el.id
+  );
+  manager.addNewsToAllNews(newNews);
+});
+
+
+//add id to news
+function addId(arr) {
+    for (let i = 0; i < arr.length; i++) {
+      arr[i].id = i + 1;
+    }
+  }
+  addId(news);
 
 //convert data from news
 function convertDate(str) {
@@ -175,6 +193,7 @@ function convertDate(str) {
   return day + "." + numberOfMOnth + "." + year;
 }
 
+
 function printSmallCardNews(arr, containerToprint) {
   containerToprint.innerHTML = "";
   let counter = 9;
@@ -188,7 +207,7 @@ function printSmallCardNews(arr, containerToprint) {
     link.href = "#currentNews";
     let divContainer = creatElement("div", "", "newsCard");
     let img = creatElement("img");
-    img.src = element.image;
+    img.src = element.img;
     img.alt = element.title;
     let divContainerTitle = creatElement("div", "", "newsCardTitle");
     let title = creatElement("h3", element.title);
@@ -202,6 +221,7 @@ function printSmallCardNews(arr, containerToprint) {
   });
 }
 
+
 function prinprintNewsToCarousel(arr, containerToprint) {
   containerToprint.innerHTML = "";
   for (let i = 0; i < arr.length; i++) {
@@ -213,11 +233,13 @@ function prinprintNewsToCarousel(arr, containerToprint) {
     link.href = "#currentNews";
     let divContainer = creatElement("div", "", "newsCard");
     let img = creatElement("img");
-    img.src = element.image;
+    console.log(element);
+    img.src = element.img;
     img.alt = element.title;
     let divContainerTitle = creatElement("div", "", "newsCardTitle");
     let title = creatElement("h3", element.title);
-    let currentDate = convertDate(element.data);
+    let currentDate = convertDate(element.date);
+    
     let date = creatElement("p", currentDate, "date");
     let text = creatElement("p", "Прочети новина", "readNews");
     divContainerTitle.append(title, date, text);
@@ -227,3 +249,22 @@ function prinprintNewsToCarousel(arr, containerToprint) {
   }
 }
 
+// print news to carousel
+let politicsCarouselNews = getById("containerHomePagePoliticsNews");
+let worldCarouselNews = getById("containerHomePageWorldNews");
+let cultureCarouselNews = getById("containerHomePageCultureNews");
+let OffsideNews = getById("containerHomePageOffsideNews");
+let horoscopeCarouselNews = getById("containerHomePageHoroscopeNews");
+let rubricCarouselNews = getById("containerHomePageRubricNews");
+let arr1 = manager.filterNewsByType("politics");
+let arr2 = manager.filterNewsByType("world");
+let arr3 = manager.filterNewsByType("culture");
+let arr4 = manager.filterNewsByType("sport");
+let arr5 = manager.filterNewsByType("horoscope");
+let arr6 = manager.filterNewsByType("rubric");
+prinprintNewsToCarousel(arr1, politicsCarouselNews)
+prinprintNewsToCarousel(arr2, worldCarouselNews)
+prinprintNewsToCarousel(arr3, cultureCarouselNews)
+prinprintNewsToCarousel(arr4, OffsideNews)
+prinprintNewsToCarousel(arr5, horoscopeCarouselNews)
+prinprintNewsToCarousel(arr6, rubricCarouselNews);
