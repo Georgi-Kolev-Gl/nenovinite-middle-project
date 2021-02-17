@@ -137,3 +137,58 @@ function hashChnage() {
 
 window.addEventListener('DOMContentLoaded', hashChnage);
 window.addEventListener('hashchange', hashChnage)
+
+//convert data from news
+function convertDate(str) {
+    let months = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
+    str = str.trim();
+    let arr = str.split(", ");
+    let year = arr[1];
+    let day = arr[0].split(" ")[1];
+    let month = arr[0].split(" ")[0];
+    let numberOfMOnth = months.indexOf(month) + 1;
+    if (numberOfMOnth <= 9) {
+      numberOfMOnth = "0" + numberOfMOnth;
+    }
+    if (day <= 9) {
+      day = "0" + day;
+    }
+    return day + "." + numberOfMOnth + "." + year;
+}
+
+function printSmallCardNews(arr, containerToprint) {
+    containerToprint.innerHTML = "";
+    let counter = 9;
+    arr.forEach((element, index) => {
+        if (index === counter){
+            let ad = creatElement("div", "", "adBanner")
+            containerToprint.append(ad);
+            counter += 8;
+        }
+      let divContainer = creatElement("div", "", "newsCard");
+      let img = creatElement("img");
+      img.src = element.image;
+      img.alt = element.title;
+      let divContainerTitle = creatElement("div", "", "newsCardTitle")
+      let title = creatElement("h3", element.title);
+      let currentDate = convertDate(element.data);
+      let date = creatElement("p", currentDate, "date");
+      let text = creatElement("p", "Прочети новина", "readNews");
+      divContainerTitle.append(title, date, text)
+      divContainer.append(img, divContainerTitle);
+      containerToprint.append(divContainer);
+    });
+}
