@@ -137,6 +137,13 @@ function hashChnage() {
 window.addEventListener("DOMContentLoaded", hashChnage);
 window.addEventListener("hashchange", hashChnage);
 
+//add image url to news
+(function () {
+    news.forEach((element) => {
+      element.image = "./assets/images/" + element.image;
+    });
+  })();
+  
 //convert data from news
 function convertDate(str) {
   let months = [
