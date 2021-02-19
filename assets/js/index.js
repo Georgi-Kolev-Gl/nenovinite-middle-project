@@ -396,4 +396,20 @@ rightArrowRubric.addEventListener("click", function (event) {
   } else {
     rubricCarouselNews.style.left = parseInt(current) + 99 + "%";
   }
-});
+})
+//SEARCH FUNCТION
+let searchIcon = getById('searchAnchor');
+  let searchInput = getById('search');
+  searchIcon.addEventListener('click', function (ev) {
+    ev.preventDefault();
+    console.log(ev);
+    if (searchInput.value) {
+      let input = searchInput.value.toLowerCase()
+      let filteredNewsArr = manager.allNews.filter(e => e.title.toLowerCase().includes(input));
+      printSmallCardNews(filteredNewsArr, AllNewsPage);
+      console.log(filteredNewsArr);
+      console.log(searchInput.value)
+    }
+    searchInput.value = '';
+
+  });

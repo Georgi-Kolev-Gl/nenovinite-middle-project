@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="./assets/css/headerAndNav.css">
     <!-- FONT AWESOME LIBRARY -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/all.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/brands.min.css"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/regular.min.css"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/regular.min.css"></script> -->
 </head>
 
 <body>
@@ -24,7 +24,10 @@
                 <a href="#homeContainer"><img src="./assets/images/logo/logoMain.png" alt="logo"></a>
             </div>
             <div class="socialApps">
-                <a class="icon" href=""><i class="fa fa-search"></i></a>
+                <div class="searchInputDIV">
+                    <input type="text" id="search" class="searchInput-visible">
+                </div>
+                <a class="icon" href="" id="searchAnchor" style="margin-left: -15px;"><i class="fa fa-search"></i></a>
                 <a class="icon" target="_blank" href="https://www.nenovinite.com/ne/za-nas"><i
                         class="fa fa-envelope"></i></a>
                 <a class="icon" target="_blank" href="https://www.youtube.com/user/nenovinite/videos"><i
@@ -173,10 +176,12 @@
     <footer>
 
     </footer>
-<script src="./assets/js/news.js"></script>
-<script src="./assets/js/utilis.js"></script>
-<script src="./assets/js/constructors.js"></script>
-<script src="./assets/js/index.js"></script>
+    <script src="./assets/js/news.js"></script>
+    <script src="./assets/js/utilis.js"></script>
+    <script src="./assets/js/constructors.js"></script>
+    <!-- Search js -->
+    <!-- <script src="./assets/js/search.js"></script> -->
+    <script src="./assets/js/index.js"></script>
 </body>
 
 </html>

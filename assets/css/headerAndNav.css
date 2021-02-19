@@ -88,3 +88,17 @@ header {
     display: flex;
     border-bottom: 4px solid #d0d1d1;
 }
+/* SEARCH FORM */
+
+.serrchInputDIV{
+    margin-right: -275px;
+    margin-top: 25px;
+    border: transparent;
+}
+.searchInput-visible{
+    height: 41px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    /* border: transparent; */
+    border: 1px solid #ccd0d2;
+}
