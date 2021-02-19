@@ -1,0 +1,126 @@
+body {
+  background-color: #f5f8fa;
+}
+a {
+  text-decoration: none;
+}
+#homeContainer {
+  width: 940px;
+  margin: 0 auto;
+}
+.categoryPolitics,
+.categoryWorld,
+.categoryCulture,
+.categoryOffside,
+.categoryHoroscope,
+.categoryRubric {
+  display: block;
+  width: 100%;
+  height: 624.812px;
+  margin: 0 auto;
+  padding: 3px;
+}
+.newsCard {
+  box-sizing: border-box;
+  border: 2.2px solid white;
+  background-color: white;
+  text-align: left;
+  width: 222.5px;
+  height: 420.406px;
+  padding: 5px;
+  margin-bottom: 40px;
+  margin-left: 6px;
+  margin-right: 5px;
+}
+.newsCardTitle {
+  box-sizing: border-box;
+  width: 210.5px;
+  height: 290px;
+  padding-left: 9px;
+  padding-top: 9px;
+  padding-right: 9px;
+}
+.politicsNews,
+.worldNews,
+.cultureNews,
+.offsideNews,
+.horoscopeNews,
+.rubricNews {
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+#containerHomePagePoliticsNews,
+#containerHomePageWorldNews,
+#containerHomePageCultureNews,
+#containerHomePageOffsideNews,
+#containerHomePageHoroscopeNews,
+#containerHomePageRubricNews {
+width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  position: relative;
+  transition: all 1s;
+}
+#containerHomePagePoliticsNews img,
+#containerHomePageWorldNews img,
+#containerHomePageCultureNews img,
+#containerHomePageOffsideNews img,
+#containerHomePageHoroscopeNews img,
+#containerHomePageRubricNews img {
+  width: 208px;
+  height: 118.406px;
+}
+.date,
+.readNews {
+  font-size: 18px;
+  font-weight: 300;
+  margin-bottom: 5px;
+}
+.newsCardTitle h3 {
+  height: 168px;
+  margin-bottom: 30px;
+  word-break: break-word;
+  font-size: 22px;
+}
+.categoryTitle {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.categoryCarouselLogo {
+  width: 100%;
+  display: flex;
+}
+.categoryCarouselLogo img {
+  margin: 0 auto;
+}
+.leftArrow {
+  background: url("../images/logo/left.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-clip: border-box;
+  display: block;
+  width: 42px;
+  height: 42px;
+  margin-left: 40px;
+}
+.leftArrow:hover {
+  background: url("../images/logo/leftHover.png");
+}
+.rightArrow {
+  background: url("../images/logo/right.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-clip: border-box;
+  display: block;
+  width: 42px;
+  height: 42px;
+  margin-right: 40px;
+}
+.rightArrow:hover {
+  background: url("../images/logo/rightHover.png");
+}

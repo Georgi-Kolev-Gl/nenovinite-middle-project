@@ -1,8 +1,8 @@
-const news = [
+let news = [
   {
     title:
       "Министърът на здравеопазването прибегна до услугите на ало-измамници, за да ваксинира възрастните хора",
-    image: "politici_1",
+    image: "politics_1",
     text: {
       subtitle: "РАЗБИРА СЕ, ЧЕ НА ПОРЕДЕН БРИФИНГ -",
       description:
@@ -2041,3 +2041,10 @@ const news = [
     type: "rubric",
   },
 ];
+
+//add image url to news
+(function () {
+  news.forEach((element) => {
+    element.image = "./assets/images/" + element.image + ".jpg";
+  });
+})();
