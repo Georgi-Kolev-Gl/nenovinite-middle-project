@@ -124,3 +124,12 @@ width: 100%;
 .rightArrow:hover {
   background: url("../images/logo/rightHover.png");
 }
+
+/* CHANGES BY KIRIL
+DIV CONTAINERS STYLES */
+.pageContainer{
+  display: flex;
+  flex-wrap: wrap;
+  width: 945px;
+  margin: 0 auto;
+}
