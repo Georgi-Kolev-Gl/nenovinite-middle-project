@@ -8,6 +8,7 @@ const HoroscopePage = document.getElementById("horoscope");
 const RubricPage = document.getElementById("rubric");
 const AddNewsPage = document.getElementById("addNews");
 
+
 function hashChnage() {
   let currentPage = window.location.hash.slice(1);
   switch (currentPage) {
@@ -21,6 +22,7 @@ function hashChnage() {
       HoroscopePage.style.display = "none";
       RubricPage.style.display = "none";
       AddNewsPage.style.display = "none";
+      readCurrentNews.style.display = "none";
       break;
 
     case "allNewsContainer":
@@ -33,6 +35,7 @@ function hashChnage() {
       HoroscopePage.style.display = "none";
       RubricPage.style.display = "none";
       AddNewsPage.style.display = "none";
+      readCurrentNews.style.display = "none";
       break;
 
     case "politicsContainer":
@@ -45,6 +48,7 @@ function hashChnage() {
       HoroscopePage.style.display = "none";
       RubricPage.style.display = "none";
       AddNewsPage.style.display = "none";
+      readCurrentNews.style.display = "none";
       break;
 
     case "worldContainer":
@@ -57,6 +61,7 @@ function hashChnage() {
       HoroscopePage.style.display = "none";
       RubricPage.style.display = "none";
       AddNewsPage.style.display = "none";
+      readCurrentNews.style.display = "none";
       break;
 
     case "cultureContainer":
@@ -69,6 +74,7 @@ function hashChnage() {
       HoroscopePage.style.display = "none";
       RubricPage.style.display = "none";
       AddNewsPage.style.display = "none";
+      readCurrentNews.style.display = "none";
       break;
 
     case "offsideContainer":
@@ -81,6 +87,7 @@ function hashChnage() {
       HoroscopePage.style.display = "none";
       RubricPage.style.display = "none";
       AddNewsPage.style.display = "none";
+      readCurrentNews.style.display = "none";
       break;
 
     case "horoscope":
@@ -93,6 +100,7 @@ function hashChnage() {
       HoroscopePage.style.display = "block";
       RubricPage.style.display = "none";
       AddNewsPage.style.display = "none";
+      readCurrentNews.style.display = "none";
       break;
 
     case "rubric":
@@ -105,6 +113,7 @@ function hashChnage() {
       HoroscopePage.style.display = "none";
       RubricPage.style.display = "block";
       AddNewsPage.style.display = "none";
+      readCurrentNews.style.display = "none";
       break;
 
     case "addNews":
@@ -117,7 +126,34 @@ function hashChnage() {
       HoroscopePage.style.display = "none";
       RubricPage.style.display = "none";
       AddNewsPage.style.display = "block";
+      readCurrentNews.style.display = "none";
       break;
+    
+    case "addNews":
+      HomePage.style.display = "none";
+      AllNewsPage.style.display = "none";
+      PoliticPage.style.display = "none";
+      WorldPage.style.display = "none";
+      CulturePage.style.display = "none";
+      OffsidePage.style.display = "none";
+      HoroscopePage.style.display = "none";
+      RubricPage.style.display = "none";
+      AddNewsPage.style.display = "none";
+      readCurrentNews.style.display = "block";
+      break;
+    
+    case "currentNews":
+        HomePage.style.display = "none";
+        AllNewsPage.style.display = "none";
+        PoliticPage.style.display = "none";
+        WorldPage.style.display = "none";
+        CulturePage.style.display = "none";
+        OffsidePage.style.display = "none";
+        HoroscopePage.style.display = "none";
+        RubricPage.style.display = "none";
+        AddNewsPage.style.display = "none";
+        readCurrentNews.style.display = "block";
+        break;
 
     default:
       HomePage.style.display = "block";
@@ -397,3 +433,5 @@ rightArrowRubric.addEventListener("click", function (event) {
     rubricCarouselNews.style.left = parseInt(current) + 99 + "%";
   }
 });
+
+const readCurrentNews = document.getElementById("currentNews");
