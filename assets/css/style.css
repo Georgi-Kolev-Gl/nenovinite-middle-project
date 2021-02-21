@@ -133,3 +133,14 @@ DIV CONTAINERS STYLES */
   width: 945px;
   margin: 0 auto;
 }
+.adBanner{
+  border: solid 1px black;
+  width: 100%;
+  margin: 0 auto;
+  height: 300px;
+}
+
+.addNewsForm{
+  display: flex;
+  flex-direction: column;
+}

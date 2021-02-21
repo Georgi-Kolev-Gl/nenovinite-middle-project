@@ -10,7 +10,7 @@
     <!-- STYLES FOR HEADER -->
     <link rel="stylesheet" href="./assets/css/headerAndNav.css">
     <!-- FONT AWESOME LIBRARY -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/all.min.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/all.min.js"></script>
 </head>
 
 <body>
@@ -44,7 +44,8 @@
                         <li><a href="#politicsContainer">Политика и общество</a></li>
                         <li><a href="#worldContainer">Свят</a></li>
                         <li><a href="#cultureContainer">Не!ука и култура</a></li>
-                        <li><a href="#offsideContainer"><img src="./assets/images/logo/ne-zasada.png" alt="Не!"><span>Засада</span> </a></li>
+                        <li><a href="#offsideContainer"><img src="./assets/images/logo/ne-zasada.png"
+                                    alt="Не!"><span>Засада</span> </a></li>
                         <li><a href="#horoscope">Не!Хороскоп</a></li>
                         <li><a href="#rubric">Рубрики</a></li>
                         <li><a href="#addNews">Напиши Не!Новина</a></li>
@@ -169,7 +170,44 @@
         <div class="pageContainer" id="offsideContainer">OFFSIDE</div>
         <div class="pageContainer" id="horoscope">HOROSCOPE</div>
         <div class="pageContainer" id="rubric">Rubric</div>
-        <div class="pageContainer" id="addNews">AddNews</div>
+        <div class="pageContainer" id="addNews">
+            AddNews
+            <div>
+                <h1>Напиши новина</h1>
+                <p>Медия №37 в България и №32 в Света разчита на мрежа от случайни хора, които да подават случайни
+                    сигнали, вести, очевидности и пророчества. Изпращайте ни вашите текстове, които ние може да
+                    публикуваме, да допълним и развием, или да продадем на неграмотен човек, представяйки му ги за
+                    мантри срещу плешивост. Одобрените за публикуване материали може да се появят в сайта след дни,
+                    седмици и месеци, защото времето е концепция, съществуваща само в главата ви.
+                </p>
+            </div>
+            <div class="addNewsFormContainer">
+                <form action="" class="addNewsForm">
+                    <label for="email">Email*</label><br>
+                    <input type="text" name="email" id="addNewsEmail"><br>
+
+                    <label for="name">Име/Прякор</label><br>
+                    <input type="text" name="name" id="addNewsName"><br>
+                    <label for="title">Заглавие на новината</label><br>
+                    <input type="text" name="title" id="addNewsTitle"><br>
+                    <label for="content">Съдържание</label><br>
+                    <textarea name="content" id="addNewsContent" cols="30" rows="10"><br>                   
+                    </textarea><br>
+                    <label for="surveyQuestion">Въпрос на анкета</label><br>
+                    <input type="text" name="surveyQuestion" id="surveyQuestion"><br>
+                    <label for="surveyAnswers">Отговори на анкета</label><br>
+                    <input type="text" name="surveyAnswer" id="surveyAnswer"><br>
+                    <a href="javascript">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                    <label for="validateNotRobot">2 + 2 = </label>
+                    <input type="number" name="validateNotRobot" id="validateNotRobot">
+                    <button id="addNewsButton">Депозирай</button>
+
+
+                </form>
+            </div>
+        </div>
     </main>
     <footer>
 
@@ -177,7 +215,7 @@
     <script src="./assets/js/news.js"></script>
     <script src="./assets/js/utilis.js"></script>
     <script src="./assets/js/constructors.js"></script>
-    <script src="./assets/js/searchFUNCTION.js"></script>    
+    <script src="./assets/js/searchFUNCTION.js"></script>
     <script src="./assets/js/index.js"></script>
 </body>
 
