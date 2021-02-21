@@ -193,7 +193,6 @@ function addId(arr) {
     arr[i].id = i + 1;
   }
 }
-addId(news);
 
 //convert data from news
 function convertDate(str) {
@@ -230,6 +229,7 @@ function printSmallCardNews(arr, containerToprint) {
   containerToprint.innerHTML = "";
   let counter = 7;
   arr.forEach((element, index) => {
+    let currentNews = element;
     if (index === counter) {
       let ad = creatElement("div", "", "adBanner");
       containerToprint.append(ad);
@@ -252,6 +252,9 @@ function printSmallCardNews(arr, containerToprint) {
     divContainer.append(img, divContainerTitle);
     link.append(divContainer);
     containerToprint.append(link);
+    link.addEventListener("click", function () {
+      console.log(currentNews)
+  })
   });
 }
 
