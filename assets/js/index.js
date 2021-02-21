@@ -8,8 +8,7 @@ const HoroscopePage = document.getElementById("horoscope");
 const RubricPage = document.getElementById("rubric");
 const AddNewsPage = document.getElementById("addNews");
 
-
-function hashChnage() {
+function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
   let currentPage = window.location.hash.slice(1);
   switch (currentPage) {
     case "homeContainer":
@@ -27,7 +26,7 @@ function hashChnage() {
 
     case "allNewsContainer":
       HomePage.style.display = "none";
-      AllNewsPage.style.display = "block";
+      AllNewsPage.style.display = "flex";
       PoliticPage.style.display = "none";
       WorldPage.style.display = "none";
       CulturePage.style.display = "none";
@@ -41,7 +40,7 @@ function hashChnage() {
     case "politicsContainer":
       HomePage.style.display = "none";
       AllNewsPage.style.display = "none";
-      PoliticPage.style.display = "block";
+      PoliticPage.style.display = "flex";
       WorldPage.style.display = "none";
       CulturePage.style.display = "none";
       OffsidePage.style.display = "none";
@@ -55,7 +54,7 @@ function hashChnage() {
       HomePage.style.display = "none";
       AllNewsPage.style.display = "none";
       PoliticPage.style.display = "none";
-      WorldPage.style.display = "block";
+      WorldPage.style.display = "flex";
       CulturePage.style.display = "none";
       OffsidePage.style.display = "none";
       HoroscopePage.style.display = "none";
@@ -69,7 +68,7 @@ function hashChnage() {
       AllNewsPage.style.display = "none";
       PoliticPage.style.display = "none";
       WorldPage.style.display = "none";
-      CulturePage.style.display = "block";
+      CulturePage.style.display = "flex";
       OffsidePage.style.display = "none";
       HoroscopePage.style.display = "none";
       RubricPage.style.display = "none";
@@ -83,7 +82,7 @@ function hashChnage() {
       PoliticPage.style.display = "none";
       WorldPage.style.display = "none";
       CulturePage.style.display = "none";
-      OffsidePage.style.display = "block";
+      OffsidePage.style.display = "flex";
       HoroscopePage.style.display = "none";
       RubricPage.style.display = "none";
       AddNewsPage.style.display = "none";
@@ -97,7 +96,7 @@ function hashChnage() {
       WorldPage.style.display = "none";
       CulturePage.style.display = "none";
       OffsidePage.style.display = "none";
-      HoroscopePage.style.display = "block";
+      HoroscopePage.style.display = "flex";
       RubricPage.style.display = "none";
       AddNewsPage.style.display = "none";
       readCurrentNews.style.display = "none";
@@ -111,7 +110,7 @@ function hashChnage() {
       CulturePage.style.display = "none";
       OffsidePage.style.display = "none";
       HoroscopePage.style.display = "none";
-      RubricPage.style.display = "block";
+      RubricPage.style.display = "flex";
       AddNewsPage.style.display = "none";
       readCurrentNews.style.display = "none";
       break;
@@ -229,7 +228,7 @@ function convertDate(str) {
 
 function printSmallCardNews(arr, containerToprint) {
   containerToprint.innerHTML = "";
-  let counter = 9;
+  let counter = 7;
   arr.forEach((element, index) => {
     if (index === counter) {
       let ad = creatElement("div", "", "adBanner");
@@ -242,9 +241,11 @@ function printSmallCardNews(arr, containerToprint) {
     let img = creatElement("img");
     img.src = element.img;
     img.alt = element.title;
+    img.style.width = '200px';//CHANGED WIDTH TO 200px!!
+    img.style.height = '150px';//CHANGED HEIGHT TO 150PX!!
     let divContainerTitle = creatElement("div", "", "newsCardTitle");
     let title = creatElement("h3", element.title);
-    let currentDate = convertDate(element.data);
+    let currentDate = convertDate(element.date);//changed data to date!!
     let date = creatElement("p", currentDate, "date");
     let text = creatElement("p", "Прочети новина", "readNews");
     divContainerTitle.append(title, date, text);
@@ -270,7 +271,6 @@ function prinprintNewsToCarousel(arr, containerToprint) {
     let divContainerTitle = creatElement("div", "", "newsCardTitle");
     let title = creatElement("h3", element.title);
     let currentDate = convertDate(element.date);
-
     let date = creatElement("p", currentDate, "date");
     let text = creatElement("p", "Прочети новина", "readNews");
     divContainerTitle.append(title, date, text);
@@ -299,19 +299,19 @@ let leftArrowHoroscope = getById("leftArowHoroscope");
 let rightArrowHoroscope = getById("rightArowHoroscope");
 let leftArrowRubric = getById("leftArowRubric");
 let rightArrowRubric = getById("rightArowRubric");
-
-let arr1 = manager.filterNewsByType("politics");
-let arr2 = manager.filterNewsByType("world");
-let arr3 = manager.filterNewsByType("culture");
-let arr4 = manager.filterNewsByType("sport");
-let arr5 = manager.filterNewsByType("horoscope");
-let arr6 = manager.filterNewsByType("rubric");
-prinprintNewsToCarousel(arr1, politicsCarouselNews);
-prinprintNewsToCarousel(arr2, worldCarouselNews);
-prinprintNewsToCarousel(arr3, cultureCarouselNews);
-prinprintNewsToCarousel(arr4, OffsideNews);
-prinprintNewsToCarousel(arr5, horoscopeCarouselNews);
-prinprintNewsToCarousel(arr6, rubricCarouselNews);
+//CHANGED FILTERED NAMES FROM ARR TO INTUITIVE NAMES
+let politicsArr = manager.filterNewsByType("politics");
+let worldArr = manager.filterNewsByType("world");
+let cultureArr = manager.filterNewsByType("culture");
+let sportArr = manager.filterNewsByType("sport");
+let horoscopeArr = manager.filterNewsByType("horoscope");
+let rubricArr = manager.filterNewsByType("rubric");
+prinprintNewsToCarousel(politicsArr, politicsCarouselNews);
+prinprintNewsToCarousel(worldArr, worldCarouselNews);
+prinprintNewsToCarousel(cultureArr, cultureCarouselNews);
+prinprintNewsToCarousel(sportArr, OffsideNews);
+prinprintNewsToCarousel(horoscopeArr, horoscopeCarouselNews);
+prinprintNewsToCarousel(rubricArr, rubricCarouselNews);
 
 politicsCarouselNews.style.left = "0%";
 worldCarouselNews.style.left = "0%";
@@ -432,6 +432,22 @@ rightArrowRubric.addEventListener("click", function (event) {
   } else {
     rubricCarouselNews.style.left = parseInt(current) + 99 + "%";
   }
-});
+})
+//SEARCH FUNCТION
+searchFunctionality();
 
-const readCurrentNews = document.getElementById("currentNews");
+//ALL NEWS DIV PRINT
+printSmallCardNews(manager.allNews, AllNewsPage);
+
+//POLITICS  DIV PRINT
+printSmallCardNews(politicsArr, PoliticPage);
+//WORLD  DIV PRINT
+printSmallCardNews(worldArr, WorldPage);
+//CULTURE  DIV PRINT
+printSmallCardNews(cultureArr, CulturePage);
+//SPORT DIV PRINT
+printSmallCardNews(sportArr, OffsidePage);
+//HOROSCOPE  DIV PRINT
+printSmallCardNews(horoscopeArr, HoroscopePage);
+//RUBRIC DIV PRINT
+printSmallCardNews(rubricArr, RubricPage);
