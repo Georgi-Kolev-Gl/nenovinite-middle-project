@@ -433,6 +433,7 @@ rightArrowRubric.addEventListener("click", function (event) {
     rubricCarouselNews.style.left = parseInt(current) + 99 + "%";
   }
 })
+
 //SEARCH FUNCТION
 searchFunctionality();
 
@@ -451,3 +452,9 @@ printSmallCardNews(sportArr, OffsidePage);
 printSmallCardNews(horoscopeArr, HoroscopePage);
 //RUBRIC DIV PRINT
 printSmallCardNews(rubricArr, RubricPage);
+//RUBRIC DIV PRINT
+
+
+//current news page
+readCurrentNews = document.getElementById("currentNews")
+
