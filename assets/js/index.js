@@ -194,7 +194,7 @@ function addId(arr) {
   }
 }
 
-//convert data from news
+//convert date from news
 function convertDate(str) {
   let months = [
     "Jan",
@@ -231,8 +231,8 @@ function printSmallCardNews(arr, containerToprint) {
   arr.forEach((element, index) => {
     let currentNews = element;
     if (index === counter) {
-      let ad = creatElement("div", "", "adBanner");
-      containerToprint.append(ad);
+      let banner = creatElement("div", "", "adBanner");
+      containerToprint.append(banner);
       counter += 8;
     }
     let link = creatElement("a", "", "news");
@@ -253,7 +253,7 @@ function printSmallCardNews(arr, containerToprint) {
     link.append(divContainer);
     containerToprint.append(link);
     link.addEventListener("click", function () {
-      console.log(currentNews)
+      printCurrentNews(currentNews, readCurrentNews)
   })
   });
 }
