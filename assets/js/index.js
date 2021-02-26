@@ -21,6 +21,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       HoroscopePage.style.display = "none";
       RubricPage.style.display = "none";
       AddNewsPage.style.display = "none";
+      readCurrentNews.style.display = "none";
       break;
 
     case "allNewsContainer":
@@ -33,6 +34,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       HoroscopePage.style.display = "none";
       RubricPage.style.display = "none";
       AddNewsPage.style.display = "none";
+      readCurrentNews.style.display = "none";
       break;
 
     case "politicsContainer":
@@ -45,6 +47,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       HoroscopePage.style.display = "none";
       RubricPage.style.display = "none";
       AddNewsPage.style.display = "none";
+      readCurrentNews.style.display = "none";
       break;
 
     case "worldContainer":
@@ -57,6 +60,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       HoroscopePage.style.display = "none";
       RubricPage.style.display = "none";
       AddNewsPage.style.display = "none";
+      readCurrentNews.style.display = "none";
       break;
 
     case "cultureContainer":
@@ -69,6 +73,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       HoroscopePage.style.display = "none";
       RubricPage.style.display = "none";
       AddNewsPage.style.display = "none";
+      readCurrentNews.style.display = "none";
       break;
 
     case "offsideContainer":
@@ -81,6 +86,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       HoroscopePage.style.display = "none";
       RubricPage.style.display = "none";
       AddNewsPage.style.display = "none";
+      readCurrentNews.style.display = "none";
       break;
 
     case "horoscope":
@@ -93,6 +99,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       HoroscopePage.style.display = "flex";
       RubricPage.style.display = "none";
       AddNewsPage.style.display = "none";
+      readCurrentNews.style.display = "none";
       break;
 
     case "rubric":
@@ -105,6 +112,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       HoroscopePage.style.display = "none";
       RubricPage.style.display = "flex";
       AddNewsPage.style.display = "none";
+      readCurrentNews.style.display = "none";
       break;
 
     case "addNews":
@@ -117,7 +125,34 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       HoroscopePage.style.display = "none";
       RubricPage.style.display = "none";
       AddNewsPage.style.display = "block";
+      readCurrentNews.style.display = "none";
       break;
+    
+    case "addNews":
+      HomePage.style.display = "none";
+      AllNewsPage.style.display = "none";
+      PoliticPage.style.display = "none";
+      WorldPage.style.display = "none";
+      CulturePage.style.display = "none";
+      OffsidePage.style.display = "none";
+      HoroscopePage.style.display = "none";
+      RubricPage.style.display = "none";
+      AddNewsPage.style.display = "none";
+      readCurrentNews.style.display = "block";
+      break;
+    
+    case "currentNews":
+        HomePage.style.display = "none";
+        AllNewsPage.style.display = "none";
+        PoliticPage.style.display = "none";
+        WorldPage.style.display = "none";
+        CulturePage.style.display = "none";
+        OffsidePage.style.display = "none";
+        HoroscopePage.style.display = "none";
+        RubricPage.style.display = "none";
+        AddNewsPage.style.display = "none";
+        readCurrentNews.style.display = "block";
+        break;
 
     default:
       HomePage.style.display = "block";
@@ -158,9 +193,8 @@ function addId(arr) {
     arr[i].id = i + 1;
   }
 }
-addId(news);
 
-//convert data from news
+//convert date from news
 function convertDate(str) {
   let months = [
     "Jan",
@@ -193,11 +227,12 @@ function convertDate(str) {
 
 function printSmallCardNews(arr, containerToprint) {
   containerToprint.innerHTML = "";
-  let counter = 9;
+  let counter = 7;
   arr.forEach((element, index) => {
+    let currentNews = element;
     if (index === counter) {
-      let ad = creatElement("div", "", "adBanner");
-      containerToprint.append(ad);
+      let banner = creatElement("div", "", "adBanner");
+      containerToprint.append(banner);
       counter += 8;
     }
     let link = creatElement("a", "", "news");
@@ -217,6 +252,9 @@ function printSmallCardNews(arr, containerToprint) {
     divContainer.append(img, divContainerTitle);
     link.append(divContainer);
     containerToprint.append(link);
+    link.addEventListener("click", function () {
+      printCurrentNews(currentNews, readCurrentNews)
+  })
   });
 }
 
@@ -236,7 +274,6 @@ function prinprintNewsToCarousel(arr, containerToprint) {
     let divContainerTitle = creatElement("div", "", "newsCardTitle");
     let title = creatElement("h3", element.title);
     let currentDate = convertDate(element.date);
-
     let date = creatElement("p", currentDate, "date");
     let text = creatElement("p", "Прочети новина", "readNews");
     divContainerTitle.append(title, date, text);
@@ -399,6 +436,7 @@ rightArrowRubric.addEventListener("click", function (event) {
     rubricCarouselNews.style.left = parseInt(current) + 99 + "%";
   }
 })
+
 //SEARCH FUNCТION
 searchFunctionality();
 
@@ -417,3 +455,9 @@ printSmallCardNews(sportArr, OffsidePage);
 printSmallCardNews(horoscopeArr, HoroscopePage);
 //RUBRIC DIV PRINT
 printSmallCardNews(rubricArr, RubricPage);
+//RUBRIC DIV PRINT
+
+
+//current news page
+readCurrentNews = document.getElementById("currentNews")
+
