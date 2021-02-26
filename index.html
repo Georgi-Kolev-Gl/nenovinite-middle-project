@@ -183,28 +183,71 @@
             </div>
             <div class="addNewsFormContainer">
                 <form action="" class="addNewsForm">
-                    <label for="email">Email*</label><br>
-                    <input type="text" name="email" id="addNewsEmail"><br>
-
-                    <label for="name">Име/Прякор</label><br>
-                    <input type="text" name="name" id="addNewsName"><br>
-                    <label for="title">Заглавие на новината</label><br>
-                    <input type="text" name="title" id="addNewsTitle"><br>
-                    <label for="content">Съдържание</label><br>
-                    <textarea name="content" id="addNewsContent" cols="30" rows="10"><br>                   
-                    </textarea><br>
-                    <label for="surveyQuestion">Въпрос на анкета</label><br>
-                    <input type="text" name="surveyQuestion" id="surveyQuestion"><br>
-                    <label for="surveyAnswers">Отговори на анкета</label><br>
-                    <input type="text" name="surveyAnswer" id="surveyAnswer"><br>
-                    <a href="javascript">
-                        <i class="fa fa-plus"></i>
-                    </a>
-                    <label for="validateNotRobot" id="validateLabel">2 + 2 = </label>
-                    <input type="number" name="validateNotRobot" id="validateNotRobot">
-                    <button id="addNewsButton">Депозирай</button>
-
-
+                    <div>
+                        <label for="email">Email*</label>
+                        <div class="addNewsInputDIV">
+                            <input type="text" name="email" id="addNewsEmail">
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="name">Име/Прякор</label>
+                        <div class="addNewsInputDIV">
+                            <input type="text" name="name" id="addNewsName">
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="title">Заглавие на новината</label>
+                        <div class="addNewsInputDIV">
+                            <input type="text" name="title" id="addNewsTitle">
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="content">Съдържание</label>
+                        <div class="addNewsInputDIV">
+                            <textarea name="content" id="addNewsContent" cols="30" rows="10" width=100%>
+                            </textarea>
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="surveyQuestion">Въпрос на анкета</label>
+                        <div class="addNewsInputDIV">
+                            <input type="text" name="surveyQuestion" id="surveyQuestion">
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="surveyAnswers">Отговори на анкета</label>
+                        <div class="addNewsInputDIV">
+                            <input type="text" name="surveyAnswer" id="surveyAnswer">
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="validateGenerator"></label>
+                        <div class="addNewsInputDIV">
+                            <a id="validateGenerator" name="validateGenerator" href="javascript:">
+                                <i class="fa fa-plus"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="validateNotRobot" id="validateLabel">2 + 2 = </label>
+                        <div class="addNewsInputDIV">
+                            <input type="number" name="validateNotRobot" id="validateNotRobot">
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="addNewsButton"></label>
+                        <div class="addNewsInputDIV">
+                            <button id="addNewsButton" name="addNewsButton">Депозирай</button>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>

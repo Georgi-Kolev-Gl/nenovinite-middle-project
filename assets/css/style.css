@@ -140,7 +140,17 @@ DIV CONTAINERS STYLES */
   height: 300px;
 }
 
-.addNewsForm{
-  display: flex;
-  flex-direction: column;
+.addNewsForm label{
+  display: inline-block;
+  text-align: end;
+  /* display: flex;
+  flex-direction: column; */
+  width: 200px;
+}
+.addNewsInputDIV{
+display: inline-block;
+width: 75%;
+}
+.addNewsForm input, textarea{
+  width: 100%;
 }
