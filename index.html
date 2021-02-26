@@ -50,6 +50,7 @@
                         <li><a href="#horoscope">Не!Хороскоп</a></li>
                         <li><a href="#rubric">Рубрики</a></li>
                         <li><a href="#addNews">Напиши Не!Новина</a></li>
+                        <li><a href="#registerFormContainer">Login</a></li>
                     </ul>
                 </div>
             </div>
@@ -252,7 +253,45 @@
                     </div>
                 </form>
             </div>
-        </div>        
+        </div>
+        <div class="pageContainer" id="login">
+            <form action="" class="registerForm">
+                <div>
+                    <label for="firstName">Име</label>
+                    <div  class="registerInput">
+                        <input type="text" name="firstName" id="firstName">
+                    </div>
+                </div>
+                <div>
+                    <label for="lastName"> Фамилия</label>
+                    <div class="registerInput">
+                        <input type="text" name="lastName" id="lastName">
+                    </div>
+                </div>
+                <div>
+                    <label for="password">Парола</label>
+                    <div class="registerInput" >
+                        <input type="password" name="password" id="password" placeholder="мин 3 букви, първа главна">
+                    </div>
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <div class="registerInput">
+                        <input type="text" name="email" id="email">
+                    </div>
+                </div>
+                <button id="register">Register</button>
+            </form>
+            <div >
+                <p>
+                    for test purposes, besides register, use testService in console;                                     
+            </p>
+            <div id="forTestOnly">
+
+            </div>
+
+            </div>
+        </div>
         <div class="pageContainer" id="currentNews"></div>
 
     </main>
@@ -264,8 +303,9 @@
     <script src="./assets/js/utilis.js"></script>
     <script src="./assets/js/constructors.js"></script>
     <script src="./assets/js/addNewsFunctionality.js"></script>
-    <script src="./assets/js/searchFUNCTION.js"></script>
+    <script src="./assets/js/searchFUNCTION.js"></script>    
     <script src="./assets/js/index.js"></script>
+    <script src="./assets/js/userService.js"></script>
 </body>
 
 </html>
