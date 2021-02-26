@@ -7,6 +7,8 @@ const OffsidePage = document.getElementById("offsideContainer");
 const HoroscopePage = document.getElementById("horoscope");
 const RubricPage = document.getElementById("rubric");
 const AddNewsPage = document.getElementById("addNews");
+const LoginPage = document.getElementById("login");
+
 
 function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
   let currentPage = window.location.hash.slice(1);
@@ -127,7 +129,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       AddNewsPage.style.display = "block";
       readCurrentNews.style.display = "none";
       break;
-    
+
     case "addNews":
       HomePage.style.display = "none";
       AllNewsPage.style.display = "none";
@@ -140,19 +142,32 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       AddNewsPage.style.display = "none";
       readCurrentNews.style.display = "block";
       break;
-    
+
     case "currentNews":
-        HomePage.style.display = "none";
-        AllNewsPage.style.display = "none";
-        PoliticPage.style.display = "none";
-        WorldPage.style.display = "none";
-        CulturePage.style.display = "none";
-        OffsidePage.style.display = "none";
-        HoroscopePage.style.display = "none";
-        RubricPage.style.display = "none";
-        AddNewsPage.style.display = "none";
-        readCurrentNews.style.display = "block";
-        break;
+      HomePage.style.display = "none";
+      AllNewsPage.style.display = "none";
+      PoliticPage.style.display = "none";
+      WorldPage.style.display = "none";
+      CulturePage.style.display = "none";
+      OffsidePage.style.display = "none";
+      HoroscopePage.style.display = "none";
+      RubricPage.style.display = "none";
+      AddNewsPage.style.display = "none";
+      readCurrentNews.style.display = "block";
+      break;
+    case "registerFormContainer":
+      HomePage.style.display = "none";
+      AllNewsPage.style.display = "none";
+      PoliticPage.style.display = "none";
+      WorldPage.style.display = "none";
+      CulturePage.style.display = "none";
+      OffsidePage.style.display = "none";
+      HoroscopePage.style.display = "none";
+      RubricPage.style.display = "none";
+      AddNewsPage.style.display = "none";
+      readCurrentNews.style.display = "none";
+      LoginPage.style.display = "block";
+      break;
 
     default:
       HomePage.style.display = "block";
@@ -254,7 +269,7 @@ function printSmallCardNews(arr, containerToprint) {
     containerToprint.append(link);
     link.addEventListener("click", function () {
       printCurrentNews(currentNews, readCurrentNews)
-  })
+    })
   });
 }
 
