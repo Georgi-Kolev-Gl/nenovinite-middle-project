@@ -133,9 +133,24 @@ DIV CONTAINERS STYLES */
   width: 945px;
   margin: 0 auto;
 }
+
+.addNewsForm label{
+  display: inline-block;
+  text-align: end;
+  /* display: flex;
+  flex-direction: column; */
+  width: 200px;
+}
+.addNewsInputDIV{
+display: inline-block;
+width: 75%;
+}
+.addNewsForm input, textarea{
+  width: 100%;
+}
+
 .adBanner {
   width: 100%;
   height: 50px;
-  background-color: red;
-  
+  background-color: red; 
 }
