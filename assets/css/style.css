@@ -9,6 +9,40 @@ body {
 a {
   text-decoration: none;
 }
+.h1{
+  color: rgb(19, 138, 184);
+  font-size: 36px;
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+  height: 39px;
+  line-height: 39.6px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+/*ALL PAGE*/
+#containerToPrintAllNews,
+#containerToPrintPoliticsNews,
+#containerToPrintWorldNews,
+#containerToPrintCultureNews,
+#containerToPrintOffsideNews,
+#containerToPrintHoroscopeNews,
+#containerToPrintRubricNews {
+  display: flex;
+  flex-wrap: wrap;
+  width: 940px;
+}
+
+#allNewsContainer,
+#politicsContainer,
+#worldContainer,
+#cultureContainer,
+#offsideContainer,
+#horoscope,
+#rubric{
+  display: flex;
+}
+
 #homeContainer {
   width: 940px;
   margin: 0 auto;
@@ -279,4 +313,14 @@ p:first-child{
 .socialTag{
   display: flex;
   justify-content: center;
+}
+.containerAutorАndRead span{
+  margin-left: 5px;
+  margin-right: 10px;
+  text-align: center;
+}
+.containerAutorАndRead a{
+  margin-left: 5px;
+  margin-right: 10px;
+  text-align: center;
 }

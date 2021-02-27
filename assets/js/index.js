@@ -7,6 +7,13 @@ const OffsidePage = document.getElementById("offsideContainer");
 const HoroscopePage = document.getElementById("horoscope");
 const RubricPage = document.getElementById("rubric");
 const AddNewsPage = document.getElementById("addNews");
+const allNewsBox = document.getElementById("containerToPrintAllNews");
+const politicsNewsBox = document.getElementById("containerToPrintPoliticsNews");
+const worldNewsBox = document.getElementById("containerToPrintWorldNews");
+const cultureNewsBox = document.getElementById("containerToPrintCultureNews");
+const offsideNewsBox = document.getElementById("containerToPrintOffsideNews");
+const horoscopeNewsBox = document.getElementById("containerToPrintHoroscopeNews");
+const rubricNewsBox = document.getElementById("containerToPrintRubricNews");
 
 function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
   let currentPage = window.location.hash.slice(1);
@@ -446,22 +453,21 @@ rightArrowRubric.addEventListener("click", function (event) {
 searchFunctionality();
 
 //ALL NEWS DIV PRINT
-printSmallCardNews(manager.allNews, AllNewsPage);
+printSmallCardNews(manager.allNews, allNewsBox);
 
 //POLITICS  DIV PRINT
-printSmallCardNews(politicsArr, PoliticPage);
+printSmallCardNews(politicsArr, politicsNewsBox);
 //WORLD  DIV PRINT
-printSmallCardNews(worldArr, WorldPage);
+printSmallCardNews(worldArr, worldNewsBox);
 //CULTURE  DIV PRINT
-printSmallCardNews(cultureArr, CulturePage);
+printSmallCardNews(cultureArr, cultureNewsBox);
 //SPORT DIV PRINT
-printSmallCardNews(sportArr, OffsidePage);
+printSmallCardNews(sportArr, offsideNewsBox);
 //HOROSCOPE  DIV PRINT
-printSmallCardNews(horoscopeArr, HoroscopePage);
+printSmallCardNews(horoscopeArr, horoscopeNewsBox);
 //RUBRIC DIV PRINT
-printSmallCardNews(rubricArr, RubricPage);
+printSmallCardNews(rubricArr, rubricNewsBox);
 //RUBRIC DIV PRINT
-
 
 //current news page
 readCurrentNews = document.getElementById("currentNews")
