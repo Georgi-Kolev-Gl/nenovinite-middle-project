@@ -227,7 +227,7 @@ function convertDate(str) {
 
 function printSmallCardNews(arr, containerToprint) {
   containerToprint.innerHTML = "";
-  let counter = 7;
+  let counter = 8;
   arr.forEach((element, index) => {
     let currentNews = element;
     if (index === counter) {
@@ -235,36 +235,7 @@ function printSmallCardNews(arr, containerToprint) {
       containerToprint.append(banner);
       counter += 8;
     }
-    let link = creatElement("a", "", "news");
-    link.href = "#currentNews";
-    let divContainer = creatElement("div", "", "newsCard");
-    let img = creatElement("img");
-    img.src = element.img;
-    img.alt = element.title;
-    img.style.width = '200px';//CHANGED WIDTH TO 200px!!
-    img.style.height = '150px';//CHANGED HEIGHT TO 150PX!!
-    let divContainerTitle = creatElement("div", "", "newsCardTitle");
-    let title = creatElement("h3", element.title);
-    let currentDate = convertDate(element.date);//changed data to date!!
-    let date = creatElement("p", currentDate, "date");
-    let text = creatElement("p", "Прочети новина", "readNews");
-    divContainerTitle.append(title, date, text);
-    divContainer.append(img, divContainerTitle);
-    link.append(divContainer);
-    containerToprint.append(link);
-    link.addEventListener("click", function () {
-      printCurrentNews(currentNews, readCurrentNews)
-  })
-  });
-}
-
-function prinprintNewsToCarousel(arr, containerToprint) {
-  containerToprint.innerHTML = "";
-  for (let i = 0; i < arr.length; i++) {
-    let element = arr[i];
-    if (i === 12) {
-      break;
-    }
+    let cardboxContainer = creatElement("div", "", "thumbnail")
     let link = creatElement("a", "", "news");
     link.href = "#currentNews";
     let divContainer = creatElement("div", "", "newsCard");
@@ -279,7 +250,41 @@ function prinprintNewsToCarousel(arr, containerToprint) {
     divContainerTitle.append(title, date, text);
     divContainer.append(img, divContainerTitle);
     link.append(divContainer);
-    containerToprint.append(link);
+    cardboxContainer.append(link)
+    containerToprint.append(cardboxContainer);
+    link.addEventListener("click", function () {
+    printCurrentNews(currentNews, readCurrentNews)
+  })
+  });
+}
+
+function prinprintNewsToCarousel(arr, containerToprint) {
+  containerToprint.innerHTML = "";
+  for (let i = 0; i < arr.length; i++) {
+    let currentNews = arr[i];
+    if (i === 12) {
+      break;
+    }
+    let cardboxContainer = creatElement("div", "", "thumbnail")
+    let link = creatElement("a", "", "news");
+    link.href = "#currentNews";
+    let divContainer = creatElement("div", "", "newsCard");
+    let img = creatElement("img");
+    img.src = currentNews.img;
+    img.alt = currentNews.title;
+    let divContainerTitle = creatElement("div", "", "newsCardTitle");
+    let title = creatElement("h3", currentNews.title);
+    let currentDate = convertDate(currentNews.date);
+    let date = creatElement("p", currentDate, "date");
+    let text = creatElement("p", "Прочети новина", "readNews");
+    divContainerTitle.append(title, date, text);
+    divContainer.append(img, divContainerTitle);
+    link.append(divContainer);
+    cardboxContainer.append(link)
+    containerToprint.append(cardboxContainer);
+    link.addEventListener("click", function () {
+      printCurrentNews(currentNews, readCurrentNews)
+    })
   }
 }
 
