@@ -115,7 +115,6 @@ a {
   width: 195px;
   word-break: break-word;
 }
-
 .newsCard .newsCardTitle p {
   color: rgb(109, 110, 113);
   cursor: pointer;
@@ -133,6 +132,7 @@ a {
   flex-direction: row;
   justify-content: space-between;
 }
+/*style left and right arrow*/
 .categoryCarouselLogo {
   width: 100%;
   display: flex;
@@ -165,6 +165,14 @@ a {
 }
 .rightArrow:hover {
   background: url("../images/logo/rightHover.png");
+}
+/*AD BANER*/
+.adBanner {
+  background-color: rgb(255, 255, 255);
+  border-bottom: 3px solid rgb(208, 209, 209);
+  width: 940px;
+  height: 55px;
+  margin-bottom: 34px;
 }
 
 /* CHANGES BY KIRIL
