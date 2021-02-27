@@ -187,6 +187,7 @@ DIV CONTAINERS STYLES */
 .addNewsForm label{
   display: inline-block;
   text-align: end;
+
   /* display: flex;
   flex-direction: column; */
   width: 200px;
@@ -199,3 +200,83 @@ width: 75%;
   width: 100%;
 }
 
+/* current news */
+#currentNews {
+  width: 970px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+#currentNews .adBanner {
+  margin-top: 40px;
+  margin-bottom: 34px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  width: 970px;
+}
+#currentNews .titleCurrentNews{
+  text-align: center;
+  font-weight: bold;
+  color: #138ab8;
+  margin-bottom: 30px;
+  margin-top: 5px;
+  text-size-adjust: 100%;
+}
+#currentNews img{
+  height: 647px;
+  width: 970px;
+}
+.containerAutorАndRead{
+  background-color: rgb(255, 255, 255);
+  box-sizing: border-box;
+  color: rgb(109, 110, 113);
+  display: block;
+  float: left;
+  font-size: 14px;
+  height: 51.25px;
+  line-height: 22.4px;
+  margin-bottom: 0px;
+  min-height: 1px;
+  padding-bottom: 0px;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-top: 30px;
+  position: absolute;
+  text-size-adjust: 100%;
+  width: 970px;
+}
+.firstPartNews, .secondPartNews{
+  background-color: rgb(255, 255, 255);
+  color: rgb(109, 110, 113);
+  display: block;
+  font-size: 14px;
+  height: auto;
+  line-height: 28.8px;
+  padding-top: 80px;
+  margin-top: 0px;
+  text-size-adjust: 100%;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-bottom: 20px;
+}
+span:first-child {
+  font-style: italic;
+}
+#currentNews > .secondPartNews{
+  padding-top: 30px;
+}
+p:first-child{
+  font-style: italic;
+}
+.share-text{
+  font-style: italic;
+  text-align: center;
+  font-size: 12px;
+}
+.socialTag{
+  display: flex;
+  justify-content: center;
+}
