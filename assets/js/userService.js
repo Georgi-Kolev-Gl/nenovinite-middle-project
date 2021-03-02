@@ -1,15 +1,71 @@
-let testService = (function () {
+let manager = (function () {
     let FirstNameInput = document.getElementById('firstName');
     let LastNameInput = document.getElementById('lastName');
     let password = document.getElementById('password');
     let emailInput = document.getElementById('email');
-    let btn = document.getElementById('register');
+    let registerBtn = document.getElementById('register');
     let container = document.getElementById('forTestOnly');
+    let loginEmail = document.getElementById('loginEmail');
+    let loginPassword = document.getElementById('loginPassword');
+    let loginBtn = document.getElementById('loginBtn');
+    let addNewsEmail = document.getElementById('addNewsEmail');
+    let addNewsShownOfNameOfUser = document.getElementById('addNewsName');
+    let addNewsTitle = document.getElementById('addNewsTitle');
+    let addNewsText = document.getElementById('addNewsContent');
+    let logOutAnchor = document.querySelectorAll('.navUl>li a')[8];
+    // FUNCTION FOR LOGIN LOGOUT ANCHOR. TO BE MOVED TO UTILS
+    function loginLogOutAnchorFunction(ev) {
+        if (ev.target.innerText === "Logout") {
+            console.log(ev);
+            ev.preventDefault();
+            manager.logOut();
+        }
+    }
+
+    class News {
+        constructor(title, img, text, date, user, counter, type, id) {
+            this.title = title;
+            this.img = img;
+            this.text = text;
+            this.date = date;
+            this.user = user;
+            this.counter = counter;
+            this.type = type;
+            this.id = id;
+        }
+    }
 
     class UserService {
         constructor() {
+            this.allNews = [];//taken from old site manager!!!!
             this.Users = [];
+            this.newsId = 0;
+            this.currentUser = "Guest";
             this.userLoggedIn = false;
+        }
+        addNewsToAllNews(obj) {
+            if (obj instanceof News) {
+                this.newsId++;
+                this.allNews.push(obj);
+            }
+        }
+        filterNewsByType(type) {
+            return this.allNews.filter((el) => el.type === type)
+        }
+        getNews(arr) {
+            arr.forEach(el => {
+                let newNews = new News(
+                    el.title,
+                    el.image,
+                    el.text,
+                    el.data,
+                    el.user,
+                    el.counter,
+                    el.type,
+                    el.id
+                );
+                this.addNewsToAllNews(newNews);
+            })
         }
         //GET USERS FROM LOCAL STORIGE
         getUsers() {
@@ -39,7 +95,6 @@ let testService = (function () {
                 if (password.length > 3 && password[0] === password[0].toUpperCase()) {
                     let user = new User(firstName.trim(), lastName.trim(), password, email.toLowerCase());
                     this.Users.push(user);
-                    this.userLoggedIn = true;
                     localStorage.setItem("Users", JSON.stringify(this.Users));
                 }
             }
@@ -54,13 +109,25 @@ let testService = (function () {
                 return
             }
             let userObj = filteredUser[0];
-            if (userObj.password === password) {
+            console.log(userObj.password, " === ", password);
+            if (password === userObj.password) {
+                console.log("Inside if ", userObj);
                 this.userLoggedIn = true;
+                this.currentUser = filteredUser[0];
+                logOutAnchor.innerText = "Logout";
+                logOutAnchor.addEventListener('click', loginLogOutAnchorFunction);
                 return userObj;
             }
             alert("Wrong Password");
         }
-        // DELETE USER
+        // LOGOUT
+        logOut() {
+            this.userLoggedIn = false;
+            this.currentUser = "Guest";
+            logOutAnchor.removeEventListener('click', loginLogOutAnchorFunction);
+            logOutAnchor.innerText = "Login";
+        }
+        // DELETE ACCOUNT
         deleteUser(email, password) {
             email = email.trim().toLowerCase();
             let filteredUser = this.Users.filter(e => e.email === email);
@@ -77,6 +144,7 @@ let testService = (function () {
             })
             localStorage.setItem("Users", JSON.stringify(this.Users));
         }
+        // DELETE ALL USERS
         deleteAllUsers() {
             this.Users.length = 0;
             this.userLoggedIn = false;
@@ -84,12 +152,9 @@ let testService = (function () {
             alert('deleted all users');
             this.getUsers();
         }
-        // LOGOUT
-        logOut() {
+        addNews() {
         }
     }
-    let testService = new UserService;
-
     class User {
         constructor(firstName, lastName, password, email) {
             this.firstName = firstName;
@@ -103,7 +168,7 @@ let testService = (function () {
         }
     }
 
-    btn.addEventListener('click', function (ev) {
+    registerBtn.addEventListener('click', function (ev) {
         ev.preventDefault()
         testService.registerNewUser(FirstNameInput.value, LastNameInput.value, password.value, emailInput.value);
         FirstNameInput.value = '';
@@ -113,6 +178,21 @@ let testService = (function () {
         container.innerHTML = '';
         container.innerHTML = JSON.stringify(testService.Users);
     })
+    loginBtn.addEventListener('click', function () {
+        if (loginEmail.value && loginPassword.value) {
+            console.log(loginPassword.value);
+            testService.login(loginEmail.value, loginPassword.value);
+            console.log(testService.userLoggedIn);
+        }
+    })
+    // logOutAnchor.addEventListener('click', function (ev) {
+    //     console.log(ev);
+    //     if (ev.target.innerText === "Logout") {
+    //         ev.preventDefault();
+    //         manager.logOut();
+    //     }
+    // });
+    let testService = new UserService;
     testService.getUsers();
     return testService;
 })();
