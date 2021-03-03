@@ -9,6 +9,17 @@ const RubricPage = document.getElementById("rubric");
 const AddNewsPage = document.getElementById("addNews");
 const LoginPage = document.getElementById("login");
 
+// LOGIN BUTTONS AND FUNC
+const registerForm = document.getElementById('registerForm');
+const loginForm = document.getElementById('loginForm');
+registerForm.style.display = 'none';
+loginForm.style.display = 'block';
+function changeLoginPageInnerHTML(){
+    if(!manager.userLoggedIn){        
+        location.hash = '#registerFormContainer';
+    }
+}
+
 
 function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
   let currentPage = window.location.hash.slice(1);
@@ -126,6 +137,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       break;
 
     case "addNews":
+      changeLoginPageInnerHTML();
       HomePage.style.display = "none";
       AllNewsPage.style.display = "none";
       PoliticPage.style.display = "none";
@@ -152,7 +164,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       readCurrentNews.style.display = "block";
       LoginPage.style.display = "none";
       break;
-    case "registerFormContainer":
+    case "registerFormContainer":      
       HomePage.style.display = "none";
       AllNewsPage.style.display = "none";
       PoliticPage.style.display = "none";
