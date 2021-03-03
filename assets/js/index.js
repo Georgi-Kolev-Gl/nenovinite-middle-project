@@ -13,10 +13,12 @@ const registerForm = document.getElementById('registerForm');
 const loginForm = document.getElementById('loginForm');
 registerForm.style.display = 'none';
 loginForm.style.display = 'block';
-function changeLoginPageInnerHTML(){
-    if(!manager.userLoggedIn){        
-        location.hash = '#registerFormContainer';
-    }
+function changeLoginPageInnerHTML() {
+  registerForm.style.display = 'none';
+  loginForm.style.display = 'block';
+  if (!manager.userLoggedIn) {
+    location.hash = '#registerFormContainer';
+  }
 }
 const allNewsBox = document.getElementById("containerToPrintAllNews");
 const politicsNewsBox = document.getElementById("containerToPrintPoliticsNews");
@@ -170,7 +172,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       readCurrentNews.style.display = "block";
       LoginPage.style.display = "none";
       break;
-    case "registerFormContainer":      
+    case "registerFormContainer":
       HomePage.style.display = "none";
       AllNewsPage.style.display = "none";
       PoliticPage.style.display = "none";
@@ -202,30 +204,8 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
 window.addEventListener("DOMContentLoaded", hashChnage);
 window.addEventListener("hashchange", hashChnage);
 
-//create site manager and add news to manager
-//let manager = new siteManger();
-// news.forEach(function (el) {
-//   let newNews = new News(
-//     el.title,
-//     el.image,
-//     el.text,
-//     el.data,
-//     el.user,
-//     el.counter,
-//     el.type,
-//     el.id
-//   );
-//   manager.addNewsToAllNews(newNews);
-// });
 manager.getNews(news);
-//add id to news
-// function addId(arr) {
-//   for (let i = 0; i < arr.length; i++) {
-//     arr[i].id = i + 1;
-//   }
-// }
 
-//convert date from news
 function convertDate(str) {
   let months = [
     "Jan",
@@ -286,7 +266,7 @@ function printSmallCardNews(arr, containerToprint) {
     link.addEventListener("click", function () {
       printCurrentNews(currentNews, readCurrentNews)
     })
-  };
+  })
 }
 
 function prinprintNewsToCarousel(arr, containerToprint) {
