@@ -181,6 +181,9 @@ let manager = (function () {
                 }
             })
         }
+        filterByUser(user) {
+            return this.allNews.filter((el) => el.user === user)
+        }
     }
     class User {
         constructor(firstName, lastName, password, email) {

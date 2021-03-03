@@ -8,6 +8,9 @@ const HoroscopePage = document.getElementById("horoscope");
 const RubricPage = document.getElementById("rubric");
 const AddNewsPage = document.getElementById("addNews");
 const LoginPage = document.getElementById("login");
+const currentNewsByUser = document.getElementById("currentNewsByUser")
+const containerPrintAllNewsByUser = document.getElementById("containerPrintAllNewsByUser")
+const titleContainerPrintAllNewsByUser = document.getElementById("AllUserNews")
 // LOGIN BUTTONS AND FUNC
 const registerForm = document.getElementById('registerForm');
 const loginForm = document.getElementById('loginForm');
@@ -44,6 +47,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       AddNewsPage.style.display = "none";
       readCurrentNews.style.display = "none";
       LoginPage.style.display = "none";
+      currentNewsByUser.style.display = "none";
       break;
 
     case "allNewsContainer":
@@ -58,6 +62,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       AddNewsPage.style.display = "none";
       readCurrentNews.style.display = "none";
       LoginPage.style.display = "none";
+      currentNewsByUser.style.display = "none";
       break;
 
     case "politicsContainer":
@@ -72,6 +77,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       AddNewsPage.style.display = "none";
       readCurrentNews.style.display = "none";
       LoginPage.style.display = "none";
+      currentNewsByUser.style.display = "none";
       break;
 
     case "worldContainer":
@@ -86,6 +92,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       AddNewsPage.style.display = "none";
       readCurrentNews.style.display = "none";
       LoginPage.style.display = "none";
+      currentNewsByUser.style.display = "none";
       break;
 
     case "cultureContainer":
@@ -100,6 +107,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       AddNewsPage.style.display = "none";
       readCurrentNews.style.display = "none";
       LoginPage.style.display = "none";
+      currentNewsByUser.style.display = "none";
       break;
 
     case "offsideContainer":
@@ -114,6 +122,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       AddNewsPage.style.display = "none";
       readCurrentNews.style.display = "none";
       LoginPage.style.display = "none";
+      currentNewsByUser.style.display = "none";
       break;
 
     case "horoscope":
@@ -128,6 +137,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       AddNewsPage.style.display = "none";
       readCurrentNews.style.display = "none";
       LoginPage.style.display = "none";
+      currentNewsByUser.style.display = "none";
       break;
 
     case "rubric":
@@ -142,6 +152,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       AddNewsPage.style.display = "none";
       readCurrentNews.style.display = "none";
       LoginPage.style.display = "none";
+      currentNewsByUser.style.display = "none";
       break;
 
     case "addNews":
@@ -157,6 +168,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       AddNewsPage.style.display = "block";
       readCurrentNews.style.display = "none";
       LoginPage.style.display = "none";
+      currentNewsByUser.style.display = "none";
       break;
 
     case "currentNews":
@@ -171,6 +183,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       AddNewsPage.style.display = "none";
       readCurrentNews.style.display = "block";
       LoginPage.style.display = "none";
+      currentNewsByUser.style.display = "none";
       break;
     case "registerFormContainer":
       HomePage.style.display = "none";
@@ -184,8 +197,22 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       AddNewsPage.style.display = "none";
       readCurrentNews.style.display = "none";
       LoginPage.style.display = "block";
+      currentNewsByUser.style.display = "none";
       break;
-
+      case "currentNewsByUser":
+        HomePage.style.display = "none";
+        AllNewsPage.style.display = "none";
+        PoliticPage.style.display = "none";
+        WorldPage.style.display = "none";
+        CulturePage.style.display = "none";
+        OffsidePage.style.display = "none";
+        HoroscopePage.style.display = "none";
+        RubricPage.style.display = "none";
+        AddNewsPage.style.display = "none";
+        readCurrentNews.style.display = "none";
+        LoginPage.style.display = "none";
+        currentNewsByUser.style.display = "block";
+        break;
     default:
       HomePage.style.display = "block";
       AllNewsPage.style.display = "none";
@@ -197,6 +224,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       RubricPage.style.display = "none";
       AddNewsPage.style.display = "none";
       LoginPage.style.display = "none";
+      currentNewsByUser.style.display = "none";
       break;
   }
 }
@@ -237,6 +265,7 @@ function convertDate(str) {
 }
 
 function printSmallCardNews(arr, containerToprint) {
+  console.log(2)
   containerToprint.innerHTML = "";
   let counter = 8;
   arr.forEach((element, index) => {

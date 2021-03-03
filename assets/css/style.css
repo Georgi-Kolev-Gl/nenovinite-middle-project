@@ -27,7 +27,8 @@ a {
 #containerToPrintCultureNews,
 #containerToPrintOffsideNews,
 #containerToPrintHoroscopeNews,
-#containerToPrintRubricNews {
+#containerToPrintRubricNews,
+#containerPrintAllNewsByUser {
   display: flex;
   flex-wrap: wrap;
   width: 940px;
@@ -39,7 +40,8 @@ a {
 #cultureContainer,
 #offsideContainer,
 #horoscope,
-#rubric{
+#rubric,
+#currentNewsByUser{
   display: flex;
 }
 
@@ -359,4 +361,15 @@ p:first-child{
     justify-content: space-between;
     height: 150px;
     align-items: center;
+}
+
+
+/*title news by user*/
+#AllUserNews{
+  text-align: center;
+  font-weight: bold;
+  color: #138ab8;
+  margin-bottom: 30px;
+  margin-top: 35px;
+  text-size-adjust: 100%;
 }

@@ -11,8 +11,13 @@ function printCurrentNews(news, containerToPrint) {
     let calendar = creatElement("i", "", "fa fa-calendar");
     let date = creatElement("span", news.date, "dateCurrentNews");
     let userLogo = creatElement("i", "", "fa fa-user");
+    let userName = news.user
     let linkUser = creatElement("a", news.user, "news");
-    linkUser.href = "userPage";
+    linkUser.href = "#currentNewsByUser";
+    linkUser.addEventListener("click", function () {
+      titleContainerPrintAllNewsByUser.innerHTML = `Публикации от ${userName}`
+      printNewsByUser (userName, containerPrintAllNewsByUser)
+    })
     let reviewLogo = creatElement("i", "", "fa fa-eye");
     let review = creatElement("span", news.counter.toString(), "reviewText");
     
@@ -65,7 +70,6 @@ function printCurrentNews(news, containerToPrint) {
         containerToPrint.append(divSecond, banner)
       } 
     }
-  
     containerToPrint.append(printQuestionnare (getRandomQuestionnaire (manager.allQuestionnaire), containerQuestionnaire))
   }
   
