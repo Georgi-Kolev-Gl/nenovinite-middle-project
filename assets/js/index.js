@@ -205,7 +205,8 @@ window.addEventListener("DOMContentLoaded", hashChnage);
 window.addEventListener("hashchange", hashChnage);
 
 manager.getNews(news);
-
+manager.addQuestionnaire(questionnaire);
+console.log(manager.allQuestionnaire)
 function convertDate(str) {
   let months = [
     "Jan",
