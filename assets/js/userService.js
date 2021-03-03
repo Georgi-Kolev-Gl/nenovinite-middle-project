@@ -25,6 +25,15 @@ let manager = (function () {
         }
     }
 
+    class Questionnaire {
+        constructor (title, questions, id) {
+            this.title = title;
+            this.questions = questions;
+            this.id = id;
+        }
+
+    }
+
     class News {
         constructor(title, img, text, date, user, counter, type, id) {
             this.title = title;
@@ -43,8 +52,10 @@ let manager = (function () {
             this.allNews = [];//taken from old site manager!!!!
             this.Users = [];
             this.newsId = 0;
+            this.questionnaireId = 0;
             this.currentUser = "Guest";
             this.userLoggedIn = false;
+            this.allQuestionnaire = [];
         }
         addNewsToAllNews(obj) {
             if (obj instanceof News) {
@@ -156,6 +167,19 @@ let manager = (function () {
             this.getUsers();
         }
         addNews() {
+        }
+        addQuestionnaire (arr) {
+            arr.forEach(el => {
+                let newQuestionnaire = new Questionnaire(
+                    el.title,
+                    el.question,
+                    el.id
+                );
+                if (newQuestionnaire instanceof Questionnaire) {
+                    this.questionnaireId++;
+                    this.allQuestionnaire.push(newQuestionnaire);
+                }
+            })
         }
     }
     class User {

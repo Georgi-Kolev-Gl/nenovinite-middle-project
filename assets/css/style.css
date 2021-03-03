@@ -263,6 +263,7 @@ width: 75%;
 /* current news */
 #currentNews {
   width: 970px;
+  height: auto;
   margin-left: 15px;
   margin-right: 15px;
   margin: 0 auto;
@@ -349,4 +350,13 @@ p:first-child{
   margin-left: 5px;
   margin-right: 10px;
   text-align: center;
+}
+
+/* FOOTER */
+#footerContainer{
+    background-color: #138ab8;
+    display: flex;
+    justify-content: space-between;
+    height: 150px;
+    align-items: center;
 }

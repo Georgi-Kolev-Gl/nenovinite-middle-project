@@ -1,0 +1,153 @@
+div.containerAllQuestion {
+  background-color: rgb(255, 255, 255);
+  border-top: 1ps solid rgb(255, 255, 255);
+  border-bottom: 4px solid rgb(208, 209, 209);
+  box-sizing: border-box;
+  color: rgb(109, 110, 113);
+  display: block;
+  font-size: 14px;
+  height: auto;
+  margin-bottom: 34px;
+  margin-right: -15px;
+  padding-bottom: 20px;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-top: 10px;
+  text-size-adjust: 100%;
+  width: 970px;
+}
+
+div.containerVote {
+  background-color: rgb(255, 255, 255);
+  border-top: 1ps solid rgb(255, 255, 255);
+  border-bottom: 4px solid rgb(208, 209, 209);
+  box-sizing: border-box;
+  color: rgb(109, 110, 113);
+  display: block;
+  font-size: 14px;
+  margin-bottom: 34px;
+  margin-right: -15px;
+  padding-bottom: 20px;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-top: 10px;
+  text-size-adjust: 100%;
+  width: 970px;
+  height: auto;
+}
+div.formWrapper {
+  width: 850px;
+}
+.questionnaire {
+  box-sizing: border-box;
+  color: rgb(109, 110, 113);
+  display: flex;
+  flex-direction: column;
+  float: left;
+  font-size: 14px;
+  height: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-size-adjust: 100%;
+  width: 850px;
+}
+.titleQuestionnaire {
+  color: rgb(19, 138, 184);
+  display: block;
+  font-size: 30px;
+  font-weight: 700;
+  height: auto;
+  line-height: 33px;
+  margin-block-end: 10px;
+  margin-block-start: 5px;
+  margin-bottom: 10px;
+  margin-inline-end: 0px;
+  margin-inline-start: 0px;
+  margin-top: 5px;
+  text-align: center;
+  text-size-adjust: 100%;
+  width: 100%;
+}
+.myFormQuestionnare {
+  box-sizing: border-box;
+  color: rgb(109, 110, 113);
+  display: block;
+  font-size: 14px;
+  height: auto;
+  line-height: 22.4px;
+  text-size-adjust: 100%;
+  width: 100%;
+}
+.questionnaireTEXT {
+  box-sizing: border-box;
+  color: rgb(109, 110, 113);
+  display: block;
+  float: left;
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 22.4px;
+  margin-left: 205px;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  text-size-adjust: 100%;
+  width: 410px;
+}
+/*form*/
+#myFormQuestionnare {
+  display: flex;
+  flex-direction: column;
+}
+.textQuestionnaire {
+  color: rgb(109, 110, 113);
+  cursor: pointer;
+  display: inline;
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  height: auto;
+  line-height: 28.8px;
+  margin-bottom: 0px;
+  max-width: 100%;
+  min-height: 22px;
+  padding-left: 0px;
+  text-size-adjust: 100%;
+  width: auto;
+}
+
+#vote {
+  background-color: rgb(48, 151, 209);
+  border-color: rgb(42, 136, 189);
+  border-radius: 4px;
+  border-style: solid;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-top-width: 1px;
+  box-shadow: rgba(255, 255, 255, 0.15) 0px 1px 0px 0px inset,
+    rgba(0, 0, 0, 0.075) 0px 1px 1px 0px;
+  box-sizing: border-box;
+  color: rgb(255, 255, 255);
+  font-size: 25px;
+  font-weight: 700;
+  height: 42px;
+  text-align: center;
+  text-size-adjust: 100%;
+  width: 100%;
+}
+
+.percentQuestionnaire {
+  background-color: rgb(51, 122, 183);
+  box-sizing: border-box;
+  color: rgb(255, 255, 255);
+  display: block;
+  font-size: 16px;
+  height: 25px;
+  line-height: 24px;
+  min-width: 60px;
+  padding-right: 10px;
+  text-align: right;
+  width: 812.406px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
