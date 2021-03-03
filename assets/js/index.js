@@ -237,6 +237,7 @@ function convertDate(str) {
 }
 
 function printSmallCardNews(arr, containerToprint) {
+  console.log(2);
   containerToprint.innerHTML = "";
   let counter = 8;
   arr.forEach((element, index) => {

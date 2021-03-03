@@ -6,7 +6,7 @@ function searchFunctionality() {
         if (string) {
             let filteredNewsArr = manager.allNews.filter(e => e.title.toLowerCase().includes(string));
             console.log(filteredNewsArr);//CONSOLE.LOG for test purposes
-            printSmallCardNews(filteredNewsArr, AllNewsPage);
+            printSmallCardNews(filteredNewsArr, allNewsBox);
             location.hash = '#allNewsContainer';
             console.log(string);
         }
@@ -23,7 +23,7 @@ function searchFunctionality() {
         }
     })
     allNewsAnchor.addEventListener('click', function () {
-        printSmallCardNews(manager.allNews, AllNewsPage);
+        printSmallCardNews(manager.allNews, allNewsBox);
         searchInput.value = '';
     })
 }
