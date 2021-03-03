@@ -7,6 +7,17 @@ const OffsidePage = document.getElementById("offsideContainer");
 const HoroscopePage = document.getElementById("horoscope");
 const RubricPage = document.getElementById("rubric");
 const AddNewsPage = document.getElementById("addNews");
+const LoginPage = document.getElementById("login");
+// LOGIN BUTTONS AND FUNC
+const registerForm = document.getElementById('registerForm');
+const loginForm = document.getElementById('loginForm');
+registerForm.style.display = 'none';
+loginForm.style.display = 'block';
+function changeLoginPageInnerHTML(){
+    if(!manager.userLoggedIn){        
+        location.hash = '#registerFormContainer';
+    }
+}
 const allNewsBox = document.getElementById("containerToPrintAllNews");
 const politicsNewsBox = document.getElementById("containerToPrintPoliticsNews");
 const worldNewsBox = document.getElementById("containerToPrintWorldNews");
@@ -14,6 +25,7 @@ const cultureNewsBox = document.getElementById("containerToPrintCultureNews");
 const offsideNewsBox = document.getElementById("containerToPrintOffsideNews");
 const horoscopeNewsBox = document.getElementById("containerToPrintHoroscopeNews");
 const rubricNewsBox = document.getElementById("containerToPrintRubricNews");
+
 
 function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
   let currentPage = window.location.hash.slice(1);
@@ -29,6 +41,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       RubricPage.style.display = "none";
       AddNewsPage.style.display = "none";
       readCurrentNews.style.display = "none";
+      LoginPage.style.display = "none";
       break;
 
     case "allNewsContainer":
@@ -42,6 +55,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       RubricPage.style.display = "none";
       AddNewsPage.style.display = "none";
       readCurrentNews.style.display = "none";
+      LoginPage.style.display = "none";
       break;
 
     case "politicsContainer":
@@ -55,6 +69,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       RubricPage.style.display = "none";
       AddNewsPage.style.display = "none";
       readCurrentNews.style.display = "none";
+      LoginPage.style.display = "none";
       break;
 
     case "worldContainer":
@@ -68,6 +83,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       RubricPage.style.display = "none";
       AddNewsPage.style.display = "none";
       readCurrentNews.style.display = "none";
+      LoginPage.style.display = "none";
       break;
 
     case "cultureContainer":
@@ -81,6 +97,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       RubricPage.style.display = "none";
       AddNewsPage.style.display = "none";
       readCurrentNews.style.display = "none";
+      LoginPage.style.display = "none";
       break;
 
     case "offsideContainer":
@@ -94,6 +111,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       RubricPage.style.display = "none";
       AddNewsPage.style.display = "none";
       readCurrentNews.style.display = "none";
+      LoginPage.style.display = "none";
       break;
 
     case "horoscope":
@@ -107,6 +125,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       RubricPage.style.display = "none";
       AddNewsPage.style.display = "none";
       readCurrentNews.style.display = "none";
+      LoginPage.style.display = "none";
       break;
 
     case "rubric":
@@ -120,9 +139,11 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       RubricPage.style.display = "flex";
       AddNewsPage.style.display = "none";
       readCurrentNews.style.display = "none";
+      LoginPage.style.display = "none";
       break;
 
     case "addNews":
+      changeLoginPageInnerHTML();
       HomePage.style.display = "none";
       AllNewsPage.style.display = "none";
       PoliticPage.style.display = "none";
@@ -133,9 +154,10 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       RubricPage.style.display = "none";
       AddNewsPage.style.display = "block";
       readCurrentNews.style.display = "none";
+      LoginPage.style.display = "none";
       break;
-    
-    case "addNews":
+
+    case "currentNews":
       HomePage.style.display = "none";
       AllNewsPage.style.display = "none";
       PoliticPage.style.display = "none";
@@ -146,20 +168,21 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       RubricPage.style.display = "none";
       AddNewsPage.style.display = "none";
       readCurrentNews.style.display = "block";
+      LoginPage.style.display = "none";
       break;
-    
-    case "currentNews":
-        HomePage.style.display = "none";
-        AllNewsPage.style.display = "none";
-        PoliticPage.style.display = "none";
-        WorldPage.style.display = "none";
-        CulturePage.style.display = "none";
-        OffsidePage.style.display = "none";
-        HoroscopePage.style.display = "none";
-        RubricPage.style.display = "none";
-        AddNewsPage.style.display = "none";
-        readCurrentNews.style.display = "block";
-        break;
+    case "registerFormContainer":      
+      HomePage.style.display = "none";
+      AllNewsPage.style.display = "none";
+      PoliticPage.style.display = "none";
+      WorldPage.style.display = "none";
+      CulturePage.style.display = "none";
+      OffsidePage.style.display = "none";
+      HoroscopePage.style.display = "none";
+      RubricPage.style.display = "none";
+      AddNewsPage.style.display = "none";
+      readCurrentNews.style.display = "none";
+      LoginPage.style.display = "block";
+      break;
 
     default:
       HomePage.style.display = "block";
@@ -171,6 +194,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       HoroscopePage.style.display = "none";
       RubricPage.style.display = "none";
       AddNewsPage.style.display = "none";
+      LoginPage.style.display = "none";
       break;
   }
 }
@@ -179,27 +203,27 @@ window.addEventListener("DOMContentLoaded", hashChnage);
 window.addEventListener("hashchange", hashChnage);
 
 //create site manager and add news to manager
-let manager = new siteManger();
-news.forEach(function (el) {
-  let newNews = new News(
-    el.title,
-    el.image,
-    el.text,
-    el.data,
-    el.user,
-    el.counter,
-    el.type,
-    el.id
-  );
-  manager.addNewsToAllNews(newNews);
-});
-
+//let manager = new siteManger();
+// news.forEach(function (el) {
+//   let newNews = new News(
+//     el.title,
+//     el.image,
+//     el.text,
+//     el.data,
+//     el.user,
+//     el.counter,
+//     el.type,
+//     el.id
+//   );
+//   manager.addNewsToAllNews(newNews);
+// });
+manager.getNews(news);
 //add id to news
-function addId(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    arr[i].id = i + 1;
-  }
-}
+// function addId(arr) {
+//   for (let i = 0; i < arr.length; i++) {
+//     arr[i].id = i + 1;
+//   }
+// }
 
 //convert date from news
 function convertDate(str) {
@@ -260,9 +284,9 @@ function printSmallCardNews(arr, containerToprint) {
     cardboxContainer.append(link)
     containerToprint.append(cardboxContainer);
     link.addEventListener("click", function () {
-    printCurrentNews(currentNews, readCurrentNews)
-  })
-  });
+      printCurrentNews(currentNews, readCurrentNews)
+    })
+  };
 }
 
 function prinprintNewsToCarousel(arr, containerToprint) {

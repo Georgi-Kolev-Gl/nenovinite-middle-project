@@ -209,21 +209,16 @@ a {
   margin-bottom: 34px;
 }
 
-/* CHANGES BY KIRIL
-DIV CONTAINERS STYLES */
+
 .pageContainer{
   display: flex;
   flex-wrap: wrap;
   width: 945px;
   margin: 0 auto;
 }
-
+/* ADD NEWS PAGE */
 .addNewsForm label{
   display: inline-block;
-  text-align: end;
-
-  /* display: flex;
-  flex-direction: column; */
   width: 200px;
 }
 .addNewsInputDIV{
@@ -231,6 +226,37 @@ display: inline-block;
 width: 75%;
 }
 .addNewsForm input, textarea{
+  width: 100%;
+}
+/* REGISTER PAGE */
+#login{
+  width: 472.5px;
+}
+.registerForm label{
+  display: inline-block;
+  text-align: end;  
+  width: 50px;
+}
+.registerInput {
+  margin: 10px;
+  display: inline-block;
+  width: 45%;
+}
+.registerForm input{
+  width: 100%;
+}
+/* LOGIN */
+.loginForm label{
+  display: inline-block;
+  text-align: end;  
+  width: 50px;
+}
+.loginInput {
+  margin: 10px;
+  display: inline-block;
+  width: 45%;
+}
+.loginForm input{
   width: 100%;
 }
 

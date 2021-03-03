@@ -50,6 +50,7 @@
                         <li><a href="#horoscope">Не!Хороскоп</a></li>
                         <li><a href="#rubric">Рубрики</a></li>
                         <li><a href="#addNews">Напиши Не!Новина</a></li>
+                        <li><a href="#registerFormContainer">Login</a></li>
                     </ul>
                 </div>
             </div>
@@ -275,8 +276,74 @@
                     </div>
                 </form>
             </div>
-        </div>  
+        </div>
+        <div class="pageContainer" id="login">
+            <h3>За да добавиш Не!новина влез в профила си или се регистрирай :)</h3>
+            <form action="" class="registerForm" id="registerForm">
+                <div>
+                    <label for="firstName">Име</label>
+                    <div class="registerInput">
+                        <input type="text" name="firstName" id="firstName">
+                    </div>
+                </div>
+                <div>
+                    <label for="lastName"> Фамилия</label>
+                    <div class="registerInput">
+                        <input type="text" name="lastName" id="lastName">
+                    </div>
+                </div>
+                <div>
+                    <label for="password">Парола</label>
+                    <div class="registerInput">
+                        <input type="password" name="password" id="password" placeholder="мин 3 букви, първа главна">
+                    </div>
+                </div>
+                <div>
+                    <label for="password">Потвърди парола</label>
+                    <div class="registerInput">
+                        <input type="password" name="password" id="passwordRepeat" placeholder="мин 3 букви, първа главна">
+                    </div>
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <div class="registerInput">
+                        <input type="text" name="email" id="email">
+                    </div>
+                </div>
+                <button id="register">Register</button>
+            </form>
+            
+                <form action="" class="loginForm" id="loginForm">
+                    <div>
+                        <label for="loginEmail">Email</label>
+                        <div class="loginInput">
+                            <input type="text" name="loginEmail" id="loginEmail">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="loginPassword">Password</label>
+                        <div class="loginInput">
+                            <input type="password" name="loginPassword" id="loginPassword">
+                        </div>
+                    </div>
+                    <div>
+                        <button id="loginBtn">Login</button>
+                        <button id="showRegisterFormBtn">Регистрирай се</button>
+                    </div>
+                </form>
+            
+            <div>
+                <p>
+                    for test purposes, besides register, use testService in console;
+                </p>
+                <div id="forTestOnly">
+                </div>
+            </div>
+        </div>
+
+       
         <!-- CURRENT NEWS PAGE -->      
+
         <div class="pageContainer" id="currentNews"></div>
 
     </main>
@@ -286,9 +353,11 @@
     <script src="./assets/js/news.js"></script>
     <script src="./assets/js/printCurrentNews.js"></script>
     <script src="./assets/js/utilis.js"></script>
-    <script src="./assets/js/constructors.js"></script>
+    <!-- <script src="./assets/js/constructors.js"></script> -->
+    <script src="./assets/js/loginFunctionality.js"></script>
     <script src="./assets/js/addNewsFunctionality.js"></script>
     <script src="./assets/js/searchFUNCTION.js"></script>
+    <script src="./assets/js/userService.js"></script>
     <script src="./assets/js/index.js"></script>
 </body>
 
