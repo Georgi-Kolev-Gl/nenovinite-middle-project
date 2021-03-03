@@ -356,7 +356,7 @@ p:first-child{
 #footerContainer{
     background-color: #138ab8;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     height: 150px;
     align-items: center;
 }
