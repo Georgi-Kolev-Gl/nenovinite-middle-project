@@ -61,7 +61,8 @@ function printCurrentNews(news, containerToPrint) {
         iconReddit.append(reddit);
         divIcon.append(iconFacebook, iconTwitter, iconReddit);
         divSecond.append(currentParagraph, divIcon)
-        containerToPrint.append(divSecond)
+        let banner = creatElement("div", "", "adBanner");
+        containerToPrint.append(divSecond, banner)
       } 
     }
   
