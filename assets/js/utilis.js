@@ -11,3 +11,15 @@ function creatElement(element, text, className) {
   }
   return newElement;
 }
+
+function footerStyle(el) {
+  let bodyHeigth = document.body.offsetHeight;
+  let windowHeigth = window.innerHeight;  
+  if (windowHeigth < bodyHeigth) {
+      el.style.position = 'static';
+  } else {    
+      el.style.position = 'fixed';
+      el.style.bottom = "0px";
+      el.style.width = "100%";
+  }
+}
