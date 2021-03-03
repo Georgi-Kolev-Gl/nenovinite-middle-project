@@ -2,12 +2,14 @@ let manager = (function () {
     let FirstNameInput = document.getElementById('firstName');
     let LastNameInput = document.getElementById('lastName');
     let password = document.getElementById('password');
+    let passwordRepeat = document.getElementById('passwordRepeat');
     let emailInput = document.getElementById('email');
     let registerBtn = document.getElementById('register');
     let container = document.getElementById('forTestOnly');
     let loginEmail = document.getElementById('loginEmail');
     let loginPassword = document.getElementById('loginPassword');
     let loginBtn = document.getElementById('loginBtn');
+    let showRegFormBtn = document.getElementById('showRegisterFormBtn');
     let addNewsEmail = document.getElementById('addNewsEmail');
     let addNewsShownOfNameOfUser = document.getElementById('addNewsName');
     let addNewsTitle = document.getElementById('addNewsTitle');
@@ -19,6 +21,7 @@ let manager = (function () {
             console.log(ev);
             ev.preventDefault();
             manager.logOut();
+            location.hash = '#registerFormContainer';
         }
     }
 
@@ -169,29 +172,41 @@ let manager = (function () {
     }
 
     registerBtn.addEventListener('click', function (ev) {
-        ev.preventDefault()
-        testService.registerNewUser(FirstNameInput.value, LastNameInput.value, password.value, emailInput.value);
-        FirstNameInput.value = '';
-        LastNameInput.value = '';
-        password.value = '';
-        emailInput.value = '';
-        container.innerHTML = '';
-        container.innerHTML = JSON.stringify(testService.Users);
+        ev.preventDefault();
+        if (FirstNameInput.value && LastNameInput.value && password.value && passwordRepeat.value && emailInput.value) {
+            if (password.value === passwordRepeat.value) {
+                testService.registerNewUser(FirstNameInput.value, LastNameInput.value, password.value, emailInput.value);
+                FirstNameInput.value = '';
+                LastNameInput.value = '';
+                password.value = '';
+                emailInput.value = '';
+                container.innerHTML = '';
+                container.innerHTML = JSON.stringify(testService.Users);
+                loginForm.style.display = 'block';
+                registerForm.style.display = 'none';
+            } else {
+                alert('Паролата не съвпада!');
+            }
+        } else {
+            alert(`Всички полета са задължителни`)
+        }
     })
-    loginBtn.addEventListener('click', function () {
+    loginBtn.addEventListener('click', function (ev) {
+        ev.preventDefault();
         if (loginEmail.value && loginPassword.value) {
             console.log(loginPassword.value);
             testService.login(loginEmail.value, loginPassword.value);
+            loginEmail.value = '';
+            loginPassword.value = '';
+            location.hash = "#addNews";
             console.log(testService.userLoggedIn);
         }
     })
-    // logOutAnchor.addEventListener('click', function (ev) {
-    //     console.log(ev);
-    //     if (ev.target.innerText === "Logout") {
-    //         ev.preventDefault();
-    //         manager.logOut();
-    //     }
-    // });
+    showRegFormBtn.addEventListener('click', (ev) => {
+        ev.preventDefault();
+        loginForm.style.display = 'none';
+        registerForm.style.display = 'block';
+    })
     let testService = new UserService;
     testService.getUsers();
     return testService;
