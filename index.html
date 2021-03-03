@@ -255,10 +255,11 @@
             </div>
         </div>
         <div class="pageContainer" id="login">
-            <form action="" class="registerForm">
+            <h3>За да добавиш Не!новина влез в профила си или се регистрирай :)</h3>
+            <form action="" class="registerForm" id="registerForm">
                 <div>
                     <label for="firstName">Име</label>
-                    <div  class="registerInput">
+                    <div class="registerInput">
                         <input type="text" name="firstName" id="firstName">
                     </div>
                 </div>
@@ -270,8 +271,14 @@
                 </div>
                 <div>
                     <label for="password">Парола</label>
-                    <div class="registerInput" >
+                    <div class="registerInput">
                         <input type="password" name="password" id="password" placeholder="мин 3 букви, първа главна">
+                    </div>
+                </div>
+                <div>
+                    <label for="password">Потвърди парола</label>
+                    <div class="registerInput">
+                        <input type="password" name="password" id="passwordRepeat" placeholder="мин 3 букви, първа главна">
                     </div>
                 </div>
                 <div>
@@ -282,25 +289,35 @@
                 </div>
                 <button id="register">Register</button>
             </form>
-            <div>
-                <div>
-                    <form action="" class="loginForm">
+            
+                <form action="" class="loginForm" id="loginForm">
+                    <div>
                         <label for="loginEmail">Email</label>
-                        <input type="text" name="loginEmail" id="loginEmail">
+                        <div class="loginInput">
+                            <input type="text" name="loginEmail" id="loginEmail">
+                        </div>
+                    </div>
+                    <div>
                         <label for="loginPassword">Password</label>
-                        <input type="password" name="loginPassword" id="loginPassword">
+                        <div class="loginInput">
+                            <input type="password" name="loginPassword" id="loginPassword">
+                        </div>
+                    </div>
+                    <div>
                         <button id="loginBtn">Login</button>
-                    </form>
-                </div>
+                        <button id="showRegisterFormBtn">Регистрирай се</button>
+                    </div>
+                </form>
+            
+            <div>
                 <p>
-                    for test purposes, besides register, use testService in console;                                     
-            </p>
-            <div id="forTestOnly">
-
-            </div>
-
+                    for test purposes, besides register, use testService in console;
+                </p>
+                <div id="forTestOnly">
+                </div>
             </div>
         </div>
+
         <div class="pageContainer" id="currentNews"></div>
 
     </main>
@@ -311,8 +328,9 @@
     <script src="./assets/js/printCurrentNews.js"></script>
     <script src="./assets/js/utilis.js"></script>
     <!-- <script src="./assets/js/constructors.js"></script> -->
+    <script src="./assets/js/loginFunctionality.js"></script>
     <script src="./assets/js/addNewsFunctionality.js"></script>
-    <script src="./assets/js/searchFUNCTION.js"></script>    
+    <script src="./assets/js/searchFUNCTION.js"></script>
     <script src="./assets/js/userService.js"></script>
     <script src="./assets/js/index.js"></script>
 </body>
