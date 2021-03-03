@@ -350,3 +350,12 @@ p:first-child{
   margin-right: 10px;
   text-align: center;
 }
+
+/* FOOTER */
+#footerContainer{
+    background-color: #138ab8;
+    display: flex;
+    justify-content: space-between;
+    height: 150px;
+    align-items: center;
+}
