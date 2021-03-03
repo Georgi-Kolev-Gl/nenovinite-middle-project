@@ -22,6 +22,7 @@ function printCurrentNews(news, containerToPrint) {
     let divSecond = creatElement("div", "", "secondPartNews")
     containerAutorАndRead.append(calendar, date, userLogo, linkUser, reviewLogo, review)
     containerToPrint.append(titleCurrentNews, img, containerAutorАndRead)
+    let containerQuestionnaire = creatElement ("div", "", "containerQuestionnaire")
     let i = 0
     if (subtitle.trim().length > 0){
       let subtitleCurrentNews = creatElement("span", subtitle, "subtitleTextCurrentNews")
@@ -63,5 +64,7 @@ function printCurrentNews(news, containerToPrint) {
         containerToPrint.append(divSecond)
       } 
     }
+  
+    containerToPrint.append(printQuestionnare (getRandomQuestionnaire (manager.allQuestionnaire), containerQuestionnaire))
   }
   
