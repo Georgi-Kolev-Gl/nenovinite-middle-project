@@ -11,6 +11,8 @@ const LoginPage = document.getElementById("login");
 const currentNewsByUser = document.getElementById("currentNewsByUser")
 const containerPrintAllNewsByUser = document.getElementById("containerPrintAllNewsByUser")
 const titleContainerPrintAllNewsByUser = document.getElementById("AllUserNews")
+const Footer_Container = document.getElementById('footerContainer');
+
 // LOGIN BUTTONS AND FUNC
 const registerForm = document.getElementById('registerForm');
 const loginForm = document.getElementById('loginForm');
@@ -229,9 +231,14 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
   }
 }
 
-window.addEventListener("DOMContentLoaded", hashChnage);
-window.addEventListener("hashchange", hashChnage);
-
+window.addEventListener("DOMContentLoaded", function(){
+  hashChnage();
+  footerStyle(Footer_Container);
+});
+window.addEventListener("hashchange", function(){
+  hashChnage();
+  footerStyle(Footer_Container);
+});
 manager.getNews(news);
 manager.addQuestionnaire(questionnaire);
 function convertDate(str) {
