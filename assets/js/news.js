@@ -2046,10 +2046,10 @@ let news = [
 (function () {
   news.forEach((element) => {
     element.image = "./assets/images/" + element.image + ".jpg";
-  });
+  });  
 })();
 (function () {
   news.forEach((element, index) => {
     element.id = index + 1;
-  })
+  })  
 })();
