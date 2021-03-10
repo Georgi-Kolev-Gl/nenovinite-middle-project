@@ -22,14 +22,14 @@ function printCurrentNews(news, containerToPrint) {
     let review = creatElement("span", news.counter.toString(), "reviewText");
     
     let subtitle = news.text.subtitle;
-    let text = news.text.description.split(". ");
+    let text = news.text.description.split(". ");    
     let divFirst = creatElement("div", "", "firstPartNews")
     let divSecond = creatElement("div", "", "secondPartNews")
     containerAutorАndRead.append(calendar, date, userLogo, linkUser, reviewLogo, review)
     containerToPrint.append(titleCurrentNews, img, containerAutorАndRead)
     let containerQuestionnaire = creatElement ("div", "", "containerQuestionnaire")
     let i = 0
-    if (subtitle.trim().length > 0){
+    if (subtitle.trim().length > 0){      
       let subtitleCurrentNews = creatElement("span", subtitle, "subtitleTextCurrentNews")
       let firstParagraph = creatElement("span", text[0], "subtitleTextCurrentNews")
       divFirst.append(subtitleCurrentNews, firstParagraph)
@@ -37,11 +37,11 @@ function printCurrentNews(news, containerToPrint) {
     }
     for (i; i < text.length; i++){
       if (i < 3) {
-        let paragraphText = text[i] + "."
-        let currentParagraph = creatElement("p", paragraphText, "subtitleTextParagraph")
-        divFirst.append(currentParagraph)
+        let paragraphText = text[i] + ".";        
+        let currentParagraph = creatElement("p", paragraphText, "subtitleTextParagraph");        
+        divFirst.append(currentParagraph)        
       } else if(i === 3) {
-        containerToPrint.append(divFirst)
+        containerToPrint.append(divFirst)        
         let banner = creatElement("div", "", "adBanner");
         containerToPrint.append(banner)
         let paragraphText = text[i] + "."
