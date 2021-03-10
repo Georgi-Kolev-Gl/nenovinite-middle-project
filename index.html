@@ -229,6 +229,24 @@
                     </div>
                     <br>
                     <div>
+                        <label for="addImg">Добави снимка</label>
+                        <div class="addNewsInputDIV">
+                            <input type="text" name="addImg" id="addImg">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="type">Категория</label>
+                        <div class="addNewsInputDIV">
+                            <select name="type" id="type">
+                                <option value="politics">Политика</option>
+                                <option value="sport">Спорт</option>
+                                <option value="world">Свят</option>
+                                <option value="culture">Култура</option>
+                                <option value="rubric">Рубрика</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
                         <label for="content">Съдържание</label>
                         <div class="addNewsInputDIV">
                             <textarea name="content" id="addNewsContent" cols="30" rows="10" width=100%>
@@ -338,13 +356,13 @@
                 </div>
             </div>
         </div>
-        </div>       
-         <div class="pageContainer" id="currentNews"></div>
-         <!--  NEWS PAGE BY USER-->
-         <div class="pageContainer" id="currentNewsByUser">
-             <h1 id="AllUserNews"></h1>
-             <div id="containerPrintAllNewsByUser"></div>
-         </div>
+        </div>
+        <div class="pageContainer" id="currentNews"></div>
+        <!--  NEWS PAGE BY USER-->
+        <div class="pageContainer" id="currentNewsByUser">
+            <h1 id="AllUserNews"></h1>
+            <div id="containerPrintAllNewsByUser"></div>
+        </div>
 
     </main>
     <footer>
