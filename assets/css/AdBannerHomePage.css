@@ -1,4 +1,4 @@
-.adBanerHomePage {
+.adBannerHomePage {
     width: 100%;
     background: white;
     border-bottom: 2px solid #d0d1d1;
@@ -12,26 +12,29 @@
     position: relative;
     margin-top: 35px;
 }
-.adBanerHomePage .adBanerHomePage-abs {
+.adBannerHomePage-abs {
     position: absolute;
     top: 0px;
-    left: 20px;
+ 
 }
 
-.adBanerHomePage .adBanerHomePage-abs .adBanerHomePage-box {
+.adBannerHomePage .adBannerHomePage-abs .adBannerHomePage-box {
     display: inline-block;
     white-space: nowrap;
-    margin-left: 0px;
+    margin-left: 20px;
 }
-.adBanerHomePage .adBanerHomePage-abs .adBanerHomePage-text {
+.adBannerHomePage .adBannerHomePage-abs .adBannerHomePage-text {
     color: #138ab8;
 }
 
-.adBanerHomePage .adBanerHomePage-abs img {
+.adBannerHomePage .adBannerHomePage-abs img {
     vertical-align: sub;
     padding: 0px 7px;
 }
 
-.ticadBanerHomePageker i {
+.ticadBannerHomePageker i {
     color: #980e0e;
+}
+#adBannerHomePage-box{
+    margin-left: 20px;
 }
