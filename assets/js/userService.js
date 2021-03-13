@@ -14,6 +14,7 @@ let manager = (function () {
     let addNewsShownOfNameOfUser = document.getElementById('addNewsName');
     let addNewsTitle = document.getElementById('addNewsTitle');
     let addNewsText = document.getElementById('addNewsContent');
+    let addImg = document.getElementById('addImg');
     let logOutAnchor = document.querySelectorAll('.navUl>li a')[8];
     // FUNCTION FOR LOGIN LOGOUT ANCHOR. TO BE MOVED TO UTILS
     function loginLogOutAnchorFunction(ev) {
@@ -25,7 +26,7 @@ let manager = (function () {
     }
 
     class Questionnaire {
-        constructor (title, questions, id) {
+        constructor(title, questions, id) {
             this.title = title;
             this.questions = questions;
             this.id = id;
@@ -165,9 +166,13 @@ let manager = (function () {
             alert('deleted all users');
             this.getUsers();
         }
-        addNews() {
+        addNews(title, img, text, date, type) {
+            let newsObj = new News(title, img, text, date, this.currentUser.firstName, 0, type, this.allNews.length + 1)
+            this.currentUser.myNews.push(newsObj);
+            this.allNews.unshift(newsObj);
+            localStorage.setItem('Users', JSON.stringify(this.Users))
         }
-        addQuestionnaire (arr) {
+        addQuestionnaire(arr) {
             arr.forEach(el => {
                 let newQuestionnaire = new Questionnaire(
                     el.title,
@@ -195,9 +200,6 @@ let manager = (function () {
             this.password = password;
             this.email = email;
             this.myNews = [];
-        }
-        // USER ADD NEWS
-        addNews() {
         }
     }
 
@@ -229,6 +231,8 @@ let manager = (function () {
             loginEmail.value = '';
             loginPassword.value = '';
             location.hash = "#addNews";
+            addNewsEmail.value = testService.currentUser.email;
+            addNewsShownOfNameOfUser.value = testService.currentUser.firstName;
             console.log(testService.userLoggedIn);
         }
     })

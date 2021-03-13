@@ -1,7 +1,7 @@
-* {
+/* * {
     box-sizing: border-box;
     font-family: 'Roboto'sans-serif;
-}
+} */
 /* BODY */
 body {
     font-size: 14px;
@@ -14,6 +14,7 @@ header {
 }
 /* FONTAWESOME ICONS */
 .icon {
+    font-family: Roboto;    
     height: 42px;
     width: 42px;
     display: inline-block;
