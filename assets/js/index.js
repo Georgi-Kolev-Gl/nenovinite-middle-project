@@ -38,6 +38,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
   let currentPage = window.location.hash.slice(1);
   switch (currentPage) {
     case "homeContainer":
+      document.title = "Hе!Новините";
       HomePage.style.display = "block";
       AllNewsPage.style.display = "none";
       PoliticPage.style.display = "none";
@@ -53,6 +54,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       break;
 
     case "allNewsContainer":
+      document.title = "Всички Hе!Новините";
       HomePage.style.display = "none";
       AllNewsPage.style.display = "flex";
       PoliticPage.style.display = "none";
@@ -68,6 +70,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       break;
 
     case "politicsContainer":
+      document.title = "Политик и общество";
       HomePage.style.display = "none";
       AllNewsPage.style.display = "none";
       PoliticPage.style.display = "flex";
@@ -83,6 +86,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       break;
 
     case "worldContainer":
+      document.title = "Свят";
       HomePage.style.display = "none";
       AllNewsPage.style.display = "none";
       PoliticPage.style.display = "none";
@@ -98,6 +102,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       break;
 
     case "cultureContainer":
+      document.title = "Не!Ука и култура";
       HomePage.style.display = "none";
       AllNewsPage.style.display = "none";
       PoliticPage.style.display = "none";
@@ -113,6 +118,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       break;
 
     case "offsideContainer":
+      document.title = "Не!Засада";
       HomePage.style.display = "none";
       AllNewsPage.style.display = "none";
       PoliticPage.style.display = "none";
@@ -128,6 +134,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       break;
 
     case "horoscope":
+      document.title = "Не!Хороскоп";
       HomePage.style.display = "none";
       AllNewsPage.style.display = "none";
       PoliticPage.style.display = "none";
@@ -143,6 +150,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       break;
 
     case "rubric":
+      document.title = "Рубрики";
       HomePage.style.display = "none";
       AllNewsPage.style.display = "none";
       PoliticPage.style.display = "none";
@@ -158,6 +166,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       break;
 
     case "addNews":
+      document.title = "Не!Новините: Напиши новина";
       changeLoginPageInnerHTML();
       HomePage.style.display = "none";
       AllNewsPage.style.display = "none";
@@ -188,6 +197,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       currentNewsByUser.style.display = "none";
       break;
     case "registerFormContainer":
+      document.title = "Не!Новините: Вход";
       HomePage.style.display = "none";
       AllNewsPage.style.display = "none";
       PoliticPage.style.display = "none";
