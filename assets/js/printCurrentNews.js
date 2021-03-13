@@ -2,6 +2,8 @@ function printCurrentNews(news, containerToPrint) {
     document.title = news.title;
     containerToPrint.innerHTML = "";
     let banner = createElement("div", "", "adBanner");
+    let ad = createAd()
+    banner.append(ad)
     containerToPrint.append(banner);
     let titleCurrentNews = createElement("h1", news.title, "titleCurrentNews");
     let img = createElement("img", "", "imgCurrentNews");
@@ -45,6 +47,8 @@ function printCurrentNews(news, containerToPrint) {
         divFirst.append(currentParagraph)        
       } else if(i === 3) {
         let banner = createElement("div", "", "adBanner");
+        let ad = createAd()
+        banner.append(ad)
         containerToPrint.append(banner)
         let paragraphText = text[i] + "."
         let currentParagraph = createElement("p", paragraphText, "subtitleTextParagraph")
@@ -69,6 +73,8 @@ function printCurrentNews(news, containerToPrint) {
         divIcon.append(iconFacebook, iconTwitter, iconReddit);
         divSecond.append(currentParagraph, divIcon)
         let banner = createElement("div", "", "adBanner");
+        let ad = createAd()
+        banner.append(ad)
         containerToPrint.append(divSecond, banner)
       } 
     }

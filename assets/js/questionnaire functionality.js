@@ -1,6 +1,6 @@
 //get random questionnaire 
 function getRandomQuestionnaire (arr) {
-    let random = Math.round(Math.random() * arr.length)
+    let random = Math.floor(Math.random() * arr.length)
     return arr[random]
   }
   

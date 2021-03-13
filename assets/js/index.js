@@ -288,6 +288,8 @@ function printSmallCardNews(arr, containerToprint) {
     let currentNews = element;
     if (index === counter) {
       let banner = createElement("div", "", "adBanner");
+      let ad = createAd()
+      banner.append(ad)
       containerToprint.append(banner);
       counter += 8;
     }
