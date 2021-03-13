@@ -18,7 +18,6 @@ let manager = (function () {
     // FUNCTION FOR LOGIN LOGOUT ANCHOR. TO BE MOVED TO UTILS
     function loginLogOutAnchorFunction(ev) {
         if (ev.target.innerText === "Logout") {
-            console.log(ev);
             ev.preventDefault();
             manager.logOut();
             location.hash = '#registerFormContainer';
@@ -183,6 +182,10 @@ let manager = (function () {
         }
         filterByUser(user) {
             return this.allNews.filter((el) => el.user === user)
+        }
+        sortByViewership(arr) {
+            arr.sort((a, b) => b.counter - a.counter);
+            return arr;
         }
     }
     class User {

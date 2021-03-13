@@ -29,6 +29,7 @@ function printCurrentNews(news, containerToPrint) {
     containerToPrint.append(titleCurrentNews, img, containerAutorАndRead)
     let containerQuestionnaire = creatElement ("div", "", "containerQuestionnaire")
     let i = 0
+    containerToPrint.append(divFirst)
     if (subtitle.trim().length > 0){
       let subtitleCurrentNews = creatElement("span", subtitle, "subtitleTextCurrentNews")
       let firstParagraph = creatElement("span", text[0], "subtitleTextCurrentNews")
@@ -41,7 +42,6 @@ function printCurrentNews(news, containerToPrint) {
         let currentParagraph = creatElement("p", paragraphText, "subtitleTextParagraph")
         divFirst.append(currentParagraph)
       } else if(i === 3) {
-        containerToPrint.append(divFirst)
         let banner = creatElement("div", "", "adBanner");
         containerToPrint.append(banner)
         let paragraphText = text[i] + "."
@@ -71,5 +71,26 @@ function printCurrentNews(news, containerToPrint) {
       } 
     }
     containerToPrint.append(printQuestionnare (getRandomQuestionnaire (manager.allQuestionnaire), containerQuestionnaire))
+
+    //added similar and polpular news
+    let divButton = document.createElement("div", "", "btnSimilarAndPopularNews");
+    let btnSimilar = document.createElement("button");
+    btnSimilar.id = "btnSimilar";
+    btnSimilar.innerText = "Подобни";
+    let btnPopular = document.createElement("button");
+    btnPopular.id = "btnPopular";
+    btnPopular.innerText = "Популярни"
+    divButton.append(btnSimilar, btnPopular);
+    containerToPrint.append(divButton);
+    let divSimilarNews = document.createElement("div");
+    divSimilarNews.id = "similarNews"
+    containerToPrint.append(divButton);
+    let divPopularNews = document.createElement("div", "", "popularNews");
+    let arraynews = addSimilarNews(news.type)
+    printSmallCardNews(arraynews.slice(0,4), divSimilarNews)
+    containerToPrint.append(divSimilarNews)
+    let popularNews = manager.sortByViewership(arraynews).slice(0,4)
+    printSmallCardNews(popularNews, divPopularNews)
+    containerToPrint.append(divPopularNews)
   }
   
