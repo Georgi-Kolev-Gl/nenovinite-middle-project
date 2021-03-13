@@ -8,29 +8,29 @@ function getRandomQuestionnaire (arr) {
   function printQuestionnare (obj, containerToPrint) {
     let currentQuestionnare = obj;
     let titleQuestionnaire = obj.title;
-    let h2 = creatElement("h2", titleQuestionnaire, "titleQuestionnaire");
-    let div = creatElement("div", "", "formWrapper");
+    let h2 = createElement("h2", titleQuestionnaire, "titleQuestionnaire");
+    let div = createElement("div", "", "formWrapper");
     let allQuestion = Object.keys(obj.questions);
     div.append(h2);
-    let containerQuestionnaire = creatElement("div", "", "containerAllQuestion")
-    let containerVote = creatElement("div", "", "myFormQuestionnare")
-    let form = creatElement("form");
+    let containerQuestionnaire = createElement("div", "", "containerAllQuestion")
+    let containerVote = createElement("div", "", "myFormQuestionnare")
+    let form = createElement("form");
     form.id = "myFormQuestionnare";
-    let divText = creatElement("div", "", "questionnaireTEXT");
+    let divText = createElement("div", "", "questionnaireTEXT");
     for (i = 0; i < allQuestion.length; i++) {
-      let input = creatElement("input");
+      let input = createElement("input");
       input.type = "radio";
       input.name = "vote";
       input.value = `${allQuestion[i]}`;
-      let label = creatElement(
+      let label = createElement(
         "label",
         `${allQuestion[i]}`,
         "textQuestionnaire"
       );
-      let br = creatElement("br");
+      let br = createElement("br");
       divText.append(input, label, br);
     }
-    let btn = creatElement("button", "ГЛАСУВАЙ");
+    let btn = createElement("button", "ГЛАСУВАЙ");
     btn.id = "vote";
 
     btn.addEventListener("click", function (ev) {
@@ -57,17 +57,17 @@ function getRandomQuestionnaire (arr) {
     averageSum = 100 / result.reduce((sum, el) => sum + el, 0);
     let percent = result.map((el) => Math.round(el * averageSum));
     let titleQuestionnaire = obj.title;
-    let containerQuestionnaire = creatElement("div", "", "containerVote")
-    let h2 = creatElement("h2", titleQuestionnaire, "titleQuestionnaire");
-    let div = creatElement("div", "", "questionnaire");
+    let containerQuestionnaire = createElement("div", "", "containerVote")
+    let h2 = createElement("h2", titleQuestionnaire, "titleQuestionnaire");
+    let div = createElement("div", "", "questionnaire");
     div.append(h2);
     for (i = 0; i < allQuestion.length; i++) {
-      let divText = creatElement(
+      let divText = createElement(
         "p",
         `${allQuestion[i]}`,
         "textQuestionnaire"
       );
-      let divPercent = creatElement(
+      let divPercent = createElement(
         "p",
         `${result[i]} (${percent[i]}%)`,
         "percentQuestionnaire"
