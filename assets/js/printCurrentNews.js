@@ -94,5 +94,16 @@ function printCurrentNews(news, containerToPrint) {
     let popularNews = manager.sortByViewership(arraynews).slice(0,4)
     printSmallCardNews(popularNews, divPopularNews)
     containerToPrint.append(divPopularNews)
+    btnPopular.addEventListener("click", function(ev) {
+      ev.preventDefault();
+      divPopularNews.style.display = "flex";
+      divSimilarNews.style.display = "none";
+    })
+    btnSimilar.addEventListener("click", function(ev) {
+      console.log(ev)
+      ev.preventDefault();
+      divPopularNews.style.display = "none";
+      divSimilarNews.style.display = "flex";
+    })
   }
   
