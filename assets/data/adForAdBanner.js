@@ -9,7 +9,7 @@ let adForAdBanner = [
         id: 2,
         name: "Travel books",
         url: "https://travelbooks.bg/",
-        img: "./assets/images/ad/trevelBook.jpg"
+        img: "./assets/images/ad/travelBook.jpg"
     },
     {
         id: 3,
