@@ -1,14 +1,14 @@
 (function () {
-    let createNewsBtn = document.getElementById("addNewsButton");
-    let validateLabel = document.getElementById("validateLabel");
-    let addNewsEmail = document.getElementById('addNewsEmail');
-    let addNewsShownOfNameOfUser = document.getElementById('addNewsName');
-    let typeOfNews = document.getElementById('type');
-    let addNewsTitle = document.getElementById('addNewsTitle');
-    let addNewsText = document.getElementById('addNewsContent');
-    let addImg = document.getElementById('addImg');
+    let createNewsBtn = getById("addNewsButton");
+    let validateLabel = getById("validateLabel");
+    let addNewsEmail = getById('addNewsEmail');
+    let addNewsShownOfNameOfUser = getById('addNewsName');
+    let typeOfNews = getById('type');
+    let addNewsTitle = getById('addNewsTitle');
+    let addNewsText = getById('addNewsContent');
+    let addImg = getById('addImg');
 
-    let validateInput = document.getElementById("validateNotRobot");
+    let validateInput = getById("validateNotRobot");
     function randomNumSumGenerator() {
         let a = Math.floor((Math.random() * 10) + 1);
         let b = Math.floor((Math.random() * 10) + 1);

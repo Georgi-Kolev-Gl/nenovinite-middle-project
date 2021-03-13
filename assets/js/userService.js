@@ -1,20 +1,20 @@
 let manager = (function () {
-    let FirstNameInput = document.getElementById('firstName');
-    let LastNameInput = document.getElementById('lastName');
-    let password = document.getElementById('password');
-    let passwordRepeat = document.getElementById('passwordRepeat');
-    let emailInput = document.getElementById('email');
-    let registerBtn = document.getElementById('register');
-    let container = document.getElementById('forTestOnly');
-    let loginEmail = document.getElementById('loginEmail');
-    let loginPassword = document.getElementById('loginPassword');
-    let loginBtn = document.getElementById('loginBtn');
-    let showRegFormBtn = document.getElementById('showRegisterFormBtn');
-    let addNewsEmail = document.getElementById('addNewsEmail');
-    let addNewsShownOfNameOfUser = document.getElementById('addNewsName');
-    let addNewsTitle = document.getElementById('addNewsTitle');
-    let addNewsText = document.getElementById('addNewsContent');
-    let addImg = document.getElementById('addImg');
+    let FirstNameInput = getById('firstName');
+    let LastNameInput = getById('lastName');
+    let password = getById('password');
+    let passwordRepeat = getById('passwordRepeat');
+    let emailInput = getById('email');
+    let registerBtn = getById('register');
+    let container = getById('forTestOnly');
+    let loginEmail = getById('loginEmail');
+    let loginPassword = getById('loginPassword');
+    let loginBtn = getById('loginBtn');
+    let showRegFormBtn = getById('showRegisterFormBtn');
+    let addNewsEmail = getById('addNewsEmail');
+    let addNewsShownOfNameOfUser = getById('addNewsName');
+    let addNewsTitle = getById('addNewsTitle');
+    let addNewsText = getById('addNewsContent');
+    let addImg = getById('addImg');
     let logOutAnchor = document.querySelectorAll('.navUl>li a')[8];
     // FUNCTION FOR LOGIN LOGOUT ANCHOR. TO BE MOVED TO UTILS
     function loginLogOutAnchorFunction(ev) {
