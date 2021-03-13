@@ -385,6 +385,7 @@ p:first-child{
   text-size-adjust: 100%;
 }
 
+/*popular and similar news*/
 .similarNews {
   display: flex;
   padding-left: 20px;
@@ -400,30 +401,42 @@ p:first-child{
   width: 970px
 }
 
-#btnSimilar {
+#btnSimilar, #btnPopular{
+  width: 191px;
   border: none;
   background: none;
   font-size: 20px;
   margin-bottom: 20px;
   margin-left: 35px;
   text-align: left;
-  color: rgb(19, 138, 184);
-  width: 193px;
-  font-weight: 700;
+  outline: none;
 }
-#btnPopular {
-  border: none;
-  background: none;
-  font-size: 20px;
-  margin-bottom: 20px;
-  text-align: left;
-  text-align: left;
+
+
+
+.active {
   color: rgb(109, 110, 113);
   width: 193px;
   cursor: pointer;
-}
-#btnPopular:hover {
-  text-decoration: underline;
+  outline: none;
 }
 
+.inactive{
+  color: rgb(19, 138, 184);
+  width: 233px;
+  font-weight: 700;
+  pointer-events: none;
+  cursor: unset;
+}
+
+.btnSimilar {
+  color: rgb(19, 138, 184);
+  width: 233px;
+  font-weight: 700;
+  cursor: unset;
+}
+
+.active:hover {
+  text-decoration: underline;
+}
 

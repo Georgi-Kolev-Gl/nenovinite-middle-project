@@ -1,4 +1,5 @@
 function printCurrentNews(news, containerToPrint) {
+    document.title = news.title;
     containerToPrint.innerHTML = "";
     let banner = createElement("div", "", "adBanner");
     containerToPrint.append(banner);
@@ -76,12 +77,10 @@ function printCurrentNews(news, containerToPrint) {
     //added similar and polpular news
     let divButton = createElement("div");
     divButton.id = "btnSimilarAndPopularNews";
-    let btnSimilar = createElement("button");
+    let btnSimilar = createElement("button", "Подобни", "inactive");
     btnSimilar.id = "btnSimilar";
-    btnSimilar.innerText = "Подобни";
-    let btnPopular = createElement("button");
+    let btnPopular = createElement("button", "Популярни", "active");
     btnPopular.id = "btnPopular";
-    btnPopular.innerText = "Популярни"
     divButton.append(btnSimilar, btnPopular);
     containerToPrint.append(divButton);
     let divSimilarNews = createElement("div", "", "similarNews");
@@ -96,12 +95,15 @@ function printCurrentNews(news, containerToPrint) {
     containerToPrint.append(divPopularNews)
     btnPopular.addEventListener("click", function(ev) {
       ev.preventDefault();
+      btnSimilar.className = "active";
+      btnPopular.className = "inactive";
       divPopularNews.style.display = "flex";
       divSimilarNews.style.display = "none";
     })
     btnSimilar.addEventListener("click", function(ev) {
-      console.log(ev)
       ev.preventDefault();
+      btnSimilar.className = "inactive";
+      btnPopular.className = "active";
       divPopularNews.style.display = "none";
       divSimilarNews.style.display = "flex";
     })
