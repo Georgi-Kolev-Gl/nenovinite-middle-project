@@ -70,7 +70,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       break;
 
     case "politicsContainer":
-      document.title = "Политик и общество";
+      document.title = "Политикa и общество";
       HomePage.style.display = "none";
       AllNewsPage.style.display = "none";
       PoliticPage.style.display = "flex";

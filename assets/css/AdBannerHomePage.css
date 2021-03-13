@@ -1,0 +1,40 @@
+.adBannerHomePage {
+    width: 100%;
+    background: white;
+    border-bottom: 2px solid #d0d1d1;
+    overflow: hidden;
+    height: 36px;
+    line-height: 36px;
+    font-size: 20px;
+    margin-bottom: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+    position: relative;
+    margin-top: 35px;
+}
+.adBannerHomePage-abs {
+    position: absolute;
+    top: 0px;
+ 
+}
+
+.adBannerHomePage .adBannerHomePage-abs .adBannerHomePage-box {
+    display: inline-block;
+    white-space: nowrap;
+    margin-left: 20px;
+}
+.adBannerHomePage .adBannerHomePage-abs .adBannerHomePage-text {
+    color: #138ab8;
+}
+
+.adBannerHomePage .adBannerHomePage-abs img {
+    vertical-align: sub;
+    padding: 0px 7px;
+}
+
+.ticadBannerHomePageker i {
+    color: #980e0e;
+}
+#adBannerHomePage-box{
+    margin-left: 20px;
+}
