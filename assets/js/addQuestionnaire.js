@@ -17,13 +17,27 @@ btnAddQuestionnaire.addEventListener("click", function (ev) {
 })
 
 function getValueFromAnswer () {
+    let arr = []
+   let questionnare = {};
+   questionnare.question = {};
+   questionnaire.id = 50;
+   let title = getById("surveyQuestion").value
+   questionnare.title = title;
    let answer = document.querySelectorAll(".surveyAnswer");
    let arrayAnswer = [];
    answer.forEach(element => {
        if (element.value){
+        questionnare.question[element.value] = 0;
         arrayAnswer.push(element.value);
        }
    });
-   return arrayAnswer;
+   arr.push(questionnare)
+   manager.addQuestionnaire(arr)
+   return questionnare;
 }
+
+// let questionnare = {};
+// questionnare.question = {};
+// questionnare.question.afag = 4;
+// console.log(questionnare)
 
