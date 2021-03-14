@@ -102,6 +102,7 @@ header {
     border-bottom-left-radius: 20px;
     /* border: transparent; */
     border: 1px solid #ccd0d2;
+    outline: none;
 }
 #nezasada{
     display: flex;

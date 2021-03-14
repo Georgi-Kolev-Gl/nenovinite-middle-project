@@ -1,21 +1,21 @@
-const HomePage = document.getElementById("homeContainer");
-const AllNewsPage = document.getElementById("allNewsContainer");
-const PoliticPage = document.getElementById("politicsContainer");
-const WorldPage = document.getElementById("worldContainer");
-const CulturePage = document.getElementById("cultureContainer");
-const OffsidePage = document.getElementById("offsideContainer");
-const HoroscopePage = document.getElementById("horoscope");
-const RubricPage = document.getElementById("rubric");
-const AddNewsPage = document.getElementById("addNews");
-const LoginPage = document.getElementById("login");
-const currentNewsByUser = document.getElementById("currentNewsByUser")
-const containerPrintAllNewsByUser = document.getElementById("containerPrintAllNewsByUser")
-const titleContainerPrintAllNewsByUser = document.getElementById("AllUserNews")
-const Footer_Container = document.getElementById('footerContainer');
+const HomePage = getById("homeContainer");
+const AllNewsPage = getById("allNewsContainer");
+const PoliticPage = getById("politicsContainer");
+const WorldPage = getById("worldContainer");
+const CulturePage = getById("cultureContainer");
+const OffsidePage = getById("offsideContainer");
+const HoroscopePage = getById("horoscope");
+const RubricPage = getById("rubric");
+const AddNewsPage = getById("addNews");
+const LoginPage = getById("login");
+const currentNewsByUser = getById("currentNewsByUser")
+const containerPrintAllNewsByUser = getById("containerPrintAllNewsByUser")
+const titleContainerPrintAllNewsByUser = getById("AllUserNews")
+const Footer_Container = getById('footerContainer');
 
 // LOGIN BUTTONS AND FUNC
-const registerForm = document.getElementById('registerForm');
-const loginForm = document.getElementById('loginForm');
+const registerForm = getById('registerForm');
+const loginForm = getById('loginForm');
 registerForm.style.display = 'none';
 loginForm.style.display = 'block';
 function changeLoginPageInnerHTML() {
@@ -25,19 +25,20 @@ function changeLoginPageInnerHTML() {
     location.hash = '#registerFormContainer';
   }
 }
-const allNewsBox = document.getElementById("containerToPrintAllNews");
-const politicsNewsBox = document.getElementById("containerToPrintPoliticsNews");
-const worldNewsBox = document.getElementById("containerToPrintWorldNews");
-const cultureNewsBox = document.getElementById("containerToPrintCultureNews");
-const offsideNewsBox = document.getElementById("containerToPrintOffsideNews");
-const horoscopeNewsBox = document.getElementById("containerToPrintHoroscopeNews");
-const rubricNewsBox = document.getElementById("containerToPrintRubricNews");
+const allNewsBox = getById("containerToPrintAllNews");
+const politicsNewsBox = getById("containerToPrintPoliticsNews");
+const worldNewsBox = getById("containerToPrintWorldNews");
+const cultureNewsBox = getById("containerToPrintCultureNews");
+const offsideNewsBox = getById("containerToPrintOffsideNews");
+const horoscopeNewsBox = getById("containerToPrintHoroscopeNews");
+const rubricNewsBox = getById("containerToPrintRubricNews");
 
 
 function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
   let currentPage = window.location.hash.slice(1);
   switch (currentPage) {
     case "homeContainer":
+      document.title = "Hе!Новините";
       HomePage.style.display = "block";
       AllNewsPage.style.display = "none";
       PoliticPage.style.display = "none";
@@ -53,6 +54,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       break;
 
     case "allNewsContainer":
+      document.title = "Всички Hе!Новините";
       HomePage.style.display = "none";
       AllNewsPage.style.display = "flex";
       PoliticPage.style.display = "none";
@@ -68,6 +70,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       break;
 
     case "politicsContainer":
+      document.title = "Политикa и общество";
       HomePage.style.display = "none";
       AllNewsPage.style.display = "none";
       PoliticPage.style.display = "flex";
@@ -83,6 +86,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       break;
 
     case "worldContainer":
+      document.title = "Свят";
       HomePage.style.display = "none";
       AllNewsPage.style.display = "none";
       PoliticPage.style.display = "none";
@@ -98,6 +102,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       break;
 
     case "cultureContainer":
+      document.title = "Не!Ука и култура";
       HomePage.style.display = "none";
       AllNewsPage.style.display = "none";
       PoliticPage.style.display = "none";
@@ -113,6 +118,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       break;
 
     case "offsideContainer":
+      document.title = "Не!Засада";
       HomePage.style.display = "none";
       AllNewsPage.style.display = "none";
       PoliticPage.style.display = "none";
@@ -128,6 +134,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       break;
 
     case "horoscope":
+      document.title = "Не!Хороскоп";
       HomePage.style.display = "none";
       AllNewsPage.style.display = "none";
       PoliticPage.style.display = "none";
@@ -143,6 +150,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       break;
 
     case "rubric":
+      document.title = "Рубрики";
       HomePage.style.display = "none";
       AllNewsPage.style.display = "none";
       PoliticPage.style.display = "none";
@@ -158,6 +166,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       break;
 
     case "addNews":
+      document.title = "Не!Новините: Напиши новина";
       changeLoginPageInnerHTML();
       HomePage.style.display = "none";
       AllNewsPage.style.display = "none";
@@ -188,6 +197,7 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       currentNewsByUser.style.display = "none";
       break;
     case "registerFormContainer":
+      document.title = "Не!Новините: Вход";
       HomePage.style.display = "none";
       AllNewsPage.style.display = "none";
       PoliticPage.style.display = "none";
@@ -278,22 +288,24 @@ function printSmallCardNews(arr, containerToprint) {
   arr.forEach((element, index) => {
     let currentNews = element;
     if (index === counter) {
-      let banner = creatElement("div", "", "adBanner");
+      let banner = createElement("div", "", "adBanner");
+      let ad = createAd()
+      banner.append(ad)
       containerToprint.append(banner);
       counter += 8;
     }
-    let cardboxContainer = creatElement("div", "", "thumbnail")
-    let link = creatElement("a", "", "news");
+    let cardboxContainer = createElement("div", "", "thumbnail")
+    let link = createElement("a", "", "news");
     link.href = "#currentNews";
-    let divContainer = creatElement("div", "", "newsCard");
-    let img = creatElement("img");
+    let divContainer = createElement("div", "", "newsCard");
+    let img = createElement("img");
     img.src = element.img;
     img.alt = element.title;
-    let divContainerTitle = creatElement("div", "", "newsCardTitle");
-    let title = creatElement("h3", element.title);
+    let divContainerTitle = createElement("div", "", "newsCardTitle");
+    let title = createElement("h3", element.title);
     let currentDate = convertDate(element.date);
-    let date = creatElement("p", currentDate, "date");
-    let text = creatElement("p", "Прочети новина", "readNews");
+    let date = createElement("p", currentDate, "date");
+    let text = createElement("p", "Прочети новина", "readNews");
     divContainerTitle.append(title, date, text);
     divContainer.append(img, divContainerTitle);
     link.append(divContainer);
@@ -313,18 +325,18 @@ function prinprintNewsToCarousel(arr, containerToprint) {
     if (i === 12) {
       break;
     }
-    let cardboxContainer = creatElement("div", "", "thumbnail")
-    let link = creatElement("a", "", "news");
+    let cardboxContainer = createElement("div", "", "thumbnail")
+    let link = createElement("a", "", "news");
     link.href = "#currentNews";
-    let divContainer = creatElement("div", "", "newsCard");
-    let img = creatElement("img");
+    let divContainer = createElement("div", "", "newsCard");
+    let img = createElement("img");
     img.src = currentNews.img;
     img.alt = currentNews.title;
-    let divContainerTitle = creatElement("div", "", "newsCardTitle");
-    let title = creatElement("h3", currentNews.title);
+    let divContainerTitle = createElement("div", "", "newsCardTitle");
+    let title = createElement("h3", currentNews.title);
     let currentDate = convertDate(currentNews.date);
-    let date = creatElement("p", currentDate, "date");
-    let text = creatElement("p", "Прочети новина", "readNews");
+    let date = createElement("p", currentDate, "date");
+    let text = createElement("p", "Прочети новина", "readNews");
     divContainerTitle.append(title, date, text);
     divContainer.append(img, divContainerTitle);
     link.append(divContainer);
@@ -512,5 +524,5 @@ printSmallCardNews(rubricArr, rubricNewsBox);
 //RUBRIC DIV PRINT
 
 //current news page
-readCurrentNews = document.getElementById("currentNews")
+readCurrentNews = getById("currentNews")
 

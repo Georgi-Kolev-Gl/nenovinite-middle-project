@@ -16,11 +16,11 @@ let manager = (function () {
     let addNewsTitle = document.getElementById('addNewsTitle');
     let addNewsText = document.getElementById('addNewsContent');
     let addImg = document.getElementById('addImg');
+
     let logOutAnchor = document.querySelectorAll('.navUl>li a')[8];
     // FUNCTION FOR LOGIN LOGOUT ANCHOR. TO BE MOVED TO UTILS
     function loginLogOutAnchorFunction(ev) {
         if (ev.target.innerText === "Logout") {
-            console.log(ev);
             ev.preventDefault();
             manager.logOut();
             location.hash = '#registerFormContainer';
@@ -208,6 +208,10 @@ let manager = (function () {
         }
         filterByUser(user) {
             return this.allNews.filter((el) => el.user === user)
+        }
+        sortByViewership(arr) {
+            arr.sort((a, b) => b.counter - a.counter);
+            return arr;
         }
     }
 

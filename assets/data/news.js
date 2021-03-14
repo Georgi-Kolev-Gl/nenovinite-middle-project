@@ -1,3 +1,4 @@
+
 let news = (function(){
   if(localStorage.getItem('News')){    
     return JSON.parse(localStorage.getItem('News'))
@@ -2060,6 +2061,4 @@ let news = (function(){
     localStorage.setItem('News', JSON.stringify(news))
     return news;
   }
-})()
-
-
+})();

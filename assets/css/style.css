@@ -127,18 +127,21 @@ a {
   max-width: 100%;
   width: 213px;
 }
-.newsCard > .newsCardTitle {
+.newsCardTitle {
+  box-sizing: border-box;
   color: rgb(99, 107, 111);
   cursor: pointer;
   display: block;
   font-size: 14px;
-  height: 314px;
+  height: 195px;
   padding-left: 9px;
   padding-right: 9px;
   padding-top: 9px;
   text-align: left;
   text-size-adjust: 100%;
+  margin-right: 9px;
   width: 213px;
+  margin: 0 auto;
 }
 .newsCard > .newsCardTitle > h3 {
   color: rgb(109, 110, 113);
@@ -149,19 +152,26 @@ a {
   height: 192px;
   text-align: left;
   text-size-adjust: 100%;
-  width: 195px;
+  width: 190px;
+  padding-right: 9px;
   word-break: break-word;
 }
-.newsCard .newsCardTitle p {
+.newsCard .newsCardTitle > p {
   color: rgb(109, 110, 113);
   cursor: pointer;
   display: block;
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 100;
   height: 28px;
   text-align: left;
   text-size-adjust: 100%;
   width: 195px;
+}
+p.date {
+  margin-bottom: 0px;
+}
+p.readNews{
+  margin-top: 5px;
 }
 .categoryTitle {
   width: 100%;
@@ -208,10 +218,14 @@ a {
   background-color: rgb(255, 255, 255);
   border-bottom: 3px solid rgb(208, 209, 209);
   width: 940px;
-  height: 55px;
+  height: 251px;
   margin-bottom: 34px;
-}
 
+}
+.adBanner img{
+  width: 100%;
+  height: 100%;
+}
 
 .pageContainer{
   display: flex;
@@ -277,8 +291,6 @@ width: 75%;
 #currentNews .adBanner {
   margin-top: 40px;
   margin-bottom: 34px;
-  padding-bottom: 30px;
-  padding-top: 30px;
   width: 970px;
 }
 #currentNews .titleCurrentNews{
@@ -289,7 +301,7 @@ width: 75%;
   margin-top: 5px;
   text-size-adjust: 100%;
 }
-#currentNews img{
+#currentNews > img{
   height: 647px;
   width: 970px;
 }
@@ -374,3 +386,59 @@ p:first-child{
   margin-top: 35px;
   text-size-adjust: 100%;
 }
+
+/*popular and similar news*/
+.similarNews {
+  display: flex;
+  padding-left: 20px;
+  padding-right: 15px;
+  width: 970px
+   
+}
+
+.popularNews {
+  display: none;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 970px
+}
+
+#btnSimilar, #btnPopular{
+  width: 191px;
+  border: none;
+  background: none;
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-left: 35px;
+  text-align: left;
+  outline: none;
+}
+
+
+
+.active {
+  color: rgb(109, 110, 113);
+  width: 193px;
+  cursor: pointer;
+  outline: none;
+}
+
+.inactive{
+  color: rgb(19, 138, 184);
+  width: 233px;
+  font-weight: 700;
+  pointer-events: none;
+  cursor: unset;
+}
+
+.btnSimilar {
+  color: rgb(19, 138, 184);
+  width: 233px;
+  font-weight: 700;
+  cursor: unset;
+}
+
+.active:hover {
+  text-decoration: underline;
+}
+
