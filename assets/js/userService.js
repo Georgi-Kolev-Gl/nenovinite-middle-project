@@ -5,6 +5,7 @@ let manager = (function () {
     let passwordRepeat = document.getElementById('passwordRepeat');
     let emailInput = document.getElementById('email');
     let registerBtn = document.getElementById('register');
+    let backToLoginBtn = getById('backToLogin');
     let container = document.getElementById('forTestOnly');
     let loginEmail = document.getElementById('loginEmail');
     let loginPassword = document.getElementById('loginPassword');
@@ -23,6 +24,16 @@ let manager = (function () {
             ev.preventDefault();
             manager.logOut();
             location.hash = '#registerFormContainer';
+        }
+    }
+    class User {
+        constructor(firstName, lastName, password, email) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.password = password;
+            this.email = email;
+            this.myNews = [];
+            this.isOnline = false;
         }
     }
 
@@ -50,7 +61,7 @@ let manager = (function () {
 
     class UserService {
         constructor() {
-            this.allNews = [];//taken from old site manager!!!!
+            this.allNews = [];
             this.Users = [];
             this.newsId = 0;
             this.questionnaireId = 0;
@@ -71,9 +82,9 @@ let manager = (function () {
             arr.forEach(el => {
                 let newNews = new News(
                     el.title,
-                    el.image,
+                    el.image || el.img,
                     el.text,
-                    el.data,
+                    el.date || el.data,//change
                     el.user,
                     el.counter,
                     el.type,
@@ -86,6 +97,11 @@ let manager = (function () {
         getUsers() {
             if (localStorage.getItem("Users")) {
                 this.Users = JSON.parse(localStorage.getItem("Users"))
+                if (this.Users.some(user => user.isOnline === true)) {
+                    let user = this.Users.filter(userObj => userObj.isOnline === true)[0];
+                    console.log(user);
+                    this.login(user.email, user.password);
+                }
             } else {
                 localStorage.setItem("Users", JSON.stringify(this.Users));
             }
@@ -103,7 +119,6 @@ let manager = (function () {
             let emails = this.Users.map(e => e.email.toLowerCase())
             //console.log(emails);
             if (emails.includes(email.trim().toLowerCase())) {
-                console.log("Already registered!");
                 alert('already registered!');
             } else {
                 password = password.trim();
@@ -129,6 +144,8 @@ let manager = (function () {
                 console.log("Inside if ", userObj);
                 this.userLoggedIn = true;
                 this.currentUser = filteredUser[0];
+                this.currentUser.isOnline = true;//is online
+                localStorage.setItem('Users', JSON.stringify(this.Users));
                 logOutAnchor.innerText = "Logout";
                 logOutAnchor.addEventListener('click', loginLogOutAnchorFunction);
                 return userObj;
@@ -138,7 +155,9 @@ let manager = (function () {
         // LOGOUT
         logOut() {
             this.userLoggedIn = false;
+            this.currentUser.isOnline = false;
             this.currentUser = "Guest";
+            localStorage.setItem("Users", JSON.stringify(this.Users));
             logOutAnchor.removeEventListener('click', loginLogOutAnchorFunction);
             logOutAnchor.innerText = "Login";
         }
@@ -171,7 +190,8 @@ let manager = (function () {
             let newsObj = new News(title, img, text, date, this.currentUser.firstName, 0, type, this.allNews.length + 1)
             this.currentUser.myNews.push(newsObj);
             this.allNews.unshift(newsObj);
-            localStorage.setItem('Users', JSON.stringify(this.Users))
+            localStorage.setItem('Users', JSON.stringify(this.Users));
+            localStorage.setItem('News', JSON.stringify(this.allNews));
         }
         addQuestionnaire(arr) {
             arr.forEach(el => {
@@ -190,15 +210,7 @@ let manager = (function () {
             return this.allNews.filter((el) => el.user === user)
         }
     }
-    class User {
-        constructor(firstName, lastName, password, email) {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.password = password;
-            this.email = email;
-            this.myNews = [];
-        }
-    }
+
 
     registerBtn.addEventListener('click', function (ev) {
         ev.preventDefault();
@@ -209,8 +221,6 @@ let manager = (function () {
                 LastNameInput.value = '';
                 password.value = '';
                 emailInput.value = '';
-                container.innerHTML = '';
-                container.innerHTML = JSON.stringify(testService.Users);
                 loginForm.style.display = 'block';
                 registerForm.style.display = 'none';
             } else {
@@ -238,8 +248,13 @@ let manager = (function () {
         loginForm.style.display = 'none';
         registerForm.style.display = 'block';
     })
+    backToLoginBtn.addEventListener('click', (ev)=>{
+        ev.preventDefault();
+        loginForm.style.display = 'block';
+        registerForm.style.display = 'none';
+    })
     let testService = new UserService;
-    testService.getUsers();
+    // testService.getUsers();//
     return testService;
 })();
 

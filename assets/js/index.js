@@ -19,9 +19,9 @@ const loginForm = document.getElementById('loginForm');
 registerForm.style.display = 'none';
 loginForm.style.display = 'block';
 function changeLoginPageInnerHTML() {
-  registerForm.style.display = 'none';
-  loginForm.style.display = 'block';
   if (!manager.userLoggedIn) {
+    registerForm.style.display = 'none';
+    loginForm.style.display = 'block';
     location.hash = '#registerFormContainer';
   }
 }
@@ -201,20 +201,20 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
       LoginPage.style.display = "block";
       currentNewsByUser.style.display = "none";
       break;
-      case "currentNewsByUser":
-        HomePage.style.display = "none";
-        AllNewsPage.style.display = "none";
-        PoliticPage.style.display = "none";
-        WorldPage.style.display = "none";
-        CulturePage.style.display = "none";
-        OffsidePage.style.display = "none";
-        HoroscopePage.style.display = "none";
-        RubricPage.style.display = "none";
-        AddNewsPage.style.display = "none";
-        readCurrentNews.style.display = "none";
-        LoginPage.style.display = "none";
-        currentNewsByUser.style.display = "block";
-        break;
+    case "currentNewsByUser":
+      HomePage.style.display = "none";
+      AllNewsPage.style.display = "none";
+      PoliticPage.style.display = "none";
+      WorldPage.style.display = "none";
+      CulturePage.style.display = "none";
+      OffsidePage.style.display = "none";
+      HoroscopePage.style.display = "none";
+      RubricPage.style.display = "none";
+      AddNewsPage.style.display = "none";
+      readCurrentNews.style.display = "none";
+      LoginPage.style.display = "none";
+      currentNewsByUser.style.display = "block";
+      break;
     default:
       HomePage.style.display = "block";
       AllNewsPage.style.display = "none";
@@ -231,11 +231,12 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
   }
 }
 
-window.addEventListener("DOMContentLoaded", function(){
+window.addEventListener("DOMContentLoaded", function () {
+  manager.getUsers();
   hashChnage();
   footerStyle(Footer_Container);
 });
-window.addEventListener("hashchange", function(){
+window.addEventListener("hashchange", function () {
   hashChnage();
   footerStyle(Footer_Container);
 });
@@ -272,7 +273,6 @@ function convertDate(str) {
 }
 
 function printSmallCardNews(arr, containerToprint) {
-  console.log(2)
   containerToprint.innerHTML = "";
   let counter = 8;
   arr.forEach((element, index) => {
