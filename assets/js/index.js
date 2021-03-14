@@ -33,7 +33,6 @@ const offsideNewsBox = getById("containerToPrintOffsideNews");
 const horoscopeNewsBox = getById("containerToPrintHoroscopeNews");
 const rubricNewsBox = getById("containerToPrintRubricNews");
 
-
 function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
   let currentPage = window.location.hash.slice(1);
   switch (currentPage) {
