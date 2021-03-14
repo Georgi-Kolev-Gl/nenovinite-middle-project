@@ -3,7 +3,7 @@ function getById(id) {
 }
 function createElement(element, text, className) {
   let newElement = document.createElement(element);
-  if (text && text.trim().length > 0) {    
+  if (text && text.trim().length > 0) {
     newElement.innerHTML = text;//!!!!
   }
   if (className) {

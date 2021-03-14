@@ -68,7 +68,7 @@ header {
     font-size: 16px;
     color: white;
     padding-bottom: 13px;
-    font-weight: bolder;               
+    font-weight: 430;               
 }
 .navUl a:hover {
     border-bottom: 4px solid white;

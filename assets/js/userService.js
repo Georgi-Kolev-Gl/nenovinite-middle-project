@@ -252,7 +252,7 @@ let manager = (function () {
         loginForm.style.display = 'none';
         registerForm.style.display = 'block';
     })
-    backToLoginBtn.addEventListener('click', (ev)=>{
+    backToLoginBtn.addEventListener('click', (ev) => {
         ev.preventDefault();
         loginForm.style.display = 'block';
         registerForm.style.display = 'none';

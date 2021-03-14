@@ -248,33 +248,50 @@ width: 75%;
 /* REGISTER PAGE */
 #login{
   width: 472.5px;
+  /* text-align: center; */
+}
+#login input{
+  height: 30px;
+  outline: none;
+  border-radius: 25px;
+  border: 1px solid #ccd0d2;
+  width: 100%;  
+}
+#login button{
+  color: white;
+  font-size: 16px;;
+  /* font-weight: bold; */
+  background-color: #138ab8;
+  border: 1px solid #ccd0d2;
+  border-radius: 25px;
+  height: 30px;
+  width: 180px;
+  outline: none;
+}
+#login button:hover{
+  cursor: pointer;
 }
 .registerForm label{
   display: inline-block;
   text-align: end;  
-  width: 50px;
+  width: 100px;
 }
 .registerInput {
   margin: 10px;
   display: inline-block;
   width: 45%;
 }
-.registerForm input{
-  width: 100%;
-}
+
 /* LOGIN */
 .loginForm label{
   display: inline-block;
   text-align: end;  
-  width: 50px;
+  width: 100px;
 }
 .loginInput {
   margin: 10px;
   display: inline-block;
   width: 45%;
-}
-.loginForm input{
-  width: 100%;
 }
 
 /* current news */
@@ -372,7 +389,7 @@ p:first-child{
     background-color: #138ab8;
     display: flex;
     justify-content: space-around;
-    height: 150px;
+    height: 130px;
     align-items: center;
 }
 
