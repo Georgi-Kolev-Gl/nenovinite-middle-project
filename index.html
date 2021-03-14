@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,9 +13,7 @@
     <!-- FONT AWESOME LIBRARY -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/all.min.js"></script>
     <link rel="shortcut icon" type="image/png" href="./assets/images/logo/category-5-Title.png" />
-
 </head>
-
 <body>
     <header>
         <!-- CHANGED CLASS NAME !!! -->
@@ -27,9 +24,9 @@
             <div class="socialApps">
                 <!-- SEARCH INPUT AND DIV -->
                 <div class="searchInputDIV">
-                    <input type="text" id="search" class="searchInput-visible">
+                    <input type="text" id="search" class="searchInput-visible form-control">
                 </div>
-                <a class="icon" href="" id="searchAnchor" style="margin-left: -15px;"><i class="fa fa-search"></i></a>
+                <a class="icon" href="" id="searchAnchor" style="margin-left: -30px;"><i class="fa fa-search"></i></a>
                 <a class="icon" target="_blank" href="https://www.nenovinite.com/ne/za-nas"><i
                         class="fa fa-envelope"></i></a>
                 <a class="icon" target="_blank" href="https://www.youtube.com/user/nenovinite/videos"><i
@@ -48,8 +45,8 @@
                         <li><a href="#politicsContainer">Политика и общество</a></li>
                         <li><a href="#worldContainer">Свят</a></li>
                         <li><a href="#cultureContainer">Не!ука и култура</a></li>
-                        <li><a href="#offsideContainer"><img src="./assets/images/logo/ne-zasada.png"
-                                    alt="Не!"><span>Засада</span> </a></li>
+                        <li id="nezasadaLi"><a id="nezasada" href="#offsideContainer" ><img src="./assets/images/logo/ne-zasada.png"
+                                    alt="Не!">Засада</a></li>
                         <li><a href="#horoscope">Не!Хороскоп</a></li>
                         <li><a href="#rubric">Рубрики</a></li>
                         <li><a href="#addNews">Напиши Не!Новина</a></li>
@@ -368,7 +365,8 @@
                         <input type="text" name="email" id="email">
                     </div>
                 </div>
-                <button id="register">Register</button>
+                <button id="register">Регистрирация</button>
+                <button id="backToLogin">Обратно</button>
             </form>
 
             <form action="" class="loginForm" id="loginForm">
@@ -388,14 +386,7 @@
                     <button id="loginBtn">Login</button>
                     <button id="showRegisterFormBtn">Регистрирай се</button>
                 </div>
-            </form>
-            <div>
-                <p>
-                    for test purposes, besides register, use testService in console;
-                </p>
-                <div id="forTestOnly">
-                </div>
-            </div>
+            </form>            
         </div>
         </div>
         <div class="pageContainer" id="currentNews"></div>
@@ -425,9 +416,7 @@
                     <a target="_blank" href="https://github.com/KirilZashev">Kiril Zashev</a>
                 </h4>
             </div>
-
         </div>
-
     </footer>
     <script src="./assets/js/utilis.js"></script>
     <script src="./assets/data/adForAdBanner.js"></script>

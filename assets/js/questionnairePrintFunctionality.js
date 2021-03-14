@@ -1,4 +1,3 @@
-//get random questionnaire 
 function getRandomQuestionnaire (arr) {
     let random = Math.floor(Math.random() * arr.length)
     return arr[random]
@@ -79,4 +78,4 @@ function getRandomQuestionnaire (arr) {
     containerQuestionnaire.append(div)
     containerToPrint.append(containerQuestionnaire);
   }
-  
+

@@ -67,7 +67,7 @@ header {
     text-decoration: none;
     font-size: 16px;
     color: white;
-    padding-bottom: 15px;
+    padding-bottom: 13px;
     font-weight: bolder;               
 }
 .navUl a:hover {
@@ -104,3 +104,26 @@ header {
     border: 1px solid #ccd0d2;
     outline: none;
 }
+#nezasada{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 7px;
+}
+.form-control{display:block;
+    width:100%;
+    padding:.375rem .75rem;
+    font-size:1rem;
+    font-weight:400;
+    line-height:1.5;
+    color:#212529;
+    background-color:#fff;
+    background-clip:padding-box;
+    border:1px solid #ccd0d2;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    border-radius: 25px;
+    transition:border-color .15s ease-in-out,box-shadow .15s ease-in-out
+}
+
