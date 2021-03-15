@@ -9,7 +9,7 @@ body {
     margin: 0;
 }
 /* HEADER */
-header {
+header {    
     padding-top: 20px;
 }
 /* FONTAWESOME ICONS */
@@ -114,6 +114,11 @@ header {
 /* MEDIA QUERRIES */
 .mobile-container{
     display: none;
+}
+#nav{
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 @media screen and (max-width: 964px){
 .topNavContainer{

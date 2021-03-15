@@ -11,5 +11,5 @@ toggleBtn.addEventListener('click', (ev) => {
     ev.preventDefault();
     mobileMenuToggle();
 });
-
 document.querySelectorAll('#myLinks a').forEach(a => a.addEventListener('click', mobileMenuToggle));
+
