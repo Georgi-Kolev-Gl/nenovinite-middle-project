@@ -9,7 +9,7 @@ body {
     margin: 0;
 }
 /* HEADER */
-header {
+header {    
     padding-top: 20px;
 }
 /* FONTAWESOME ICONS */
@@ -109,6 +109,87 @@ header {
     align-items: center;
     justify-content: space-between;
     padding-bottom: 7px;
+}
+
+/* MEDIA QUERRIES */
+.mobile-container{
+    display: none;
+}
+#nav{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+@media screen and (max-width: 964px){
+.topNavContainer{
+    display: none;
+}
+#navMainDiv{
+    display: none;
+}
+.mobile-container{
+    display: block;
+    max-width: 964px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+    margin: auto;
+    background-color: #138ab8;
+    /* height: 500px; */
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+.topnav {
+    display: block;            
+    overflow: hidden;
+    background-color: #138ab8;
+    position: relative;
+}
+
+.topnav #myLinks {
+    display: none;
+    flex-direction: column;
+}
+
+.topnav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: inline-block;
+}
+#toggler {           
+    position: absolute;
+    right: 80px;
+    top: 10px;
+    border: none;
+    outline: none;
+}
+#toggler:hover{
+    cursor: pointer;
+}
+.topnav a:hover {
+    color: #22aee4;
+    transition: all 0.8s ease;
+    
+}
+
+.active {
+    background-color: #138ab8;
+    color: white;
+}
+.icon svg {
+    font-size: 23px;
+    line-height: 44px;
+    color: white;
+    margin: 0px;
+}
+main{
+    margin-top: 50px;
+}
+
 }
 .form-control{display:block;
     width:100%;
