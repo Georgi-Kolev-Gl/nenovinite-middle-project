@@ -20,7 +20,6 @@
 
     function validateAnswer(num) {
         if (num === Number(validateInput.value)) {
-            console.log(true);
             return true
         }
         return false
@@ -32,7 +31,6 @@
             answer = randomNumSumGenerator();
             validateInput.value = '';
             alert('Wrong Answer! Try Again');
-
         } else {
             let date = getTodayDate();
             let content = {
@@ -45,7 +43,7 @@
             typeOfNews.value = "";
             addNewsText.value = "";
             printSmallCardNews(manager.allNews, allNewsBox);
-            console.log('success!');
+            getValueFromAnswer ()
             alert('Новината е добавена!')
         }
     })

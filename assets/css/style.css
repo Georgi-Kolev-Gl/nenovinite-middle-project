@@ -459,3 +459,16 @@ p:first-child{
   text-decoration: underline;
 }
 
+/*questionnaire*/
+.containerAnswer{
+  display: flex;
+  flex-direction: row;
+}
+.surveyAnswer{
+  margin-bottom: 15px;
+  margin-left: 5px;
+  margin-right: 20px;
+  width: 550px;
+  height: 30px;
+}
+

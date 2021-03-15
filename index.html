@@ -233,8 +233,7 @@
         </div>
 
         <div class="pageContainer" id="addNews">
-            AddNews
-            <div>
+          <div>
                 <h1>Напиши новина</h1>
                 <p>Медия №37 в България и №32 в Света разчита на мрежа от случайни хора, които да подават случайни
                     сигнали, вести, очевидности и пророчества. Изпращайте ни вашите текстове, които ние може да
@@ -299,20 +298,15 @@
                         </div>
                     </div>
                     <br>
-                    <div>
-                        <label for="surveyAnswers">Отговори на анкета</label>
-                        <div class="addNewsInputDIV">
-                            <input type="text" name="surveyAnswer" id="surveyAnswer">
-                        </div>
-                    </div>
-                    <br>
-                    <div>
-                        <label for="validateGenerator"></label>
-                        <div class="addNewsInputDIV">
-                            <a id="validateGenerator" name="validateGenerator" href="javascript:">
-                                <i class="fa fa-plus"></i>
-                            </a>
-                        </div>
+                    <div style="display:flex; flex-direction: row;">
+                        <div><label for="surveyAnswers">Отговори на анкета</label></div>
+                        <div class="addNewsInputDIV" id="newQuestionnaireAnswer">
+                            <div class="addNewsInputDIV">
+                                <a id="addNewsQuestionnaire" name="validateGenerator" href="javascript:">
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                            </div>
+                        </div> 
                     </div>
                     <br>
                     <div>
@@ -432,6 +426,7 @@
     <script src="./assets/js/userService.js"></script>
     <script src="./assets/js/index.js"></script>
     <script src="./assets/js/moveAdBanner.js"></script>
+    <script src="./assets/js/addQuestionnaire.js"></script>
 </body>
 
 </html>
