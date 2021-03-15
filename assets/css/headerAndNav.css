@@ -1,7 +1,7 @@
-* {
+/* * {
     box-sizing: border-box;
     font-family: 'Roboto'sans-serif;
-}
+} */
 /* BODY */
 body {
     font-size: 14px;
@@ -9,11 +9,12 @@ body {
     margin: 0;
 }
 /* HEADER */
-header {
+header {    
     padding-top: 20px;
 }
 /* FONTAWESOME ICONS */
 .icon {
+    font-family: Roboto;    
     height: 42px;
     width: 42px;
     display: inline-block;
@@ -66,8 +67,8 @@ header {
     text-decoration: none;
     font-size: 16px;
     color: white;
-    padding-bottom: 15px;
-    font-weight: bolder;               
+    padding-bottom: 13px;
+    font-weight: 430;               
 }
 .navUl a:hover {
     border-bottom: 4px solid white;
@@ -101,4 +102,109 @@ header {
     border-bottom-left-radius: 20px;
     /* border: transparent; */
     border: 1px solid #ccd0d2;
+    outline: none;
 }
+#nezasada{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 7px;
+}
+
+/* MEDIA QUERRIES */
+.mobile-container{
+    display: none;
+}
+#nav{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+@media screen and (max-width: 964px){
+.topNavContainer{
+    display: none;
+}
+#navMainDiv{
+    display: none;
+}
+.mobile-container{
+    display: block;
+    max-width: 964px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+    margin: auto;
+    background-color: #138ab8;
+    /* height: 500px; */
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+.topnav {
+    display: block;            
+    overflow: hidden;
+    background-color: #138ab8;
+    position: relative;
+}
+
+.topnav #myLinks {
+    display: none;
+    flex-direction: column;
+}
+
+.topnav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: inline-block;
+}
+#toggler {           
+    position: absolute;
+    right: 80px;
+    top: 10px;
+    border: none;
+    outline: none;
+}
+#toggler:hover{
+    cursor: pointer;
+}
+.topnav a:hover {
+    color: #22aee4;
+    transition: all 0.8s ease;
+    
+}
+
+.active {
+    background-color: #138ab8;
+    color: white;
+}
+.icon svg {
+    font-size: 23px;
+    line-height: 44px;
+    color: white;
+    margin: 0px;
+}
+main{
+    margin-top: 50px;
+}
+
+}
+.form-control{display:block;
+    width:100%;
+    padding:.375rem .75rem;
+    font-size:1rem;
+    font-weight:400;
+    line-height:1.5;
+    color:#212529;
+    background-color:#fff;
+    background-clip:padding-box;
+    border:1px solid #ccd0d2;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    border-radius: 25px;
+    transition:border-color .15s ease-in-out,box-shadow .15s ease-in-out
+}
+
