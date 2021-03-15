@@ -1,8 +1,8 @@
 
-let news = (function(){
-  if(localStorage.getItem('News')){    
+let news = (function () {
+  if (localStorage.getItem('News')) {
     return JSON.parse(localStorage.getItem('News'))
-  }else{
+  } else {
     let news = [
       {
         title:
@@ -2046,18 +2046,11 @@ let news = (function(){
         type: "rubric",
       },
     ]
-    //add image url to news
-    // (function () {
-      news.forEach((element, index) => {
-        element.image = "./assets/images/" + element.image + ".jpg";
-        element.id = index + 1;
-      });  
-    // })();
-    // (function () {
-      // news.forEach((element, index) => {
-      //   element.id = index + 1;
-      // })  
-    // })();
+
+    news.forEach((element, index) => {
+      element.image = "./assets/images/" + element.image + ".jpg";
+      element.id = index + 1;
+    });
     localStorage.setItem('News', JSON.stringify(news))
     return news;
   }

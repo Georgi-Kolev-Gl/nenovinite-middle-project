@@ -5,17 +5,13 @@ let manager = (function () {
     let passwordRepeat = document.getElementById('passwordRepeat');
     let emailInput = document.getElementById('email');
     let registerBtn = document.getElementById('register');
-    let backToLoginBtn = getById('backToLogin');
-    let container = document.getElementById('forTestOnly');
+    let backToLoginBtn = getById('backToLogin');    
     let loginEmail = document.getElementById('loginEmail');
     let loginPassword = document.getElementById('loginPassword');
     let loginBtn = document.getElementById('loginBtn');
     let showRegFormBtn = document.getElementById('showRegisterFormBtn');
     let addNewsEmail = document.getElementById('addNewsEmail');
-    let addNewsShownOfNameOfUser = document.getElementById('addNewsName');
-    let addNewsTitle = document.getElementById('addNewsTitle');
-    let addNewsText = document.getElementById('addNewsContent');
-    let addImg = document.getElementById('addImg');
+    let addNewsShownOfNameOfUser = document.getElementById('addNewsName');   
 
     let logOutAnchor = document.querySelectorAll('.navUl>li a')[8];
     // FUNCTION FOR LOGIN LOGOUT ANCHOR. TO BE MOVED TO UTILS
@@ -109,7 +105,7 @@ let manager = (function () {
         }
         // REGISTER
         registerNewUser(firstName, lastName, password, email) {
-            console.log('btn clicked');
+
             let isEmail = email.trim().includes('@');
             if (!isEmail) {
                 console.log('Not a valid email adress');
@@ -138,9 +134,8 @@ let manager = (function () {
                 return
             }
             let userObj = filteredUser[0];
-            console.log(userObj.password, " === ", password);
             if (password === userObj.password) {
-                console.log("Inside if ", userObj);
+                // console.log("Inside if ", userObj);
                 this.userLoggedIn = true;
                 this.currentUser = filteredUser[0];
                 this.currentUser.isOnline = true;//is online
@@ -221,7 +216,7 @@ let manager = (function () {
         }
     }
 
-
+// REGISTER BUTTON
     registerBtn.addEventListener('click', function (ev) {
         ev.preventDefault();
         if (FirstNameInput.value && LastNameInput.value && password.value && passwordRepeat.value && emailInput.value) {
@@ -230,13 +225,19 @@ let manager = (function () {
                 FirstNameInput.value = '';
                 LastNameInput.value = '';
                 password.value = '';
+                passwordRepeat.value = '';
                 emailInput.value = '';
-                loginForm.style.display = 'block';
-                registerForm.style.display = 'none';
+                LOGIN_FORM.style.display = 'block';
+                REGISTER_FORM.style.display = 'none';
             } else {
                 alert('Паролата не съвпада!');
             }
         } else {
+            FirstNameInput.value = '';
+            LastNameInput.value = '';
+            password.value = '';
+            passwordRepeat.value = '';
+            emailInput.value = '';
             alert(`Всички полета са задължителни`)
         }
     })
@@ -255,13 +256,13 @@ let manager = (function () {
     })
     showRegFormBtn.addEventListener('click', (ev) => {
         ev.preventDefault();
-        loginForm.style.display = 'none';
-        registerForm.style.display = 'block';
+        LOGIN_FORM.style.display = 'none';
+        REGISTER_FORM.style.display = 'block';
     })
     backToLoginBtn.addEventListener('click', (ev) => {
         ev.preventDefault();
-        loginForm.style.display = 'block';
-        registerForm.style.display = 'none';
+        LOGIN_FORM.style.display = 'block';
+        REGISTER_FORM.style.display = 'none';
     })
     let testService = new UserService;
     // testService.getUsers();//

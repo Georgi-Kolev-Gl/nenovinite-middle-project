@@ -1,6 +1,5 @@
 let questionnaire = (function () {
-  if (localStorage.getItem("Questionnaire")) {
-    console.log(JSON.parse(localStorage.getItem("Questionnaire")));
+  if (localStorage.getItem("Questionnaire")) {    
     return JSON.parse(localStorage.getItem("Questionnaire"));
   } else {
     let questionnaire = [
@@ -146,12 +145,9 @@ let questionnaire = (function () {
     questionnaire.forEach((element, index) => {
       element.id = index + 1;
       
-    });
-    console.log(questionnaire);
-    let survey = JSON.stringify(questionnaire);
-    console.log(survey);
-    localStorage.setItem("Questionnaire", survey);
-    
+    });    
+    let survey = JSON.stringify(questionnaire);    
+    localStorage.setItem("Questionnaire", survey);    
     return JSON.parse(localStorage.getItem("Questionnaire"));
   }
 })();
