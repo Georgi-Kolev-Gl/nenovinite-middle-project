@@ -4,7 +4,6 @@ btnAddQuestionnaire.addEventListener("click", function (ev) {
     ev.preventDefault()
     let input = createElement("input", "", "surveyAnswer")
     input.type = "text"
-    
     let a = createElement("button", "", "btnRemoveAnswer")
     a.addEventListener("click", function(ev){
         let element = ev.target.parentElement;
@@ -18,21 +17,21 @@ btnAddQuestionnaire.addEventListener("click", function (ev) {
 
 function getValueFromAnswer () {
     let arr = []
-   let questionnare = {};
-   questionnare.question = {};
-   questionnaire.id = 50;
+   let NewQuestionnare = {};
+   NewQuestionnare.question = {};
+   NewQuestionnare.id = 50;
    let title = getById("surveyQuestion").value
-   questionnare.title = title;
+   NewQuestionnare.title = title;
    let answer = document.querySelectorAll(".surveyAnswer");
-   let arrayAnswer = [];
    answer.forEach(element => {
        if (element.value){
-        questionnare.question[element.value] = 0;
-        arrayAnswer.push(element.value);
+        NewQuestionnare.question[element.value] = 0;
        }
    });
-   arr.push(questionnare)
+   arr.push(NewQuestionnare)
+   questionnaire.push(NewQuestionnare)
    manager.addQuestionnaire(arr)
+   
 }
 
 // let questionnare = {};

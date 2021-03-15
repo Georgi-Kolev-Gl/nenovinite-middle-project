@@ -205,6 +205,13 @@ let manager = (function () {
                     this.allQuestionnaire.push(newQuestionnaire);
                 }
             })
+            localStorage.setItem('Questionnaire', JSON.stringify(this.allQuestionnaire));  
+        }
+        getQuestionnaire(){
+            if (localStorage.getItem("Questionnaire")) {
+                console.log(JSON.parse(localStorage.getItem("Questionnaire")))
+                this.allQuestionnaire = JSON.parse(localStorage.getItem("Questionnaire"))
+            } 
         }
         filterByUser(user) {
             return this.allNews.filter((el) => el.user === user)

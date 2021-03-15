@@ -242,11 +242,13 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
 }
 
 window.addEventListener("DOMContentLoaded", function () {
+  manager.getQuestionnaire();
   manager.getUsers();
   hashChnage();
   footerStyle(Footer_Container);
 });
 window.addEventListener("hashchange", function () {
+  manager.getQuestionnaire();
   hashChnage();
   footerStyle(Footer_Container);
 });
