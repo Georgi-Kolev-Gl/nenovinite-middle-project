@@ -8,9 +8,9 @@ const HoroscopePage = getById("horoscope");
 const RubricPage = getById("rubric");
 const AddNewsPage = getById("addNews");
 const LoginPage = getById("login");
-const currentNewsByUser = getById("currentNewsByUser")
-const containerPrintAllNewsByUser = getById("containerPrintAllNewsByUser")
-const titleContainerPrintAllNewsByUser = getById("AllUserNews")
+const currentNewsByUser = getById("currentNewsByUser");
+const containerPrintAllNewsByUser = getById("containerPrintAllNewsByUser");
+const titleContainerPrintAllNewsByUser = getById("AllUserNews");
 const Footer_Container = getById('footerContainer');
 
 // LOGIN BUTTONS AND FUNC
@@ -241,18 +241,18 @@ function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
 }
 
 window.addEventListener("DOMContentLoaded", function () {
-  manager.getQuestionnaire();
+  manager.getQuestionnaire(questionnaire);
   manager.getUsers();
   hashChnage();
   footerStyle(Footer_Container);
 });
 window.addEventListener("hashchange", function () {
-  manager.getQuestionnaire();
+  // manager.getQuestionnaire();
   hashChnage();
   footerStyle(Footer_Container);
 });
 manager.getNews(news);
-manager.addQuestionnaire(questionnaire);
+
 function convertDate(str) {
   let months = [
     "Jan",
@@ -527,5 +527,7 @@ printSmallCardNews(rubricArr, rubricNewsBox);
 //RUBRIC DIV PRINT
 
 //current news page
-readCurrentNews = getById("currentNews")
+readCurrentNews = getById("currentNews");
+
+
 

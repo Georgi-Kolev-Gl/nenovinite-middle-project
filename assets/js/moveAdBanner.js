@@ -7,4 +7,4 @@ let counter = 0;
     if (counter < -5600){
         counter = 940;
     }
-})()
+})();
