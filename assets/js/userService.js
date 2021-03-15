@@ -116,8 +116,7 @@ let manager = (function () {
                 alert('Not a valid email adress');
                 return
             }
-            let emails = this.Users.map(e => e.email.toLowerCase())
-            //console.log(emails);
+            let emails = this.Users.map(e => e.email.toLowerCase());
             if (emails.includes(email.trim().toLowerCase())) {
                 alert('already registered!');
             } else {
@@ -186,6 +185,7 @@ let manager = (function () {
             alert('deleted all users');
             this.getUsers();
         }
+        // ADD NEWS
         addNews(title, img, text, date, type) {
             let newsObj = new News(title, img, text, date, this.currentUser.firstName, 0, type, this.allNews.length + 1)
             this.currentUser.myNews.push(newsObj);
@@ -193,26 +193,25 @@ let manager = (function () {
             localStorage.setItem('Users', JSON.stringify(this.Users));
             localStorage.setItem('News', JSON.stringify(this.allNews));
         }
-        addQuestionnaire(arr) {
+        // GET SURVEYS
+        getQuestionnaire(arr) {
             arr.forEach(el => {
                 let newQuestionnaire = new Questionnaire(
                     el.title,
-                    el.question,
+                    el.questions || el.question,
                     el.id
                 );
-                if (newQuestionnaire instanceof Questionnaire) {
-                    this.questionnaireId++;
-                    this.allQuestionnaire.push(newQuestionnaire);
-                }
+                this.addQuestinoary(newQuestionnaire);
             })
-            localStorage.setItem('Questionnaire', JSON.stringify(this.allQuestionnaire));  
+            localStorage.setItem('Questionnaire', JSON.stringify(this.allQuestionnaire));
         }
-        getQuestionnaire(){
-            if (localStorage.getItem("Questionnaire")) {
-                console.log(JSON.parse(localStorage.getItem("Questionnaire")))
-                this.allQuestionnaire = JSON.parse(localStorage.getItem("Questionnaire"))
-            } 
+        // ADD SURVEY
+        addQuestinoary(obj) {
+            let newSurvey = new Questionnaire(obj.title, obj.questions, this.allQuestionnaire.length + 1);
+            this.allQuestionnaire.push(newSurvey);
+            localStorage.setItem('Questionnaire', JSON.stringify(this.allQuestionnaire));
         }
+
         filterByUser(user) {
             return this.allNews.filter((el) => el.user === user)
         }

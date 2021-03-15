@@ -5,7 +5,7 @@ btnAddQuestionnaire.addEventListener("click", function (ev) {
     let input = createElement("input", "", "surveyAnswer")
     input.type = "text"
     let a = createElement("button", "", "btnRemoveAnswer")
-    a.addEventListener("click", function(ev){
+    a.addEventListener("click", function (ev) {
         let element = ev.target.parentElement;
         console.log(element)
         element.remove()
@@ -15,27 +15,20 @@ btnAddQuestionnaire.addEventListener("click", function (ev) {
     containerAnswer.insertBefore(div, containerAnswer.childNodes[0])
 })
 
-function getValueFromAnswer () {
-    let arr = []
-   let NewQuestionnare = {};
-   NewQuestionnare.question = {};
-   NewQuestionnare.id = 50;
-   let title = getById("surveyQuestion").value
-   NewQuestionnare.title = title;
-   let answer = document.querySelectorAll(".surveyAnswer");
-   answer.forEach(element => {
-       if (element.value){
-        NewQuestionnare.question[element.value] = 0;
-       }
-   });
-   arr.push(NewQuestionnare)
-   questionnaire.push(NewQuestionnare)
-   manager.addQuestionnaire(arr)
-   
+function getValueFromAnswer() {
+    let NewQuestionnare = {};
+    NewQuestionnare.questions = {};
+    NewQuestionnare.id = manager.allQuestionnaire.length + 1;
+    let title = getById("surveyQuestion").value
+    NewQuestionnare.title = title;
+    let answer = document.querySelectorAll(".surveyAnswer");
+    answer.forEach(element => {
+        if (element.value) {
+            NewQuestionnare.questions[element.value] = 0;
+        }
+    });
+    manager.addQuestinoary(NewQuestionnare);
 }
 
-// let questionnare = {};
-// questionnare.question = {};
-// questionnare.question.afag = 4;
-// console.log(questionnare)
+
 
