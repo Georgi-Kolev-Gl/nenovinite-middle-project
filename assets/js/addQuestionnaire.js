@@ -1,10 +1,10 @@
-let btnAddQuestionnaire = getById("addNewsQuestionnaire");
+let btnAddQuestionnaire = getById("addNewsInputDIV");
 let containerAnswer = getById("newQuestionnaireAnswer");
 btnAddQuestionnaire.addEventListener("click", function (ev) {
     ev.preventDefault()
     let input = createElement("input", "", "surveyAnswer")
     input.type = "text"
-    let a = createElement("button", "", "btnRemoveAnswer")
+    let a = createElement("button", "x", "btnRemoveAnswer")
     a.addEventListener("click", function(ev){
         let element = ev.target.parentElement;
         console.log(element)

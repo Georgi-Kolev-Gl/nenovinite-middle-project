@@ -316,6 +316,7 @@ function printSmallCardNews(arr, containerToprint) {
     link.addEventListener("click", function () {
       currentNews.counter += 1;
       printCurrentNews(currentNews, readCurrentNews)
+      localStorage.setItem('News', JSON.stringify(manager.allNews));
     })
   })
 }
@@ -347,6 +348,7 @@ function prinprintNewsToCarousel(arr, containerToprint) {
     link.addEventListener("click", function () {
       currentNews.counter += 1;
       printCurrentNews(currentNews, readCurrentNews)
+      localStorage.setItem('News', JSON.stringify(manager.allNews));
     })
   }
 }

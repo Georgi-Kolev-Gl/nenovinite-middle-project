@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./assets/css/questionnaire.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/AdBannerHomePage.css">
+    <link rel="stylesheet" href="./assets/css/addNews.css">
     <!-- STYLES FOR HEADER -->
     <link rel="stylesheet" href="./assets/css/headerAndNav.css">
     <!-- FONT AWESOME LIBRARY -->
@@ -252,27 +253,28 @@
                     </div>
                     <br>
                     <div>
-                        <label for="name">Име/Прякор</label>
+                        <label for="name">Име/Прякор*</label>
                         <div class="addNewsInputDIV">
                             <input type="text" name="name" id="addNewsName">
                         </div>
                     </div>
                     <br>
                     <div>
-                        <label for="title">Заглавие на новината</label>
+                        <label for="title">Заглавие на новината*</label>
                         <div class="addNewsInputDIV">
                             <input type="text" name="title" id="addNewsTitle">
                         </div>
                     </div>
                     <br>
                     <div>
-                        <label for="addImg">Добави снимка</label>
+                        <label for="addImg">Добави снимка*</label>
                         <div class="addNewsInputDIV">
                             <input type="text" name="addImg" id="addImg">
                         </div>
                     </div>
+                    <br>
                     <div>
-                        <label for="type">Категория</label>
+                        <label for="type">Категория*</label>
                         <div class="addNewsInputDIV">
                             <select name="type" id="type">
                                 <option value="politics">Политика</option>
@@ -283,8 +285,9 @@
                             </select>
                         </div>
                     </div>
-                    <div>
-                        <label for="content">Съдържание</label>
+                    <br>
+                    <div id="content">
+                        <label for="content">Съдържание*</label>
                         <div class="addNewsInputDIV">
                             <textarea name="content" id="addNewsContent" cols="30" rows="10" width=100%>
                             </textarea>
@@ -298,10 +301,10 @@
                         </div>
                     </div>
                     <br>
-                    <div style="display:flex; flex-direction: row;">
+                    <div id = "containerNewQuestionnaire" style="display:flex; flex-direction: row;">
                         <div><label for="surveyAnswers">Отговори на анкета</label></div>
                         <div class="addNewsInputDIV" id="newQuestionnaireAnswer">
-                            <div class="addNewsInputDIV">
+                            <div class="addNewsInputDIV" id="addNewsInputDIV">
                                 <a id="addNewsQuestionnaire" name="validateGenerator" href="javascript:">
                                     <i class="fa fa-plus"></i>
                                 </a>
