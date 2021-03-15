@@ -33,7 +33,6 @@ function getValueFromAnswer () {
    });
    arr.push(questionnare)
    manager.addQuestionnaire(arr)
-   return questionnare;
 }
 
 // let questionnare = {};
