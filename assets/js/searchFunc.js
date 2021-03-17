@@ -16,6 +16,7 @@
             }
         }
     }
+    
     searchIcon.addEventListener('click', function (ev) {
         ev.preventDefault();
         let input = searchInput.value.toLowerCase();
@@ -34,6 +35,3 @@
         searchInput.value = '';
     })
 })();
-
-
-
