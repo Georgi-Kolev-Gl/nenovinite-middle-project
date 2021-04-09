@@ -33,9 +33,7 @@ function getTodayDate() {
 }
 function renderViewBlock(element, arr){
   arr.map(el => { el === element ? el.style.display = "block": el.style.display = "none"});
-  console.log('Block view');
 }
 function renderViewFlex(element, arr){
   arr.map(el => { el === element ? el.style.display = "flex": el.style.display = "none"});
-  console.log('flex view');
 }
