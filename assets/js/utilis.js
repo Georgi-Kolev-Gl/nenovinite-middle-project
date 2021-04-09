@@ -31,3 +31,11 @@ function getTodayDate() {
   today.splice(3);
   return strToday = `${today[0]} ${today[1]}, ${today[2]}`;
 }
+function renderViewBlock(element, arr){
+  arr.map(el => { el === element ? el.style.display = "block": el.style.display = "none"});
+  console.log('Block view');
+}
+function renderViewFlex(element, arr){
+  arr.map(el => { el === element ? el.style.display = "flex": el.style.display = "none"});
+  console.log('flex view');
+}

@@ -1,241 +1,107 @@
-const HomePage = getById("homeContainer");
-const AllNewsPage = getById("allNewsContainer");
-const PoliticPage = getById("politicsContainer");
-const WorldPage = getById("worldContainer");
-const CulturePage = getById("cultureContainer");
-const OffsidePage = getById("offsideContainer");
-const HoroscopePage = getById("horoscope");
-const RubricPage = getById("rubric");
-const AddNewsPage = getById("addNews");
-const LoginPage = getById("login");
-const currentNewsByUser = getById("currentNewsByUser");
-const containerPrintAllNewsByUser = getById("containerPrintAllNewsByUser");
-const titleContainerPrintAllNewsByUser = getById("AllUserNews");
-const Footer_Container = getById('footerContainer');
-
+const HOME_PAGE = getById("homeContainer");
+const ALL_NEWS_PAGE = getById("allNewsContainer");
+const POLITIC_PAGE = getById("politicsContainer");
+const WORLD_PAGE = getById("worldContainer");
+const CULTURE_PAGE = getById("cultureContainer");
+const OFFSIDE_PAGE = getById("offsideContainer");
+const HORORSCOPE_PAGE = getById("horoscope");
+const RUBRIC_PAGE = getById("rubric");
+const ADD_NEWS_PAGE = getById("addNews");
+const LOGIN_PAGE = getById("login");
+const CURRENT_NEWS_BY_USER = getById("currentNewsByUser");
+const CONTAINER_PRINT_ALL_NEWS_BY_USER = getById("containerPrintAllNewsByUser");
+const TITLE_CONTAINER_PRINT_ALL_NEWS_BY_USER = getById("AllUserNews");
+const FOOTER_CONTAINER = getById('footerContainer');
+const READ_CURRENT_NEWS_CONTAINER = getById("currentNews");
+const CONTAINERS = [];
+CONTAINERS.push(HOME_PAGE, ALL_NEWS_PAGE, POLITIC_PAGE, WORLD_PAGE, CULTURE_PAGE, OFFSIDE_PAGE, HORORSCOPE_PAGE,
+  RUBRIC_PAGE, ADD_NEWS_PAGE, LOGIN_PAGE, CURRENT_NEWS_BY_USER, READ_CURRENT_NEWS_CONTAINER);
+console.log(CONTAINERS);
 // LOGIN BUTTONS AND FUNC
-const registerForm = getById('registerForm');
-const loginForm = getById('loginForm');
-registerForm.style.display = 'none';
-loginForm.style.display = 'block';
+const REGISTER_FORM = getById('registerForm');
+const LOGIN_FORM = getById('loginForm');
+REGISTER_FORM.style.display = 'none';
+LOGIN_FORM.style.display = 'block';
 function changeLoginPageInnerHTML() {
   if (!manager.userLoggedIn) {
-    registerForm.style.display = 'none';
-    loginForm.style.display = 'block';
+    REGISTER_FORM.style.display = 'none';
+    LOGIN_FORM.style.display = 'block';
     location.hash = '#registerFormContainer';
   }
 }
-const allNewsBox = getById("containerToPrintAllNews");
-const politicsNewsBox = getById("containerToPrintPoliticsNews");
-const worldNewsBox = getById("containerToPrintWorldNews");
-const cultureNewsBox = getById("containerToPrintCultureNews");
-const offsideNewsBox = getById("containerToPrintOffsideNews");
-const horoscopeNewsBox = getById("containerToPrintHoroscopeNews");
-const rubricNewsBox = getById("containerToPrintRubricNews");
+const ALL_NEWS_BOX = getById("containerToPrintAllNews");
+const POLITICS_NEWS_BOX = getById("containerToPrintPoliticsNews");
+const WORLD_NEWS_BOX = getById("containerToPrintWorldNews");
+const CULTURE_NEWS_BOX = getById("containerToPrintCultureNews");
+const OFFSIDE_NEWS_BOX = getById("containerToPrintOffsideNews");
+const HOROSCOPE_NEWS_BOX = getById("containerToPrintHoroscopeNews");
+const RUBRIC_NEWS_BOX = getById("containerToPrintRubricNews");
 
 function hashChnage() {//CHANGED DISPLAY SETTING TO FLEX
   let currentPage = window.location.hash.slice(1);
   switch (currentPage) {
+    //HOME PAGE
     case "homeContainer":
       document.title = "Hе!Новините";
-      HomePage.style.display = "block";
-      AllNewsPage.style.display = "none";
-      PoliticPage.style.display = "none";
-      WorldPage.style.display = "none";
-      CulturePage.style.display = "none";
-      OffsidePage.style.display = "none";
-      HoroscopePage.style.display = "none";
-      RubricPage.style.display = "none";
-      AddNewsPage.style.display = "none";
-      readCurrentNews.style.display = "none";
-      LoginPage.style.display = "none";
-      currentNewsByUser.style.display = "none";
+      renderViewBlock(HOME_PAGE, CONTAINERS);
       break;
-
+    // ALL NEWS PAGE
     case "allNewsContainer":
       document.title = "Всички Hе!Новините";
-      HomePage.style.display = "none";
-      AllNewsPage.style.display = "flex";
-      PoliticPage.style.display = "none";
-      WorldPage.style.display = "none";
-      CulturePage.style.display = "none";
-      OffsidePage.style.display = "none";
-      HoroscopePage.style.display = "none";
-      RubricPage.style.display = "none";
-      AddNewsPage.style.display = "none";
-      readCurrentNews.style.display = "none";
-      LoginPage.style.display = "none";
-      currentNewsByUser.style.display = "none";
+      renderViewFlex(ALL_NEWS_PAGE, CONTAINERS);
       break;
-
+    // POLITC PAGE
     case "politicsContainer":
       document.title = "Политикa и общество";
-      HomePage.style.display = "none";
-      AllNewsPage.style.display = "none";
-      PoliticPage.style.display = "flex";
-      WorldPage.style.display = "none";
-      CulturePage.style.display = "none";
-      OffsidePage.style.display = "none";
-      HoroscopePage.style.display = "none";
-      RubricPage.style.display = "none";
-      AddNewsPage.style.display = "none";
-      readCurrentNews.style.display = "none";
-      LoginPage.style.display = "none";
-      currentNewsByUser.style.display = "none";
+      renderViewFlex(POLITIC_PAGE, CONTAINERS);
       break;
-
+    // WORLD PAGE
     case "worldContainer":
       document.title = "Свят";
-      HomePage.style.display = "none";
-      AllNewsPage.style.display = "none";
-      PoliticPage.style.display = "none";
-      WorldPage.style.display = "flex";
-      CulturePage.style.display = "none";
-      OffsidePage.style.display = "none";
-      HoroscopePage.style.display = "none";
-      RubricPage.style.display = "none";
-      AddNewsPage.style.display = "none";
-      readCurrentNews.style.display = "none";
-      LoginPage.style.display = "none";
-      currentNewsByUser.style.display = "none";
+      renderViewFlex(WORLD_PAGE, CONTAINERS);
       break;
-
+    // CULTURE PAGE
     case "cultureContainer":
       document.title = "Не!Ука и култура";
-      HomePage.style.display = "none";
-      AllNewsPage.style.display = "none";
-      PoliticPage.style.display = "none";
-      WorldPage.style.display = "none";
-      CulturePage.style.display = "flex";
-      OffsidePage.style.display = "none";
-      HoroscopePage.style.display = "none";
-      RubricPage.style.display = "none";
-      AddNewsPage.style.display = "none";
-      readCurrentNews.style.display = "none";
-      LoginPage.style.display = "none";
-      currentNewsByUser.style.display = "none";
+      renderViewFlex(CULTURE_PAGE, CONTAINERS);
       break;
-
+    // OFFSIDE PAGE
     case "offsideContainer":
       document.title = "Не!Засада";
-      HomePage.style.display = "none";
-      AllNewsPage.style.display = "none";
-      PoliticPage.style.display = "none";
-      WorldPage.style.display = "none";
-      CulturePage.style.display = "none";
-      OffsidePage.style.display = "flex";
-      HoroscopePage.style.display = "none";
-      RubricPage.style.display = "none";
-      AddNewsPage.style.display = "none";
-      readCurrentNews.style.display = "none";
-      LoginPage.style.display = "none";
-      currentNewsByUser.style.display = "none";
+      renderViewFlex(OFFSIDE_PAGE, CONTAINERS);
       break;
-
+    // HOROSCOPE PAGE
     case "horoscope":
       document.title = "Не!Хороскоп";
-      HomePage.style.display = "none";
-      AllNewsPage.style.display = "none";
-      PoliticPage.style.display = "none";
-      WorldPage.style.display = "none";
-      CulturePage.style.display = "none";
-      OffsidePage.style.display = "none";
-      HoroscopePage.style.display = "flex";
-      RubricPage.style.display = "none";
-      AddNewsPage.style.display = "none";
-      readCurrentNews.style.display = "none";
-      LoginPage.style.display = "none";
-      currentNewsByUser.style.display = "none";
+      renderViewFlex(HORORSCOPE_PAGE, CONTAINERS);
       break;
-
+    // RUBRIC PAGE
     case "rubric":
       document.title = "Рубрики";
-      HomePage.style.display = "none";
-      AllNewsPage.style.display = "none";
-      PoliticPage.style.display = "none";
-      WorldPage.style.display = "none";
-      CulturePage.style.display = "none";
-      OffsidePage.style.display = "none";
-      HoroscopePage.style.display = "none";
-      RubricPage.style.display = "flex";
-      AddNewsPage.style.display = "none";
-      readCurrentNews.style.display = "none";
-      LoginPage.style.display = "none";
-      currentNewsByUser.style.display = "none";
+      renderViewFlex(RUBRIC_PAGE, CONTAINERS);
       break;
-
+    // ADD NEWS PAGE
     case "addNews":
       document.title = "Не!Новините: Напиши новина";
       changeLoginPageInnerHTML();
-      HomePage.style.display = "none";
-      AllNewsPage.style.display = "none";
-      PoliticPage.style.display = "none";
-      WorldPage.style.display = "none";
-      CulturePage.style.display = "none";
-      OffsidePage.style.display = "none";
-      HoroscopePage.style.display = "none";
-      RubricPage.style.display = "none";
-      AddNewsPage.style.display = "block";
-      readCurrentNews.style.display = "none";
-      LoginPage.style.display = "none";
-      currentNewsByUser.style.display = "none";
+      renderViewBlock(ADD_NEWS_PAGE, CONTAINERS);
       break;
-
+    // CURRENT PAGE
     case "currentNews":
-      HomePage.style.display = "none";
-      AllNewsPage.style.display = "none";
-      PoliticPage.style.display = "none";
-      WorldPage.style.display = "none";
-      CulturePage.style.display = "none";
-      OffsidePage.style.display = "none";
-      HoroscopePage.style.display = "none";
-      RubricPage.style.display = "none";
-      AddNewsPage.style.display = "none";
-      readCurrentNews.style.display = "block";
-      LoginPage.style.display = "none";
-      currentNewsByUser.style.display = "none";
+      renderViewBlock(READ_CURRENT_NEWS_CONTAINER, CONTAINERS);
       break;
+    // REGISTER/LOGIN PAGE
     case "registerFormContainer":
       document.title = "Не!Новините: Вход";
-      HomePage.style.display = "none";
-      AllNewsPage.style.display = "none";
-      PoliticPage.style.display = "none";
-      WorldPage.style.display = "none";
-      CulturePage.style.display = "none";
-      OffsidePage.style.display = "none";
-      HoroscopePage.style.display = "none";
-      RubricPage.style.display = "none";
-      AddNewsPage.style.display = "none";
-      readCurrentNews.style.display = "none";
-      LoginPage.style.display = "block";
-      currentNewsByUser.style.display = "none";
+      renderViewBlock(LOGIN_PAGE, CONTAINERS);
       break;
+    // CURRENT NEWS BY USER
     case "currentNewsByUser":
-      HomePage.style.display = "none";
-      AllNewsPage.style.display = "none";
-      PoliticPage.style.display = "none";
-      WorldPage.style.display = "none";
-      CulturePage.style.display = "none";
-      OffsidePage.style.display = "none";
-      HoroscopePage.style.display = "none";
-      RubricPage.style.display = "none";
-      AddNewsPage.style.display = "none";
-      readCurrentNews.style.display = "none";
-      LoginPage.style.display = "none";
-      currentNewsByUser.style.display = "block";
+      renderViewBlock(CURRENT_NEWS_BY_USER, CONTAINERS);
       break;
+    // DEFAULT PAGE/ HOME PAGE
     default:
-      HomePage.style.display = "block";
-      AllNewsPage.style.display = "none";
-      PoliticPage.style.display = "none";
-      WorldPage.style.display = "none";
-      CulturePage.style.display = "none";
-      OffsidePage.style.display = "none";
-      HoroscopePage.style.display = "none";
-      RubricPage.style.display = "none";
-      AddNewsPage.style.display = "none";
-      LoginPage.style.display = "none";
-      currentNewsByUser.style.display = "none";
+      renderViewBlock(HOME_PAGE, CONTAINERS);
       break;
   }
 }
@@ -244,12 +110,12 @@ window.addEventListener("DOMContentLoaded", function () {
   manager.getQuestionnaire(questionnaire);
   manager.getUsers();
   hashChnage();
-  footerStyle(Footer_Container);
+  footerStyle(FOOTER_CONTAINER);
 });
 window.addEventListener("hashchange", function () {
   // manager.getQuestionnaire();
   hashChnage();
-  footerStyle(Footer_Container);
+  footerStyle(FOOTER_CONTAINER);
 });
 manager.getNews(news);
 
@@ -314,7 +180,7 @@ function printSmallCardNews(arr, containerToprint) {
     containerToprint.append(cardboxContainer);
     link.addEventListener("click", function () {
       currentNews.counter += 1;
-      printCurrentNews(currentNews, readCurrentNews)
+      printCurrentNews(currentNews, READ_CURRENT_NEWS_CONTAINER)
       localStorage.setItem('News', JSON.stringify(manager.allNews));
     })
   })
@@ -346,7 +212,7 @@ function prinprintNewsToCarousel(arr, containerToprint) {
     containerToprint.append(cardboxContainer);
     link.addEventListener("click", function () {
       currentNews.counter += 1;
-      printCurrentNews(currentNews, readCurrentNews)
+      printCurrentNews(currentNews, READ_CURRENT_NEWS_CONTAINER)
       localStorage.setItem('News', JSON.stringify(manager.allNews));
     })
   }
@@ -510,24 +376,24 @@ leftArrowRubric.addEventListener("click", function (event) {
 searchFunctionality();
 
 //ALL NEWS DIV PRINT
-printSmallCardNews(manager.allNews, allNewsBox);
+printSmallCardNews(manager.allNews, ALL_NEWS_BOX);
 
 //POLITICS  DIV PRINT
-printSmallCardNews(politicsArr, politicsNewsBox);
+printSmallCardNews(politicsArr, POLITICS_NEWS_BOX);
 //WORLD  DIV PRINT
-printSmallCardNews(worldArr, worldNewsBox);
+printSmallCardNews(worldArr, WORLD_NEWS_BOX);
 //CULTURE  DIV PRINT
-printSmallCardNews(cultureArr, cultureNewsBox);
+printSmallCardNews(cultureArr, CULTURE_NEWS_BOX);
 //SPORT DIV PRINT
-printSmallCardNews(sportArr, offsideNewsBox);
+printSmallCardNews(sportArr, OFFSIDE_NEWS_BOX);
 //HOROSCOPE  DIV PRINT
-printSmallCardNews(horoscopeArr, horoscopeNewsBox);
+printSmallCardNews(horoscopeArr, HOROSCOPE_NEWS_BOX);
 //RUBRIC DIV PRINT
-printSmallCardNews(rubricArr, rubricNewsBox);
+printSmallCardNews(rubricArr, RUBRIC_NEWS_BOX);
 //RUBRIC DIV PRINT
 
-//current news page
-readCurrentNews = getById("currentNews");
+
+
 
 
 

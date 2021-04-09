@@ -18,8 +18,8 @@ function printCurrentNews(news, containerToPrint) {
     let linkUser = createElement("a", news.user, "news");
     linkUser.href = "#currentNewsByUser";
     linkUser.addEventListener("click", function () {
-      titleContainerPrintAllNewsByUser.innerHTML = `Публикации от ${userName}`
-      printNewsByUser (userName, containerPrintAllNewsByUser)
+      TITLE_CONTAINER_PRINT_ALL_NEWS_BY_USER.innerHTML = `Публикации от ${userName}`
+      printNewsByUser (userName, CONTAINER_PRINT_ALL_NEWS_BY_USER)
     })
     let reviewLogo = createElement("i", "", "fa fa-eye");
     let review = createElement("span", news.counter.toString(), "reviewText");
