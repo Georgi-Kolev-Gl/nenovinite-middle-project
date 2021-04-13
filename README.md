@@ -1,5 +1,9 @@
 
 ## NENOVINITE-MIDDLE-PROJECT
+## Overview
+Single Page Application, copy of the original OLX.bg (https://www.nenovinite.com/) . Project for IT Tallents Season 12
+Live link: https://georgi-kolev-gl.github.io/nenovinite-middle-project//
+
 This is our educational mid term JavaScript project.
 The task is to create copy of nenovinite.com website.
 Contributors Georgi Kolev and Kiril Zashev
