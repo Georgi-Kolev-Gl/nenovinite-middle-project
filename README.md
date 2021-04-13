@@ -6,6 +6,7 @@ Live link: https://georgi-kolev-gl.github.io/nenovinite-middle-project//
 * Javascript
 * HTML5
 * CSS3
+* MVC
 ## Features
 * Register/ login + validation
 * Add news
