@@ -10,7 +10,7 @@ Live link: https://georgi-kolev-gl.github.io/nenovinite-middle-project//
 ## Features
 * Register/ login + validation
 * Add news
-* Add questionnaire /he questionnaire are display random and not paste with the added news/
+* Add questionnaire /the questionnaire are displayed randomly and not post with the added news/
 * Vote for questionnaire
 * Sort news uploaded by user
 * Sort news by type
