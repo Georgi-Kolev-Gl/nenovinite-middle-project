@@ -1,6 +1,6 @@
 ## NENOVINITE-MIDDLE-PROJECT
 ## Overview
-Single Page Application, copy of the original Не!Новините (https://www.nenovinite.com/). Project for IT Tallents Season 12
+Single Page Application, copy of the original Не!Новините (https://www.nenovinite.com/). Project for IT Tallents Season 12.                   
 Live link: https://georgi-kolev-gl.github.io/nenovinite-middle-project//
 ## Features
 * Register/ login + validation
